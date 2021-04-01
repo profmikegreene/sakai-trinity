@@ -4,5 +4,5 @@ Mockups for user testing new Sakai UI.
 
 ## Contributors
 
-@fostersdesign
-@profmikegreene
+@fostersdesign  
+@profmikegreene  

@@ -32,3 +32,7 @@ Youtube Studio
 
 Google News
 ![](Screenshot_20210331_105030.png)
+
+[Material Design Dark theme](https://material.io/design/color/dark-theme.html)
+
+[Apple Human Interface Guidelines Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)

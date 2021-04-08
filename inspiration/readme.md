@@ -36,3 +36,7 @@ Google News
 [Material Design Dark theme](https://material.io/design/color/dark-theme.html)
 
 [Apple Human Interface Guidelines Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)
+
+[Invision's Guide to Building an MVP Design System](https://drive.google.com/file/d/1r1wRj6TcQFL5c37a6Tb0BQQ1kMN_5wJV/view?usp=sharing)
+
+[Form Design Patterns - Adam Silver - Smashing Magazine](https://www.sitepoint.com/premium/books/form-design-patterns/read/1)

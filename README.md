@@ -6,3 +6,7 @@ Mockups for user testing new Sakai UI.
 
 @fostersdesign  
 @profmikegreene  
+
+## TODO
+
+- [ ] figure out how to install browser-sync globally in dockerfile

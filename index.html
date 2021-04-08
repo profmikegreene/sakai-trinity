@@ -18,11 +18,11 @@
 				</div>
 
 				<ul class="Mrphs-systemIndicators">
-					<li><a href="#" class="Mrphs-headerItem">System Alerts</a></li>
-					<li><a href="#" class="Mrphs-headerItem">Notifications</a></li>
-					<li><a href="#" class="Mrphs-headerItem">Quick Links</a></li>
-					<li><a href="#" class="Mrphs-headerItem">Sites</a></li>
-					<li><a href="#" class="Mrphs-headerItem">Account</a></li>
+					<li><a href="#" class="Mrphs-headerItem sak-sysInd-help"><img src="icons/help-circle-outline.svg" title="Get help with this tool">Help</a></li>
+					<li><a href="#" class="Mrphs-headerItem sak-sysInd-systemAlerts"><img src="icons/alert-circle-outline.svg" title="System Alerts">System Alerts</a></li>
+					<li><a href="#" class="Mrphs-headerItem sak-sysInd-notifications"><img src="icons/notifications-circle-outline.svg" title="Notifications of site activity">Notifications</a></li>
+					<li><a href="#" class="Mrphs-headerItem sak-sysInd-quickLinks"><img src="icons/globe.svg" title="Quick links to institutional resources">Quick Links</a></li>
+					<li><a href="#" class="Mrphs-headerItem sak-sysInd-account"><img src="icons/person-circle-outline.svg" title="My Account">Account</a></li>
 				</ul>
 			</header>
 			<div class="Mrphs-toolBar">
@@ -30,12 +30,18 @@
 					<li>Sites and Tools will go here</li>
 				</ul>
 			</div>
-			<ul class="Mrphs-quickSideBar">
-				<li><a href="#" class="Mrphs-quickIt">Tasks</a></li>
-				<li><a href="#" class="Mrphs-quickIt">Grades</a></li>
-				<li><a href="#" class="Mrphs-quickIt">Calendar</a></li>
-				<li><a href="#" class="Mrphs-quickIt">Connections</a></li>
-			</ul>
+			<div class="Mrphs-quickSideBar">
+				<ul>
+					<li><a href="#" class="Mrphs-quickIt Mrphs-qsb-sites"><img src="icons/grid-outline.svg" title="Sites">Sites</a></li>
+					<li><a href="#" class="Mrphs-quickIt Mrphs-qsb-tasks"><img src="icons/calendar-outline.svg" title="Tasks">Tasks</a></li>
+					<li><a href="#" class="Mrphs-quickIt Mrphs-qsb-grades"><img src="icons/shield-checkmark-outline.svg" title="Grades">Grades</a></li>
+					<li><a href="#" class="Mrphs-quickIt Mrphs-qsb-calendar"><img src="icons/calendar-number-outline.svg" title="Calendar">Calendar</a></li>
+					<li><a href="#" class="Mrphs-quickIt Mrphs-qsb-connections"><img src="icons/people-outline.svg" title="Connections">Connections</a></li>
+				</ul>
+				<div class="Mrphs-sideWidget">
+					<img src="images/tasksWidget.png" style="width:100%">
+				</div>
+			</div>
 			<div class="Mrphs-mainContainer">
 				<div class="Mrphs-pageBody">
 					<nav class="Mrphs-breadcrumbs">
@@ -48,6 +54,43 @@
 					<div class="Mrphs-pageHeader">
 						<h1>Assignment 1 Submissions</h1>
 						<button class="Mrphs-toolCreationButton">+ Create Assignment</button>
+					</div>
+					<div class="sakai-table-toolBar">
+						<div class="sakai-table-filterContainer">
+							<div class="sakai-table-viewFilter">
+								<label for="viewFilter_viewFilterForm">View</label>
+								<select id="viewFilter_viewFilterForm" name="view">
+									<option value="all" selected="selected">Entire Site</option>
+									<option value="CALCULUS1001001SP21">CALCULUS 1001 001 SP21</option>
+								</select>
+							</div>
+							<div class="sakai-table-searchFilter">
+								<label for="form_search">Search</label>
+								<div class="sakai-table-searchFilterControls">
+									<input type="text" name="form_search" id="form_search" value="" class="sakai-table-searchFilter-searchField">
+									<input type="button" id="btnSearch_form_search" value="Search">
+								</div>
+							</div>
+						</div>
+						<div class="sakai-table-pagerContainer">
+							<div class="sakai-table-pagerLabel">Viewing 1 - 180 of 180 items</div>
+							<div class="sakai-table-pagerControls">
+								<input type="button" name="eventSubmit_doList_first" value="|<" title="First">
+								<input type="button" name="eventSubmit_doList_prev" value="<" title="Previous 200">
+								<div class="sakai-table-pagerPageSize">
+									<select id="selectPageSize_pager1" name="selectPageSize_pager1">
+										<option value="5">Show 5 items...</option>
+										<option value="10">Show 10 items...</option>
+										<option value="20">Show 20 items...</option>
+										<option value="50">Show 50 items...</option>
+										<option value="100">Show 100 items...</option>
+										<option value="200" selected="selected">Show 200 items...</option>
+									</select>
+								</div>
+								<input type="button" name="eventSubmit_doList_next" value=">" title="Next 200">
+								<input type="button" name="eventSubmit_doList_last" value=">|" title="Last">
+							</div>
+						</div>
 					</div>
 					<table class="Mrphs-table">
 						<thead>

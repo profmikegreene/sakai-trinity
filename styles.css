@@ -5,6 +5,7 @@ body {
 	font-size: 16px;
 	color: #212121;
 }
+
 ul {
 	margin: 0;
 	padding: 0;
@@ -126,7 +127,24 @@ header.sakai-topHeader {
 	padding: 16px;
 	border-right: 1px solid #eee;
 }
-.sakai-mainContainer {
+.sakai-toolBar .sakai-sitesNav__menuitem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* width: 30px; */
+	height: 30px;
+	margin: 4px;
+	padding: 4px;
+	border: 2px solid #ddd;
+	background-color: #eee;
+	overflow: hidden;
+	/* font-size: 0; */
+}
+.is-expanded {
+	overflow: visible;
+	height: auto;
+}
+.Mrphs-mainContainer {
 	display: flex;
 	flex-direction: column;
 	grid-area: main;

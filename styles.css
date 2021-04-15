@@ -14,18 +14,55 @@ ul {
 a {
 	color: #003a6b;
 }
-.Mrphs-portalWrapper {
+button, input[type="button"] {
+	display: inline-block;
+	margin: 0;
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fefefe;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 16px;
+	color: #212121;
+	text-decoration: none;
+	text-transform: none;
+	cursor: pointer;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+select, input[type="text"] {
+	box-sizing: border-box;
+	height: 2.3em;
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	padding-right: 1em;
+	background-color: #fff;
+	background-image: url("icons/caret-down-outline.svg");
+	background-size: 1em;
+	background-position: top 50% right 4px;
+	background-repeat: no-repeat;
+}
+.sakai-portalWrapper {
 	display: grid;
-	grid-template-columns: 200px auto 51px;
+	grid-template-columns: 300px auto 51px;
 	grid-template-rows: 50px auto;
 	grid-template-areas: 
 	"header header header"
 	"toolbar main sidebar";
 }
-.Mrphs-portalWrapper.quickSideBarExpanded {
-	grid-template-columns: 200px auto 251px;
+.sakai-portalWrapper.quickSideBarExpanded {
+	grid-template-columns: 300px auto 251px;
 }
-header.Mrphs-topHeader {
+header.sakai-topHeader {
+	position: sticky;
+	top: 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -35,7 +72,7 @@ header.Mrphs-topHeader {
 	background-color: #003a6b;
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
-.Mrphs-headerLogo--institution {
+.sakai-headerLogo--institution {
 	display: block;
 	width: 200px;
 	height: 50px;
@@ -43,22 +80,22 @@ header.Mrphs-topHeader {
 	background-size: auto 40px;
 	font-size: 0;
 }
-.Mrphs-headerSearch {
+.sakai-headerSearch {
 	display: flex;
 	flex-grow: 2;
 	justify-content: center;
 }
-.Mrphs-headerSearch .sakaiSearch {
-	width: 80%;
+.sakai-headerSearch .sakaiSearch {
+	width: 67%;
 	margin-right: 4px;
 }
-.Mrphs-systemIndicators {
+.sakai-systemIndicators {
 	display: flex;
 	margin: 0;
 	padding: 0;
 	color: #fff;
 }
-.Mrphs-headerItem {
+.sakai-headerItem {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -70,26 +107,31 @@ header.Mrphs-topHeader {
 	font-size: 0;
 	text-decoration: none;
 }
-.Mrphs-headerItem:hover, .Mrphs-headerItem:focus {
-	box-shadow: 0 0px 4px 4px rgba(255,255,255,.3);
+.sakai-headerItem:hover, .sakai-headerItem:focus {
+	background-color: rgba(255, 255, 255, 0.2);
 }
-.Mrphs-headerItem img {
-	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(80%) contrast(102%);
+.sakai-headerItem img {
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(100%) contrast(102%);
 }
-.sak-sysInd-sites {
-	width: 32px;
+.sak-sysInd-account {
+	box-sizing: border-box;
+	border: 2px solid #fff;	
 }
-.Mrphs-toolBar {
+.sak-sysInd-account img {
+	filter: none;
+	width: 40px;
+}
+.sakai-toolBar {
 	grid-area: toolbar;
 	box-sizing: border-box;
 	min-height: calc(100vh - 50px);
 	padding: 16px;
 	border-right: 1px solid #eee;
 }
-.Mrphs-toolBar .Mrphs-sitesNav__menuitem {
+.sakai-sitesNav__menuitem {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: left;
 	/* width: 30px; */
 	height: 30px;
 	margin: 4px;
@@ -99,27 +141,41 @@ header.Mrphs-topHeader {
 	overflow: hidden;
 	/* font-size: 0; */
 }
+
+.sakai-sitesNav__submenu {
+	display: none;
+}
+.sakai-sitesNav__menuitem.is-current {
+	height: auto;
+	flex-direction: column;
+}
+.is-current .sakai-sitesNav__submenu {
+	display: block;
+}
+.sakai-sitesNav__menuitem a {
+	text-decoration: none;
+}
 .is-expanded {
 	overflow: visible;
 	height: auto;
 }
-.Mrphs-mainContainer {
+.sakai-mainContainer {
 	display: flex;
 	flex-direction: column;
 	grid-area: main;
 }
-.Mrphs-pageBody {
+.sakai-pageBody {
 	padding: 16px;
 }
-.Mrphs-breadcrumbs ul {
+.sakai-breadcrumbs ul {
 	display: flex;
 	font-size: 0.75em;
 }
-.Mrphs-breadcrumbs ul li {
+.sakai-breadcrumbs ul li {
 	margin-right: 4px;
 	padding-right: 4px
 }
-.Mrphs-breadcrumb::after { 
+.sakai-breadcrumb::after { 
 	content: " "; 
 	display: inline-block;
 	width: 8px;
@@ -131,57 +187,68 @@ header.Mrphs-topHeader {
 	border-radius: 1px;
 	transform: rotate(45deg);
 }
-.Mrphs-pageHeader {
+.sakai-pageHeader {
 	display: flex;
-	align-items: flex-end;
 	justify-content: space-between;
 	border-bottom: 1px solid #eee;
+	margin-bottom: 16px;
 }
-.Mrphs-pageHeader h1 {
-	margin: 8px 0;
+.sakai-pageHeader h1 {
+	margin: 16px 0;
 	font-size: 1.5em;
 }
-.Mrphs-toolCreationButton {
-	display: inline-block;
-	margin: 0 0 8px 0;
-	padding: 8px 12px;
-	border: 1px solid #003a6b;
-	border-radius: 4px;
-	background: #0f4b70;
-	font-size: 1em;
-	font-weight: 600;
-	line-height: 16px;
-	color: #fff;
-	text-decoration: none;
-	text-transform: none;
-	cursor: pointer;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+.sakai-pageOptions {
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
 }
-.Mrphs-table {
+.sakai-toolOptions {
+	border: 0 none;
+	text-align: right;
+}
+.sakai-toolOptions::before {
+	content: "";
+	width: 16px;
+	height: 16px;
+	background-image: url("icons/settings.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.sakai-toolCreationButton {
+	margin-bottom:8px;
+	border-color: #003a6b;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	background: #003a6b;
+	font-weight: bold;
+	color: #fff;
+
+}
+.sakai-table {
 	width: 100%;
-	margin: 16px 0;
+	margin: 8px 0;
 	padding: 0;
 	border: 1px solid #eee;
 	border-collapse: collapse;
 }
-.Mrphs-table thead {
-	border-bottom: 1px solid #aaa;
+.sakai-table thead {
+	border: 1px solid #ccc;
 }
-.Mrphs-table th, .Mrphs-table td {
-	padding: 8px 4px;
-	border: 1px solid #ddd;
+.sakai-table th, .sakai-table td {
+	padding: 12px 8px;
 }
-.Mrphs-table thead th {
+.sakai-table thead th {
 	border-color: #aaa;
 	background-color: #ddd;
 	text-align: left;
 }
-.Mrphs-table tr:nth-child(2n+1) td {
+.sakai-table thead th a {
+	font-weight: bold;
+	text-decoration: none;
+}
+.sakai-table tr:hover td {
 	background-color: #f3f3f3;
 }
-.Mrphs-footer {
+.sakai-footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -190,32 +257,33 @@ header.Mrphs-topHeader {
 	border-top: 1px solid #eee;
 	font-size: 0.75em;
 }
-.Mrphs-footer--nav {
+.sakai-footer--nav {
 	display: flex;
 }
-.Mrphs-footer--nav li {
+.sakai-footer--nav li {
 	margin-right: 8px;
 	padding-right: 8px;
 	border-right: 1px solid #eee; 
 }
-.Mrphs-footer--nav li:last-of-type {
+.sakai-footer--nav li:last-of-type {
 	border-right: 0 none;
 }
-.Mrphs-footer--copyright {
+.sakai-footer--copyright {
 	margin:0;
 	padding: 0;
 }
-.Mrphs-quickSideBar {
+.sakai-quickSideBar {
 	grid-area: sidebar;
 	display:flex;
 	border-left: 1px solid #eee;
 	transition: width 200ms ease-in;
 }
-.Mrphs-quickSideBar ul {
+.sakai-quickSideBar ul {
+	position: fixed;
 	display: flex;
 	flex-direction: column;	
 }
-.Mrphs-quickIt {
+.sakai-quickIt {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -228,31 +296,35 @@ header.Mrphs-topHeader {
 	overflow: hidden;
 	font-size: 0;
 }
+.sakai-sideWidget {
+	display: none;
+}
+.quickSideBarExpanded .sakai-sideWidget {
+	display: block;
+	padding-left: 50px;
+}
 
 .sakai-table-toolBar {
 	display: flex;
 	align-items: flex-end;
 	margin: 0;
 }
-.sakai-table-toolBar table {
-		margin-top: 0;
-		padding-top: 0;
-	}
 .sakai-table-filterContainer {
 	display: flex;
 	flex-direction: column;
-	margin: 0 auto 10px 0;
-	padding-right: 10px;
+	margin: 0 auto 0 0;
+	padding-right: 16px;
 }
 .sakai-table-filterContainer label {
 	margin: 0 4px 0 0;
+	white-space: nowrap;
 }
 .sakai-table-viewFilter, .sakai-table-searchFilter {
 	display: flex;
 	align-items: center;
 }
 .sakai-table-viewFilter ~ .sakai-table-searchFilter {
-	margin-top: 10px;
+	margin-top: 8px;
 }
 .sakai-table-searchFilter {
 	flex-grow: 1;
@@ -268,15 +340,15 @@ header.Mrphs-topHeader {
 		margin: 0 4px 0 0;
 }
 .sakai-table-pagerContainer	{
-	margin-bottom: 10px;
-	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0 0 auto;
 	padding-left: 10px;
 	text-align: center;
 }
 .sakai-table-pagerLabel {
-	padding: 0 5px 3px 5px;
-	font-size: 12px;
-	color: var(--sakai-text-color-2);
+	padding: 4px;
+	font-size: 0.75em;
 	text-align: center;
 }
 .sakai-table-pagerControls {
@@ -288,17 +360,25 @@ header.Mrphs-topHeader {
 	display: none;
 }
 .sakai-table-pagerControls input, .sakai-table-pagerControls button {
-	font-size: 12px;
+	display: inline-block;
+	min-width: 42px;
+	font-size: 0;
 	line-height: 1;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 75%;
+}
+.sakai-table-pagerControls-previous {
+	background-image: url("icons/chevron-back-outline.svg");
+}
+.sakai-table-pagerControls-next {
+	background-image: url("icons/chevron-forward-outline.svg");
 }
 .sakai-table-pagerControls input:first-of-type, .sakai-table-pagerControls button:first-of-type {
 	margin-left: 0;
 }
 .sakai-table-pagerControls input, .sakai-table-pagerControls select, .sakai-table-pagerControls button {
 	margin: 0 0 0 4px;
-}
-.sakai-table-toolBar-centre {
-	margin-bottom: 10px;
 }
 .sakai-table-viewFilter select {
 	width: 100%;
@@ -312,9 +392,6 @@ header.Mrphs-topHeader {
 .sakai-table-viewFilter input[type=radio] ~ label, .sakai-table-viewFilter input[type=checkbox] ~ label {
 	margin-right: 4px;
 }
-.sakai-table-viewFilter .act {
-	margin: 0;	// remove margins added with .act
-}
 .sakai-table-searchFilterControls {
 	display: flex;
 	width: 100%;
@@ -322,38 +399,65 @@ header.Mrphs-topHeader {
 .sakai-table-searchFilterControls input:last-of-type, .sakai-table-searchFilterControls button:last-of-type {
 	margin-right: 0;
 }
-.sakai-table-searchFilterControls .act {
-	margin: 0;	// remove margins added with .act
+.sakai-table .sakai-table-selectItem, .sakai-table .sakai-table-statusItem, .sakai-table .sakai-table-gradeItem {
+	text-align: center;
 }
-.sakai-table-buttonContainer {
+.sakai-table-endBar {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-end;
 }
-.sakai-table-buttonContainer input:last-of-type, .sakai-table-buttonContainer button:last-of-type {
-	margin-right: 0;
-}
-.sakai-table-buttonContainer input[type=button], .sakai-table-buttonContainer input[type=submit], .sakai-table-buttonContainer button {
-	margin: 0 calc(10px / 2) 10px 0 !important;
-}
-.sakai-table-buttonContainer .act {
-	margin: 0;	// remove margins added with .act
-}
-.sakai-table-toolBar.sakai-table-toolBar-bottom {
-	align-items: flex-start;
-	margin-bottom: 10px;
-}
-.sakai-table-filterContainer {
-	margin: 10px auto 0 0;
-}
-.sakai-table-buttonContainer {
-	margin-top: 10px;
-}
-.sakai-table-pagerContainer {
+.sakai-table-pages {
 	display: flex;
-	flex-direction: column;
-	margin: 10px 0 0 auto;
 }
-.sakai-table-pagerContainer .sakai-table-pagerLabel {
-	padding: 3px calc(10px / 2) 0 calc(10px / 2);
+.sakai-table-pages li {
+	margin: 0;
+	padding: 0;
+}
+.sakai-table-pages li a {
+	display: inline-block;
+	min-width: 42px;
+	margin-left: -1px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	background-color: #fefefe;
+	text-decoration: none;
+	text-align: center;
+}
+.sakai-table-pages li:first-of-type a {
+	border-radius: 4px 0 0 4px;
+}
+.sakai-table-pages li:last-of-type a {
+	border-radius: 0 4px 4px 0;;
+}
+.sakai-table-pages .current a {
+	border-color: #003a6b;
+	background-color: #003a6b;
+	color: #fff;
+}
+.sakai-table-pages .disabled a {
+	color: #ccc;
+	cursor: default;
+}
+.sakai-table-pages span {
+	font-size: 0;
+}
+.sakai-status-success, .sakai-status-warn, .sakai-status-error {
+	padding: 8px;
+	border-radius: 4px;
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+}
+.sakai-status-success {
+	background-color: #425440;
+	color: #aaec78;
+} 
+.sakai-status-warn {
+	background-color: #6b6326;
+	color: #f8f000;
+}
+.sakai-status-error {
+	background-color: #520000;
+	color: #e56673;
 }

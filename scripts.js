@@ -7,3 +7,11 @@ quickSideBar.querySelectorAll('.sakai-quickIt').forEach(item => {
 		portalWrapper.classList.toggle("quickSideBarExpanded");
 	})
 })
+
+const toolBar = document.querySelector('.sakai-toolBar');
+toolBar.querySelectorAll('.sakai-sitesNav__menuitem').forEach(item => {
+	item.addEventListener('click', event => {
+		event.preventDefault();
+		item.classList.toggle("is-expanded");
+	})
+})

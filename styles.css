@@ -399,8 +399,11 @@ header.sakai-topHeader {
 .sakai-table-searchFilterControls input:last-of-type, .sakai-table-searchFilterControls button:last-of-type {
 	margin-right: 0;
 }
-.sakai-table .sakai-table-selectItem, .sakai-table .sakai-table-statusItem, .sakai-table .sakai-table-gradeItem {
+.sakai-table .sakai-table-selectItem {
 	text-align: center;
+}
+ .sakai-table .sakai-table-gradeItem {
+	text-align: right;
 }
 .sakai-table-endBar {
 	display: flex;

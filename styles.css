@@ -5,6 +5,7 @@ body {
 	font-size: 16px;
 	color: #212121;
 }
+
 ul {
 	margin: 0;
 	padding: 0;
@@ -50,14 +51,14 @@ select {
 }
 .sakai-portalWrapper {
 	display: grid;
-	grid-template-columns: 200px auto 51px;
+	grid-template-columns: 300px auto 51px;
 	grid-template-rows: 50px auto;
 	grid-template-areas: 
 	"header header header"
 	"toolbar main sidebar";
 }
 .sakai-portalWrapper.quickSideBarExpanded {
-	grid-template-columns: 200px auto 251px;
+	grid-template-columns: 300px auto 251px;
 }
 header.sakai-topHeader {
 	position: sticky;
@@ -118,6 +119,7 @@ header.sakai-topHeader {
 }
 .sak-sysInd-account img {
 	filter: none;
+	width: 40px;
 }
 .sakai-toolBar {
 	grid-area: toolbar;
@@ -125,6 +127,37 @@ header.sakai-topHeader {
 	min-height: calc(100vh - 50px);
 	padding: 16px;
 	border-right: 1px solid #eee;
+}
+.sakai-sitesNav__menuitem {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	/* width: 30px; */
+	height: 30px;
+	margin: 4px;
+	padding: 4px;
+	border: 2px solid #ddd;
+	background-color: #eee;
+	overflow: hidden;
+	/* font-size: 0; */
+}
+
+.sakai-sitesNav__submenu {
+	display: none;
+}
+.sakai-sitesNav__menuitem.is-current {
+	height: auto;
+	flex-direction: column;
+}
+.is-current .sakai-sitesNav__submenu {
+	display: block;
+}
+.sakai-sitesNav__menuitem a {
+	text-decoration: none;
+}
+.is-expanded {
+	overflow: visible;
+	height: auto;
 }
 .sakai-mainContainer {
 	display: flex;

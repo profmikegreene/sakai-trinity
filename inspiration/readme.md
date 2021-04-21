@@ -6,6 +6,9 @@
 ![](Screenshot%20from%202021-03-31%2010-44-28.png)
 [Chanelle's Design](https://sakailms.invisionapp.com/)
 ![](Screenshot%20from%202021-03-31%2010-43-37.png)
+![](chanelle-sakai-assignments.png)
+
+![](sakai-lessons-ng.png)
 
 Old Google Workplace Chat UI
 ![](Screenshot%20from%202021-03-31%2010-02-00.png)

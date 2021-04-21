@@ -1,0 +1,14 @@
+version: "3"
+services:
+  node:
+    build: .
+    container_name: sakai-trinity
+    user: "root"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 6001:6006
+    network_mode: "bridge"
+    dns:
+      - 8.8.8.8

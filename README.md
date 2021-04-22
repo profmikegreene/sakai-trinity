@@ -22,11 +22,10 @@ To add a new icon
 
 ```sh
 docker-compose run --rm --service-ports node
-npm install -g browser-sync
-browser-sync start --server --files "./*"
+npm install
+npm run serve
 ```
 
 ## TODO
 
-- [ ] figure out how to install browser-sync globally in dockerfile
 - [ ] auto inject screenshot via puppeteer in pull request

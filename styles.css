@@ -148,9 +148,11 @@ header.sakai-topHeader {
 .sakai-sitesNav__menuitem.is-current {
 	height: auto;
 	flex-direction: column;
+	align-items: flex-start;
 }
 .is-current .sakai-sitesNav__submenu {
 	display: block;
+	margin-left: 16px;
 }
 .sakai-sitesNav__menuitem a {
 	text-decoration: none;
@@ -208,6 +210,7 @@ header.sakai-topHeader {
 }
 .sakai-toolOptions::before {
 	content: "";
+	display: inline-block;
 	width: 16px;
 	height: 16px;
 	background-image: url("icons/settings.svg");
@@ -225,7 +228,7 @@ header.sakai-topHeader {
 }
 .sakai-table {
 	width: 100%;
-	margin: 8px 0;
+	margin: 0 0 8px 0;
 	padding: 0;
 	border: 1px solid #eee;
 	border-collapse: collapse;
@@ -307,7 +310,7 @@ header.sakai-topHeader {
 .sakai-table-toolBar {
 	display: flex;
 	align-items: flex-end;
-	margin: 0;
+	margin: 0 0 8px 0;
 }
 .sakai-table-filterContainer {
 	display: flex;
@@ -443,6 +446,48 @@ header.sakai-topHeader {
 }
 .sakai-table-pages span {
 	font-size: 0;
+}
+.sakai-table-actionsBar {
+	display: none;
+	align-items: center;
+	background-color: #333;
+	color: #fff;
+}
+.sakai-table-actionsBar.enabled {
+	display: flex;
+}
+.sakai-table-actionsBar a {
+	color: #fff;
+}
+.sakai-table-actionsBar-selected {
+	margin: 0 16px 0 0;
+	padding: 16px;
+	border-right: 1px solid #999;
+}
+.sakai-table-actionsBar-actions {
+	display: flex;
+}
+.sakai-table-actionsBar-actions li {
+	margin-right: 16px;
+}
+.sakai-table-actionsBar-cancel {
+	position: relative;
+	margin-left: auto;
+	padding: 16px;
+	font-size: 0;
+	color: #fff;
+}
+.sakai-table-actionsBar-cancel::before {
+	content: "";
+	display: inline-block;
+	font-size: 16px;
+	width: 2em;
+	height: 1em;
+	background-image: url("icons/close-outline.svg");
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(100%) contrast(102%);
 }
 .sakai-status-success, .sakai-status-warn, .sakai-status-error {
 	padding: 8px;

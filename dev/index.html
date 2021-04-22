@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title>&lt;my-element> Demo</title>
-    <script type="module" src="../my-element.js"></script>
+    <script type="module" src="/dev/components/my-element.js"></script>
+    <script type="module" src="/dev/components/hello-world.js"></script>
     <style>
       p {
         border: solid 1px blue;
@@ -13,6 +14,7 @@
     </style>
   </head>
   <body>
+    <hello-world-element></hello-world-element>
     <my-element>
       <p>This is child content</p>
     </my-element>

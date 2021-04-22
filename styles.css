@@ -44,7 +44,7 @@ select {
 	-webkit-appearance: none;
 	padding-right: 1em;
 	background-color: #fff;
-	background-image: url("icons/caret-down-outline.svg");
+	background-image: url("/icons/caret-down-outline.svg");
 	background-size: 1em;
 	background-position: top 50% right 4px;
 	background-repeat: no-repeat;
@@ -60,7 +60,8 @@ select {
 .sakai-portalWrapper.quickSideBarExpanded {
 	grid-template-columns: 300px auto 251px;
 }
-header.sakai-topHeader {
+header.sakai-topHeader,
+sakai-header {
 	position: sticky;
 	top: 0;
 	display: flex;
@@ -213,7 +214,7 @@ header.sakai-topHeader {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
-	background-image: url("icons/settings.svg");
+	background-image: url("/icons/settings.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -372,10 +373,10 @@ header.sakai-topHeader {
 	background-size: auto 75%;
 }
 .sakai-table-pagerControls-previous {
-	background-image: url("icons/chevron-back-outline.svg");
+	background-image: url("/icons/chevron-back-outline.svg");
 }
 .sakai-table-pagerControls-next {
-	background-image: url("icons/chevron-forward-outline.svg");
+	background-image: url("/icons/chevron-forward-outline.svg");
 }
 .sakai-table-pagerControls input:first-of-type, .sakai-table-pagerControls button:first-of-type {
 	margin-left: 0;
@@ -483,7 +484,7 @@ header.sakai-topHeader {
 	font-size: 16px;
 	width: 2em;
 	height: 1em;
-	background-image: url("icons/close-outline.svg");
+	background-image: url("/icons/close-outline.svg");
 	background-position: center center;
 	background-size: 100%;
 	background-repeat: no-repeat;

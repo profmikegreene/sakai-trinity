@@ -18,6 +18,7 @@
     "docs:serve": "es-dev-server --root-dir=docs --node-resolve --watch",
     "analyze": "wca analyze \"**/*.js\" --outFile custom-elements.json",
     "serve": "es-dev-server --node-resolve --watch",
+    "serve:no-watch": "es-dev-server --node-resolve",
     "test": "karma start karma.conf.cjs",
     "test:watch": "karma start karma.conf.cjs --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start karma.conf.cjs --update-snapshots",

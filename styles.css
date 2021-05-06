@@ -132,16 +132,18 @@ header.sakai-topHeader {
 	display: flex;
 	align-items: center;
 	justify-content: left;
-	/* width: 30px; */
-	height: 30px;
-	margin: 4px;
-	padding: 4px;
+	margin: 4px 0;
+	padding: 8px;
 	border: 2px solid #ddd;
 	background-color: #eee;
 	overflow: hidden;
-	/* font-size: 0; */
 }
-
+.sakai-sitesNav__menuitem:first-of-type {
+	margin-top: 0;
+}
+.sakai-sitesNav__submenuitem {
+	margin: 8px 0;
+}
 .sakai-sitesNav__submenu {
 	display: none;
 }
@@ -224,7 +226,6 @@ header.sakai-topHeader {
 	background: #003a6b;
 	font-weight: bold;
 	color: #fff;
-
 }
 .sakai-table {
 	width: 100%;
@@ -243,6 +244,7 @@ header.sakai-topHeader {
 	border-color: #aaa;
 	background-color: #ddd;
 	text-align: left;
+	white-space: nowrap;
 }
 .sakai-table thead th a {
 	font-weight: bold;
@@ -326,7 +328,7 @@ header.sakai-topHeader {
 	display: flex;
 	align-items: center;
 }
-.sakai-table-viewFilter ~ .sakai-table-searchFilter {
+.sakai-table-viewFilter ~ .sakai-table-searchFilter, .sakai-table-viewFilter ~ .sakai-table-viewFilter {
 	margin-top: 8px;
 }
 .sakai-table-searchFilter {
@@ -345,8 +347,7 @@ header.sakai-topHeader {
 .sakai-table-pagerContainer	{
 	display: flex;
 	flex-direction: column;
-	margin: 10px 0 0 auto;
-	padding-left: 10px;
+	margin: 0 0 0 auto;
 	text-align: center;
 }
 .sakai-table-pagerLabel {
@@ -508,4 +509,56 @@ header.sakai-topHeader {
 .sakai-status-error {
 	background-color: #520000;
 	color: #e56673;
+}
+.sakai-grader {
+	display: flex;
+}
+.sakai-grader-navigator {
+	width: 400px;
+	box-sizing: border-box;
+}
+.sakai-grader-navigator select {
+	width: calc(400px - 92px);
+}
+.sakai-grader iframe {
+	width: calc(100% - 400px);
+	height: calc(100vh - 50px);
+	box-sizing: border-box;
+}
+.sakai-grader-gradingBar {
+	display: flex;
+	width: 400px;
+	box-sizing: border-box;
+	margin-left: 8px;
+	padding: 16px;
+	border: 1px solid #ddd;
+	background-color: #eee;
+}
+.sakai-grader-submissionDetails h2, .sakai-grader-submissionDetails h3 {
+	margin: 0 0 4px 0;
+	padding: 0;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+.sakai-grader-submissionDetails h3 {
+	margin-top: 16px;
+	font-size: 1em;
+}
+.sakai-grader-submissionDetails p {
+	margin: 0;
+	padding: 0;
+}
+.sakai-grader-submissionDetails ol {
+	margin: 8px 0 16px 0;
+}
+.sakai-grader-submissionDetails .act {
+	margin: 16px 0;
+}
+.sakai-grader-submissionDetails .act .active {
+	margin-bottom:8px;
+	border-color: #003a6b;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	background: #003a6b;
+	font-weight: bold;
+	color: #fff;	
 }

@@ -28,4 +28,9 @@ npm run serve
 
 ## TODO
 
-- [ ] auto inject screenshot via puppeteer in pull request
+- [ ] auto inject screenshot via cypress/puppeteer in pull request
+- [ ] finish sites bar
+- [ ] finish my stuff bar
+
+@earle - what if you don't see your site on the left?
+AI to show active sites at the top? what site shows at the top

@@ -44,7 +44,7 @@ select {
 	-webkit-appearance: none;
 	padding-right: 1em;
 	background-color: #fff;
-	background-image: url("/icons/caret-down-outline.svg");
+	background-image: url("icons/caret-down-outline.svg");
 	background-size: 1em;
 	background-position: top 50% right 4px;
 	background-repeat: no-repeat;

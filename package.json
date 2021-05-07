@@ -51,7 +51,7 @@
     "@storybook/web-components": "^6.2.0",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
-    "@web/dev-server": "^0.1.14",
+    "@web/dev-server": "^0.1.17",
     "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.14",
     "chai": "^4.2.0",

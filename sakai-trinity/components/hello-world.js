@@ -1,10 +1,8 @@
-import {LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 class HelloWorld extends LitElement {
   render() {
-    return html`
-      <h1>Hello World from MyElement!</h1>
-    `;
+    return html` <h1>Hello World from MyElement!</h1> `;
   }
 }
 

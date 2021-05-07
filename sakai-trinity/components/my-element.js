@@ -12,7 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-import {LitElement, html, css} from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 /**
  * An example element.
@@ -37,12 +37,12 @@ export class MyElement extends LitElement {
       /**
        * The name to say "Hello" to.
        */
-      name: {type: String},
+      name: { type: String },
 
       /**
        * The number of times the button has been clicked.
        */
-      count: {type: Number},
+      count: { type: Number },
     };
   }
 

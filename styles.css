@@ -216,7 +216,7 @@ sakai-header {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
-	background-image: url("/icons/settings.svg");
+	background-image: url("icons/settings.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -374,10 +374,10 @@ sakai-header {
 	background-size: auto 75%;
 }
 .sakai-table-pagerControls-previous {
-	background-image: url("/icons/chevron-back-outline.svg");
+	background-image: url("icons/chevron-back-outline.svg");
 }
 .sakai-table-pagerControls-next {
-	background-image: url("/icons/chevron-forward-outline.svg");
+	background-image: url("icons/chevron-forward-outline.svg");
 }
 .sakai-table-pagerControls input:first-of-type, .sakai-table-pagerControls button:first-of-type {
 	margin-left: 0;
@@ -485,7 +485,7 @@ sakai-header {
 	font-size: 16px;
 	width: 2em;
 	height: 1em;
-	background-image: url("/icons/close-outline.svg");
+	background-image: url("icons/close-outline.svg");
 	background-position: center center;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -561,5 +561,5 @@ sakai-header {
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 	background: #003a6b;
 	font-weight: bold;
-	color: #fff;	
+	color: #fff;
 }

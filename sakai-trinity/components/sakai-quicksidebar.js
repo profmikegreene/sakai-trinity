@@ -57,9 +57,6 @@ export class SakaiQuickSidebar extends LitElement {
   }
   render() {
     return html`
-      <!-- <style>
-        @import '../styles.css';
-      </style> -->
       <div id="sakai-quickSideBar" class="sakai-quickSideBar">
         <ul>
           <li>

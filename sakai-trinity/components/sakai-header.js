@@ -1,12 +1,40 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
+export class SakaiHeader extends LitElement {
+  constructor() {
+    super();
+  }
 
-class SakaiHeader extends LitElement {
+  static get styles() {
+    return css`
+      ion-icon {
+        color: white;
+      }
+    `;
+  }
+
+  _onClick() {
+    const portalWrapper = document.querySelector('.sakai-portalWrapper');
+    portalWrapper.classList.toggle('toolBarExpanded');
+    document.querySelector('sakai-toolbar').classList.toggle('isExpanded');
+    document
+      .querySelector('sakai-toolbar')
+      .shadowRoot.getElementById('sakaiToolBar')
+      .classList.toggle('isExpanded');
+  }
+
   render() {
     return html`
       <style>
         @import '../styles.css';
       </style>
       <header role="banner" class="sakai-topHeader">
+        <a
+          href="#"
+          class="sakai-headerItem toggle-toolbar"
+          id="toggleToolbar"
+          @click=${this._onClick}
+          ><ion-icon name="apps-outline" size="large"></ion-icon
+        ></a>
         <div class="sakai-headerLogo">
           <a href="#" class="sakai-headerLogo--institution">Sakai</a>
         </div>

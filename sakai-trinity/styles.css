@@ -1,5 +1,6 @@
 :root {
 	--quickSideBarWidth: 51px;
+	--toolBarWidth: 0;
 }
 body {
 	margin: 0;
@@ -54,7 +55,7 @@ select {
 }
 .sakai-portalWrapper {
 	display: grid;
-	grid-template-columns: 300px auto var(--quickSideBarWidth);
+	grid-template-columns: var(--toolBarWidth) auto var(--quickSideBarWidth);
 	grid-template-rows: 50px auto;
 	grid-template-areas: 
 	"header header header"
@@ -63,6 +64,20 @@ select {
 .sakai-portalWrapper.quickSideBarExpanded {
 	--quickSideBarWidth: 251px;
 }
+.sakai-portalWrapper.toolBarExpanded {
+	--toolBarWidth: 300px;
+}
+sakai-toolbar {
+	grid-area: toolbar;
+	box-sizing: border-box;
+	min-height: calc(100vh - 50px);
+	padding: 0;
+	border-right: 1px solid #eee;
+	background-color: #eee;
+	display: flex;
+	justify-content: stretch;
+}
+
 header.sakai-topHeader,
 sakai-header {
 	position: sticky;
@@ -132,6 +147,7 @@ sakai-header {
 	padding: 16px;
 	border-right: 1px solid #eee;
 }
+
 .sakai-sitesNav__menuitem {
 	display: flex;
 	align-items: center;

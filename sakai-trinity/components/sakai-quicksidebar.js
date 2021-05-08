@@ -1,32 +1,72 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 export class SakaiQuickSidebar extends LitElement {
   constructor() {
     super();
   }
-
-  _onClick(e) {
-    this.classList.toggle('is-expanded');
-    console.log(e);
-
-    // Tools Menu/Bar
-    // const toolBar = document.querySelector('.sakai-toolBar');
-    // toolBar.querySelectorAll('.sakai-sitesNav__menuitem').forEach(item => {
-    //     item.addEventListener('click', event => {
-    //         event.preventDefault();
-    //         item.classList.toggle("is-expanded");
-    //     })
-    // })
+  static get styles() {
+    return css`
+      :host {
+        display: flex;
+      }
+      .sakai-quickSideBar {
+        grid-area: sidebar;
+        display: flex;
+        border-left: 1px solid #eee;
+        transition: width 200ms ease-in;
+      }
+      .sakai-quickSideBar ul {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 4px 0 0;
+      }
+      .sakai-quickSideBar li {
+        list-style: none;
+      }
+      .sakai-quickIt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        margin: 4px;
+        padding: 4px;
+        border: 2px solid #ddd;
+        background-color: #eee;
+        overflow: hidden;
+        font-size: 0;
+      }
+      .sakai-sideWidget {
+        display: none;
+      }
+      .isExpanded .sakai-sideWidget {
+        display: block;
+        padding-left: 50px;
+      }
+    `;
+  }
+  _onClick() {
+    console.log(this.baseURI);
+    const portalWrapper = document.querySelector('.sakai-portalWrapper');
+    portalWrapper.classList.toggle('quickSideBarExpanded');
+    this.shadowRoot
+      .getElementById('sakai-quickSideBar')
+      .classList.toggle('isExpanded');
   }
   render() {
     return html`
-      <style>
+      <!-- <style>
         @import '../styles.css';
-      </style>
-      <div class="sakai-quickSideBar">
+      </style> -->
+      <div id="sakai-quickSideBar" class="sakai-quickSideBar">
         <ul>
           <li>
-            <a href="#" class="sakai-quickIt sakai-qsb-sites"
+            <a
+              href="#"
+              class="sakai-quickIt sakai-qsb-sites"
+              @click=${this._onClick}
               ><img src="../icons/grid-outline.svg" title="Sites" />Sites</a
             >
           </li>

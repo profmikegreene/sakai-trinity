@@ -1,3 +1,6 @@
+:root {
+	--quickSideBarWidth: 51px;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -51,14 +54,14 @@ select {
 }
 .sakai-portalWrapper {
 	display: grid;
-	grid-template-columns: 300px auto 51px;
+	grid-template-columns: 300px auto var(--quickSideBarWidth);
 	grid-template-rows: 50px auto;
 	grid-template-areas: 
 	"header header header"
 	"toolbar main sidebar";
 }
 .sakai-portalWrapper.quickSideBarExpanded {
-	grid-template-columns: 300px auto 251px;
+	--quickSideBarWidth: 251px;
 }
 header.sakai-topHeader,
 sakai-header {

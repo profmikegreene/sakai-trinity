@@ -31,6 +31,7 @@ npm run serve
 - [ ] auto inject screenshot via cypress/puppeteer in pull request
 - [ ] finish sites bar
 - [ ] finish my stuff bar
+- [ ] separate mockups by github issue id in folders?
 
 @earle - what if you don't see your site on the left?
 AI to show active sites at the top? what site shows at the top

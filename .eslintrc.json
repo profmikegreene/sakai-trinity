@@ -4,15 +4,18 @@
   ],
   "env": {
     "browser": true,
+    "es2021": true,
     "mocha": true
   },
   "globals": {
     "chai": "readonly"
   },
+  "ignorePatterns": ["node_modules/*", "rollup-config.js", "docs", "docs-src"],
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module"
   },
+  "plugins": ["wc", "html"],
   "rules": {
     "no-unexpected-multiline": "off"
   }

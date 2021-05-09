@@ -21,6 +21,14 @@ export class SakaiHeader extends LitElement {
       .shadowRoot.getElementById('sakaiToolBar')
       .classList.toggle('isExpanded');
   }
+  _toggleQuickSideBar() {
+    const portalWrapper = document.querySelector('.sakai-portalWrapper');
+    portalWrapper.classList.toggle('quickSideBarExpanded');
+    document
+      .querySelector('sakai-quick-sidebar')
+      .shadowRoot.getElementById('sakai-quickSideBar')
+      .classList.toggle('isExpanded');
+  }
 
   render() {
     return html`
@@ -78,7 +86,10 @@ export class SakaiHeader extends LitElement {
             >
           </li>
           <li>
-            <a href="#" class="sakai-headerItem sak-sysInd-account"
+            <a
+              href="#"
+              class="sakai-headerItem sak-sysInd-account"
+              @click=${this._toggleQuickSideBar}
               ><img
                 src="../images/profile02.jpg"
                 title="My Account"

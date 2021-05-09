@@ -1,5 +1,5 @@
 :root {
-	--quickSideBarWidth: 51px;
+	--quickSideBarWidth: 0;
 	--toolBarWidth: 0;
 }
 body {

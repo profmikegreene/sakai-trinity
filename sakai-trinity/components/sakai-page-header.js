@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'https://unpkg.com/lit-element?module';
 
 export class SakaiPageHeader extends LitElement {
   constructor() {

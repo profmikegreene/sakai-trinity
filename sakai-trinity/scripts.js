@@ -3,6 +3,7 @@
 const quickSideBar = document.querySelector('.sakai-quickSideBar');
 const portalWrapper = document.querySelector('.sakai-portalWrapper');
 
+<<<<<<< HEAD
 if (quickSideBar) {
   quickSideBar.querySelectorAll('.sakai-quickIt').forEach(item => {
     item.addEventListener('click', event => {
@@ -22,6 +23,24 @@ if (toolBar) {
     });
   });
 }
+=======
+quickSideBar.querySelectorAll('.sakai-quickIt').forEach(item => {
+  item.addEventListener('click', event => {
+    event.preventDefault();
+    portalWrapper.classList.toggle('quickSideBarExpanded');
+  });
+});
+
+// Tools Menu/Bar
+
+const toolBar = document.querySelector('.sakai-toolBar');
+toolBar.querySelectorAll('.sakai-sitesNav__menuitem').forEach(item => {
+  item.addEventListener('click', event => {
+    event.preventDefault();
+    item.classList.toggle('is-expanded');
+  });
+});
+>>>>>>> main
 
 // Table Actions
 

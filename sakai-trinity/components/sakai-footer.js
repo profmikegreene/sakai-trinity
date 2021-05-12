@@ -4,7 +4,9 @@ export class SakaiFooter extends LitElement {
   constructor() {
     super();
   }
-
+  static get styles() {
+    return css``;
+  }
   _onClick(e) {
     this.classList.toggle('is-expanded');
     console.log(e);

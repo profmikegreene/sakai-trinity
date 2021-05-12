@@ -73,6 +73,13 @@ export class SakaiToolbar extends LitElement {
       .is-expanded {
         background-color: rgba(0, 0, 0, 0.05);
       }
+      .courseId,
+      .courseTitle {
+        display:inline-block;
+      }
+      .courseTitle {
+        margin-left: 18px;
+      }
       .is-current {
       }
       #manageSidebar {
@@ -124,7 +131,8 @@ export class SakaiToolbar extends LitElement {
               title="Toggle CMKL_807G_4344 as a favorite site"
             ></a>
             <a class="link-container" href="#" title="CMKL_807G_4344">
-              <span>CALCULUS 1001 001 SP21</span>
+              <span class="courseId">PT-D 901 - 01 Sp21</span>
+              <span class="courseTitle">Foreign Educated Pt Course </span>
             </a>
             <a
               class="sakai-sitesNav__dropdown"

@@ -194,6 +194,7 @@ sakai-header {
 }
 .sakai-breadcrumbs ul {
 	display: flex;
+	margin-bottom: 16px;
 	font-size: 0.75em;
 }
 .sakai-breadcrumbs ul li {
@@ -219,8 +220,9 @@ sakai-header {
 	margin-bottom: 16px;
 }
 .sakai-pageHeader h1 {
-	margin: 16px 0;
-	font-size: 1.5em;
+	margin: 0 0 16px 0;
+	font-size: 2em;
+	font-weight: normal;
 }
 .sakai-pageOptions {
 	display: flex;
@@ -228,6 +230,7 @@ sakai-header {
 	margin-left: auto;
 }
 .sakai-toolOptions {
+	margin-top:8px;
 	border: 0 none;
 	text-align: right;
 }
@@ -241,7 +244,6 @@ sakai-header {
 	background-repeat: no-repeat;
 }
 .sakai-toolCreationButton {
-	margin-bottom:8px;
 	border-color: #003a6b;
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 	background: #003a6b;
@@ -582,4 +584,76 @@ sakai-header {
 	background: #003a6b;
 	font-weight: bold;
 	color: #fff;
+}
+.sakai-dashboard-container {
+	display: flex;
+}
+.sakai-dashboard-sitesContainer {
+	display: flex;
+	flex-direction: column;
+	min-width: 350px;
+	max-width: 33%;
+	margin-right: 16px;
+}
+.sakai-dashboard-siteCard {
+	margin: 0 0 16px 0;
+	border-radius: 4px;
+	background-color: #1f2b32;
+	color: #fff;
+}
+.sakai-dashboard-siteCard h2 {
+	margin: 16px 16px 0 16px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: normal;
+}
+.sakai-dashboard-siteCard h2 a {
+	color: #fff;
+	text-decoration: none;
+}
+.sakai-dashboard-siteCard h3 {
+	margin: 0 16px 16px 16px;
+	font-size: 1em;
+}
+.sakai-dashboard-siteCard-iconBar {
+	display: flex;
+	align-items: center;
+	height: 2em;
+	border-radius: 0 0 4px 4px;
+	background-color: #eee;
+}
+.sakai-dashboard-siteCard-toolIconIndicator {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background-color: #003a6b;
+	margin: 8px;
+}
+.sakai-dashboard-widgetContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 16px;
+	width: 100%;
+}
+.sakai-dashboard-widget {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+}
+.sakai-dashboard-widget h2 {
+	margin: 0;
+	padding: 16px;
+	background-color: #eee;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+.sakai-dashboard-widgetContents {
+	padding: 16px;
+}
+.sakai-dashboard-widgetContents p {
+	margin: 0;
 }

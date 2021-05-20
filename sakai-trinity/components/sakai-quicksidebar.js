@@ -1,68 +1,117 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'https://unpkg.com/lit-element?module';
+// import 'https://unpkg.com/@github/include-fragment-element?module';
+import './sakai-card.js';
+import './sakai-widget-user.js';
 
 export class SakaiQuickSidebar extends LitElement {
   constructor() {
     super();
+    this.open = false;
+  }
+  static get properties() {
+    return {
+      open: { type: Boolean },
+    };
+  }
+  attributeChangedCallback(name, oldVal, newVal) {
+    console.log('attribute change: ', name, newVal);
+    super.attributeChangedCallback(name, oldVal, newVal);
+    this.toggleOpen();
+  }
+  toggleOpen() {
+    let pageStyles = getComputedStyle(document.documentElement);
+    if (this.open) {
+      document.documentElement.style.setProperty(
+        '--quickSideBarWidth',
+        pageStyles.getPropertyValue('--quickSideBarOpenWidth')
+      );
+    } else if (!this.open) {
+      document.documentElement.style.setProperty(
+        '--quickSideBarWidth',
+        pageStyles.getPropertyValue('--quickSideBarClosedWidth')
+      );
+    }
   }
 
-  _onClick(e) {
-    this.classList.toggle('is-expanded');
-    console.log(e);
-
-    // Tools Menu/Bar
-    // const toolBar = document.querySelector('.sakai-toolBar');
-    // toolBar.querySelectorAll('.sakai-sitesNav__menuitem').forEach(item => {
-    //     item.addEventListener('click', event => {
-    //         event.preventDefault();
-    //         item.classList.toggle("is-expanded");
-    //     })
-    // })
+  connectedCallback() {
+    super.connectedCallback();
+    this.toggleOpen();
   }
+
+  static get styles() {
+    return css`
+      :host {
+        display: none;
+      }
+      :host([open]) {
+        display: flex;
+        flex-direction: column;
+      }
+      .sakai-quickSideBar ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 4px 0 0;
+      }
+      #userNav {
+        position: fixed;
+        flex-direction: column;
+      }
+      .sakai-quickSideBar li {
+        list-style: none;
+      }
+      .sakai-quickIt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        margin: 4px;
+        padding: 4px;
+        border: 2px solid #ddd;
+        background-color: #eee;
+        overflow: hidden;
+        font-size: 0;
+      }
+      .sakai-sideWidget {
+        display: none;
+      }
+      .isExpanded .sakai-sideWidget {
+        display: block;
+        padding-left: 50px;
+      }
+      ion-icon {
+        color: #222;
+      }
+    `;
+  }
+  // _onClick() {
+  //   const portalWrapper = document.querySelector('.sakai-portalWrapper');
+  //   portalWrapper.classList.toggle('quickSideBarExpanded');
+  //   this.shadowRoot
+  //     .getElementById('sakai-quickSideBar')
+  //     .classList.toggle('isExpanded');
+  // }
   render() {
     return html`
-      <style>
-        @import '../styles.css';
-      </style>
-      <div class="sakai-quickSideBar">
-        <ul>
-          <li>
-            <a href="#" class="sakai-quickIt sakai-qsb-sites"
-              ><img src="../icons/grid-outline.svg" title="Sites" />Sites</a
-            >
-          </li>
-          <li>
-            <a href="#" class="sakai-quickIt sakai-qsb-tasks"
-              ><img src="../icons/calendar-outline.svg" title="Tasks" />Tasks</a
-            >
-          </li>
-          <li>
-            <a href="#" class="sakai-quickIt sakai-qsb-grades"
-              ><img
-                src="../icons/shield-checkmark-outline.svg"
-                title="Grades"
-              />Grades</a
-            >
-          </li>
-          <li>
-            <a href="#" class="sakai-quickIt sakai-qsb-calendar"
-              ><img
-                src="../icons/calendar-number-outline.svg"
-                title="Calendar"
-              />Calendar</a
-            >
-          </li>
-          <li>
-            <a href="#" class="sakai-quickIt sakai-qsb-connections"
-              ><img
-                src="../icons/people-outline.svg"
-                title="Connections"
-              />Connections</a
-            >
-          </li>
+      <div id="sakai-quickSideBar" class="sakai-quickSideBar">
+        <ul id="widgets">
+          <sakai-card>
+            <sakai-widget-user></sakai-widget-user>
+          </sakai-card>
+          <sakai-card>
+            <img src="../images/widget-tasks.png" />
+          </sakai-card>
+          <sakai-card>
+            <img src="../images/widget-announcements.png" />
+          </sakai-card>
+          <sakai-card>
+            <img src="../images/widget-calendar.png" />
+          </sakai-card>
+          <sakai-card>
+            <img src="../images/widget-grades.png" />
+          </sakai-card>
         </ul>
-        <div class="sakai-sideWidget">
-          <img src="../images/tasksWidget.png" style="width:100%" />
-        </div>
       </div>
     `;
   }

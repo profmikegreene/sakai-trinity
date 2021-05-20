@@ -49,16 +49,35 @@ select {
 	background-position: top 50% right 4px;
 	background-repeat: no-repeat;
 }
+:root {
+	--toolBarWidth: 0;
+	--toolBarClosedWidth: 0;
+	--toolBarOpenWidth: 300px;
+	--quickSideBarWidth: 0;
+	--quickSideBarClosedWidth: 0;
+	--quickSideBarOpenWidth: 372px;
+}
 .sakai-portalWrapper {
 	display: grid;
-	grid-template-columns: 300px auto 51px;
+	grid-template-columns: var(--toolBarWidth) auto var(--quickSideBarWidth);
 	grid-template-rows: 50px auto;
 	grid-template-areas: 
 	"header header header"
 	"toolbar main sidebar";
 }
-.sakai-portalWrapper.quickSideBarExpanded {
-	grid-template-columns: 300px auto 251px;
+
+sakai-toolbar {
+	grid-area: toolbar;
+	box-sizing: border-box;
+	min-height: calc(100vh - 50px);
+	padding: 0;
+	border-right: 1px solid #eee;
+	justify-content: stretch;
+}
+sakai-quick-sidebar {
+	grid-area: sidebar;
+	border-left: 1px solid #eee;
+	transition: width 200ms ease-in;
 }
 header.sakai-topHeader,
 sakai-header {
@@ -129,6 +148,7 @@ sakai-header {
 	padding: 16px;
 	border-right: 1px solid #eee;
 }
+
 .sakai-sitesNav__menuitem {
 	display: flex;
 	align-items: center;

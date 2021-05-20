@@ -4,6 +4,14 @@ export class SakaiCard extends LitElement {
   constructor() {
     super();
   }
+  static get properties() {
+    return {
+      /**
+       * URI of the html fragment.
+       */
+      source: { type: String },
+    };
+  }
   static get styles() {
     return css`
       :host {
@@ -11,13 +19,9 @@ export class SakaiCard extends LitElement {
       }
     `;
   }
-  _onClick() {
-    
-  }
+  _onClick() {}
   render() {
-    return html`
-      
-    `;
+    return html` <slot></slot> `;
   }
 }
 

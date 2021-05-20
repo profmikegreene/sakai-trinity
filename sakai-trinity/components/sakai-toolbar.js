@@ -3,17 +3,51 @@ import { LitElement, html, css } from 'https://unpkg.com/lit-element?module';
 export class SakaiToolbar extends LitElement {
   constructor() {
     super();
+    this.open = false;
+  }
+  static get properties() {
+    return {
+      open: { type: Boolean },
+    };
+  }
+  attributeChangedCallback(name, oldVal, newVal) {
+    console.log('attribute change: ', name, newVal);
+    super.attributeChangedCallback(name, oldVal, newVal);
+    this.toggleOpen();
+  }
+  toggleOpen() {
+    let pageStyles = getComputedStyle(document.documentElement);
+    if (this.open) {
+      document.documentElement.style.setProperty(
+        '--toolBarWidth',
+        pageStyles.getPropertyValue('--toolBarOpenWidth')
+      );
+    } else if (!this.open) {
+      document.documentElement.style.setProperty(
+        '--toolBarWidth',
+        pageStyles.getPropertyValue('--toolBarClosedWidth')
+      );
+    }
+  }
+  connectedCallback() {
+    super.connectedCallback();
+    this.toggleOpen();
   }
   static get styles() {
     return css`
-      #sakaiToolBar {
+      :host {
         display: none;
       }
+      :host([open]) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
       #sakaiToolBar.isExpanded {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: var(--toolBarWidth);
       }
       .sakai-toolBar a {
         color: #444;
@@ -75,7 +109,7 @@ export class SakaiToolbar extends LitElement {
       }
       .courseId,
       .courseTitle {
-        display:inline-block;
+        display: inline-block;
       }
       .courseTitle {
         margin-left: 18px;
@@ -101,7 +135,7 @@ export class SakaiToolbar extends LitElement {
   }
   render() {
     return html`
-      <div class="sakai-toolBar isExpanded" id="sakaiToolBar">
+      <div class="sakai-toolBar" id="sakaiToolBar">
         <ul
           class="sakai-sitesNav__menu"
           id="topnav"
@@ -148,24 +182,6 @@ export class SakaiToolbar extends LitElement {
                   class="sakai-sitesNav__submenuitem-link"
                   role="menuitem"
                   href="#"
-                  title="Site Info"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-siteinfo"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Site Info</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
                   title="Dashboard"
                 >
                   <span class="sakai-sitesNav__submenuitem-icon">
@@ -175,6 +191,24 @@ export class SakaiToolbar extends LitElement {
                   </span>
                   <span class="sakai-sitesNav__submenuitem-title"
                     >Dashboard</span
+                  >
+                </a>
+              </li>
+              <li class="sakai-sitesNav__submenuitem">
+                <a
+                  tabindex="-1"
+                  class="sakai-sitesNav__submenuitem-link"
+                  role="menuitem"
+                  href="#"
+                  title="Site Info"
+                >
+                  <span class="sakai-sitesNav__submenuitem-icon">
+                    <span
+                      class="toolMenuIcon icon-sakai--sakai-siteinfo"
+                    ></span>
+                  </span>
+                  <span class="sakai-sitesNav__submenuitem-title"
+                    >Site Info</span
                   >
                 </a>
               </li>

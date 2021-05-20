@@ -11,13 +11,9 @@ export class SakaiUser extends LitElement {
       }
     `;
   }
-  _onClick() {
-    
-  }
+  _onClick() {}
   render() {
-    return html`
-      
-    `;
+    return html``;
   }
 }
 

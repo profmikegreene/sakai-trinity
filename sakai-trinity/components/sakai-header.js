@@ -7,8 +7,12 @@ export class SakaiHeader extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        background-color: #eee;
+      }
       ion-icon {
         color: white;
+        --ionicon-stroke-width: 16px;
       }
     `;
   }
@@ -22,13 +26,18 @@ export class SakaiHeader extends LitElement {
       .shadowRoot.getElementById('sakaiToolBar')
       .classList.toggle('isExpanded');
   }
+  _changeUIState(e) {
+    console.log(e);
+    const eventDetails = { finished: e.target.checked };
+    this.dispatchEvent(
+      new CustomEvent('change-ui-finished', { detail: eventDetails })
+    );
+  }
   _toggleQuickSideBar() {
-    const portalWrapper = document.querySelector('.sakai-portalWrapper');
-    portalWrapper.classList.toggle('quickSideBarExpanded');
-    document
-      .querySelector('sakai-quick-sidebar')
-      .shadowRoot.getElementById('sakai-quickSideBar')
-      .classList.toggle('isExpanded');
+    document.querySelector('sakai-quick-sidebar').toggleAttribute('open');
+  }
+  _toggleToolBar() {
+    document.querySelector('sakai-toolbar').toggleAttribute('open');
   }
 
   render() {
@@ -41,7 +50,7 @@ export class SakaiHeader extends LitElement {
           href="#"
           class="sakai-headerItem toggle-toolbar"
           id="toggleToolbar"
-          @click=${this._onClick}
+          @click=${this._toggleToolBar}
           ><ion-icon name="apps-outline" size="large"></ion-icon
         ></a>
         <div class="sakai-headerLogo">
@@ -90,7 +99,7 @@ export class SakaiHeader extends LitElement {
             <a
               href="#"
               class="sakai-headerItem sak-sysInd-account"
-              @click=${this._toggleQuickSideBar}
+              @click=${e => this._toggleQuickSideBar(e)}
               ><img
                 src="../images/profile02.jpg"
                 title="My Account"

@@ -1,7 +1,3 @@
-:root {
-	--quickSideBarWidth: 0;
-	--toolBarWidth: 0;
-}
 body {
 	margin: 0;
 	padding: 0;
@@ -53,6 +49,14 @@ select {
 	background-position: top 50% right 4px;
 	background-repeat: no-repeat;
 }
+:root {
+	--toolBarWidth: 0;
+	--toolBarClosedWidth: 0;
+	--toolBarOpenWidth: 300px;
+	--quickSideBarWidth: 0;
+	--quickSideBarClosedWidth: 0;
+	--quickSideBarOpenWidth: 372px;
+}
 .sakai-portalWrapper {
 	display: grid;
 	grid-template-columns: var(--toolBarWidth) auto var(--quickSideBarWidth);
@@ -61,23 +65,20 @@ select {
 	"header header header"
 	"toolbar main sidebar";
 }
-.sakai-portalWrapper.quickSideBarExpanded {
-	--quickSideBarWidth: 251px;
-}
-.sakai-portalWrapper.toolBarExpanded {
-	--toolBarWidth: 300px;
-}
+
 sakai-toolbar {
 	grid-area: toolbar;
 	box-sizing: border-box;
 	min-height: calc(100vh - 50px);
 	padding: 0;
 	border-right: 1px solid #eee;
-	background-color: #eee;
-	display: flex;
 	justify-content: stretch;
 }
-
+sakai-quick-sidebar {
+	grid-area: sidebar;
+	border-left: 1px solid #eee;
+	transition: width 200ms ease-in;
+}
 header.sakai-topHeader,
 sakai-header {
 	position: sticky;

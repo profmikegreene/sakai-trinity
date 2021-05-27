@@ -54,7 +54,7 @@ export class SakaiHeader extends LitElement {
           ><ion-icon name="apps-outline" size="large"></ion-icon
         ></a>
         <div class="sakai-headerLogo">
-          <a href="/index.html" class="sakai-headerLogo--institution">Sakai</a>
+          <a href="/sakai-trinity/index.html" class="sakai-headerLogo--institution">Sakai</a>
         </div>
 
         <div class="sakai-headerSearch">

@@ -15,19 +15,18 @@ export class SakaiWidgetUser extends LitElement {
     return css`
       :host {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
       }
       .has-avatar,
       .userNav {
         width: 371px;
-
       }
       .has-avatar {
       }
       .userNav {
-        margin:0;
+        margin: 0;
         padding: 0;
-        list-style:none;
+        list-style: none;
       }
     `;
   }

@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit-element?module';
+import './sakai-toolbar-site.js';
 
 export class SakaiToolbar extends LitElement {
   constructor() {
@@ -29,6 +30,17 @@ export class SakaiToolbar extends LitElement {
       );
     }
   }
+  toggleDropdown(e) {
+    console.log(e);
+    e.path[1].classList.toggle('is-expanded');
+    e.path[1].toggleAttribute('open');
+    console.log(e.path[1].classList);
+  }
+
+  // _onClick(e) {
+  //   this.classList.toggle('is-expanded');
+  //   console.log(e);
+  // }
   connectedCallback() {
     super.connectedCallback();
     this.toggleOpen();
@@ -37,85 +49,36 @@ export class SakaiToolbar extends LitElement {
     return css`
       :host {
         display: none;
+        --background: #fafafa;
+        
       }
       :host([open]) {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow-y: scroll;
+        height: 1vh;
+
       }
 
-      #sakaiToolBar.isExpanded {
+
+      #sakaiToolBar {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        min-height: inherit;
+        background: var(--background);
       }
+
       .sakai-toolBar a {
-        color: #444;
+        color: #333;
       }
       .sakai-sitesNav__menu,
       .sakai-sitesNav__submenu {
         padding: 8px 0 0;
         margin: 0;
       }
-      .sakai-sitesNav__menuitem {
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        margin: 0;
-        padding: 8px;
-        border-bottom: 2px solid #ddd;
-        overflow: hidden;
-        list-style: none;
-      }
-      .sakai-sitesNav__menuitem:first-of-type {
-        margin-top: 0;
-      }
-      .sakai-sitesNav__submenuitem {
-        margin: 8px 0;
-        list-style: none;
-      }
-      .sakai-sitesNav__submenu {
-        display: none;
-      }
-      .sakai-sitesNav__menuitem.is-current {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .is-current .sakai-sitesNav__submenu {
-        display: block;
-        margin-left: 16px;
-      }
-      .sakai-sitesNav__menuitem a {
-        text-decoration: none;
-      }
-      .link-container {
-        display: inline-block;
-      }
-      .link-container::before {
-        content: '';
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-image: url('../icons/caret-forward-outline.svg');
-      }
-      .is-expanded .link-container::before {
-        background-image: url('../icons/caret-down-outline.svg');
-      }
-      .is-expanded {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-      .courseId,
-      .courseTitle {
-        display: inline-block;
-      }
-      .courseTitle {
-        margin-left: 18px;
-      }
-      .is-current {
-      }
+      
       #manageSidebar {
         height: 64px;
         background-color: #ddd;
@@ -127,12 +90,13 @@ export class SakaiToolbar extends LitElement {
       #mySites {
         display: none;
       }
+      #manageSidebar {
+        position: sticky;
+        bottom: 0;
+        padding: 16px 8px;
     `;
   }
-  _onClick(e) {
-    this.classList.toggle('is-expanded');
-    console.log(e);
-  }
+
   render() {
     return html`
       <div class="sakai-toolBar" id="sakaiToolBar">
@@ -141,530 +105,47 @@ export class SakaiToolbar extends LitElement {
           id="topnav"
           aria-label="Sites list begins here"
         >
-          <li class="sakai-sitesNav__menuitem home">
-            <a class="link-container" href="#" title="Home">
-              <span class="sakai-sitesNav__menuitem--myworkspace-label"
-                >Home</span
-              >
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="~f9d2039c-c773-4713-aa5e-2e8833806eae"
-              aria-haspopup="true"
-              aria-label="Open attached menu for Home to access its tools"
-            ></a>
-          </li>
-          <li class="sakai-sitesNav__menuitem is-current is-expanded">
-            <a
-              class="sakai-sitesNav__favbtn fav"
-              href="#"
-              data-site-id="CMKL_807G_4344"
-              role="switch"
-              aria-checked="true"
-              title="Toggle CMKL_807G_4344 as a favorite site"
-            ></a>
-            <a class="link-container" href="#" title="CMKL_807G_4344">
-              <span class="courseId">PT-D 901 - 01 Sp21</span>
-              <span class="courseTitle">Foreign Educated Pt Course </span>
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="CMKL_807G_4344"
-              aria-haspopup="true"
-              title="Open attached menu for CMKL_807G_4344 to access its tools"
-            ></a>
-            <ul class="sakai-sitesNav__submenu" role="menu">
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Dashboard"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-dashboard"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Dashboard</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Site Info"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-siteinfo"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Site Info</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Announcements"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-announcements"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Announcements</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem is-current">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Assignments"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-assignment-grades"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Assignments</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Calendar"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-schedule"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Calendar</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Chat Room"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-chat"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Chat Room</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Commons"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-commons"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title">Commons</span>
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Contact Us"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-feedback"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Contact Us</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Discussions"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-forums"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Discussions</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Drop Box"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-dropbox"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Drop Box</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Email"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-mailtool"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title">Email</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="sakai-sitesNav__menuitem">
-            <a
-              class="sakai-sitesNav__favbtn fav"
-              href="#"
-              data-site-id="ONKE_804F_3368"
-              role="switch"
-              aria-checked="true"
-              title="Toggle ONKE_804F_3368 as a favorite site"
-            ></a>
-            <a class="link-container" href="#" title="ONKE_804F_3368">
-              <span>ONKE_804F_3368</span>
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="ONKE_804F_3368"
-              aria-haspopup="true"
-              title="Open attached menu for ONKE_804F_3368 to access its tools"
-            ></a>
-            <ul class="sakai-sitesNav__submenu expanded" role="menu">
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Site Info"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-siteinfo"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Site Info</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Dashboard"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-dashboard"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Dashboard</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Announcements"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-announcements"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Announcements</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem is-current">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Assignments"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-assignment-grades"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Assignments</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Calendar"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-schedule"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Calendar</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Chat Room"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-chat"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Chat Room</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Commons"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-commons"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title">Commons</span>
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Contact Us"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-feedback"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Contact Us</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Discussions"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-forums"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Discussions</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Drop Box"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span class="toolMenuIcon icon-sakai--sakai-dropbox"></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title"
-                    >Drop Box</span
-                  >
-                </a>
-              </li>
-              <li class="sakai-sitesNav__submenuitem">
-                <a
-                  tabindex="-1"
-                  class="sakai-sitesNav__submenuitem-link"
-                  role="menuitem"
-                  href="#"
-                  title="Email"
-                >
-                  <span class="sakai-sitesNav__submenuitem-icon">
-                    <span
-                      class="toolMenuIcon icon-sakai--sakai-mailtool"
-                    ></span>
-                  </span>
-                  <span class="sakai-sitesNav__submenuitem-title">Email</span>
-                </a>
-              </li>
-              <li
-                class="sakai-sitesNav__submenuitem sakai-sitesNav__submenuitem__gotosite"
-              >
-                <a
-                  tabindex="-1"
-                  role="menuitem"
-                  href="#"
-                  title="Go to the site to view all"
-                >
-                  <span class="toolMenuIcon icon-sakai--see-all-tools"></span>
-                  Go to the site to view all
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="sakai-sitesNav__menuitem">
-            <a
-              class="sakai-sitesNav__favbtn fav"
-              href="#"
-              data-site-id="PEEE_533C_0324"
-              role="switch"
-              aria-checked="true"
-              title="Toggle PEEE_533C_0324 as a favorite site"
-            ></a>
-            <a class="link-container" href="#" title="PEEE_533C_0324">
-              <span>PEEE_533C_0324</span>
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="PEEE_533C_0324"
-              aria-haspopup="true"
-              title="Open attached menu for PEEE_533C_0324 to access its tools"
-            ></a>
-          </li>
-          <li class="sakai-sitesNav__menuitem">
-            <a
-              class="sakai-sitesNav__favbtn fav"
-              href="#"
-              data-site-id="RSJB_534V_4301"
-              role="switch"
-              aria-checked="true"
-              title="Toggle RSJB_534V_4301 as a favorite site"
-            ></a>
-            <a class="link-container" href="#" title="RSJB_534V_4301">
-              <span>RSJB_534V_4301</span>
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="RSJB_534V_4301"
-              aria-haspopup="true"
-              title="Open attached menu for RSJB_534V_4301 to access its tools"
-            ></a>
-          </li>
-          <li class="sakai-sitesNav__menuitem">
-            <a
-              class="sakai-sitesNav__favbtn fav"
-              href="#"
-              data-site-id="WOMM_713Q_1989"
-              role="switch"
-              aria-checked="true"
-              title="Toggle WOMM_713Q_1989 as a favorite site"
-            ></a>
-            <a class="link-container" href="#" title="WOMM_713Q_1989">
-              <span>WOMM_713Q_1989</span>
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="WOMM_713Q_1989"
-              aria-haspopup="true"
-              title="Open attached menu for WOMM_713Q_1989 to access its tools"
-            ></a>
-          </li>
-          <li class="sakai-sitesNav__menuitem">
-            <a
-              class="sakai-sitesNav__favbtn fav"
-              href="#"
-              data-site-id="KENI_450P_5054"
-              role="switch"
-              aria-checked="true"
-              title="Toggle KENI_450P_5054 as a favorite site"
-            ></a>
-            <a class="link-container" href="#" title="KENI_450P_5054">
-              <span>KENI_450P_5054</span>
-            </a>
-            <a
-              class="sakai-sitesNav__dropdown"
-              href="#"
-              data-site-id="KENI_450P_5054"
-              aria-haspopup="true"
-              title="Open attached menu for KENI_450P_5054 to access its tools"
-            ></a>
-          </li>
+          <sakai-toolbar-site
+            emoji="🇧🇷"
+            courseId="PT-D 901 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+            open
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="🐒"
+            courseId="BIOLOGY 320 - 07 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="👩‍⚕️"
+            courseId="NURSING 680 - 01 - 01 Sp21"
+            courseTitle=""
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="🖥️"
+            courseId="ENGR 101 - 01 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="🎭"
+            courseId="GREEK 103 - 01 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="💉"
+            courseId="ANESTH 440C - 41 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="💃🏼"
+            courseId="SPANISH 412 - 01 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="🌎"
+            courseId="ENVIR 101 - 01 - 01 Sp21"
+            courseTitle="Foreign Educated Pt Course"
+          ></sakai-toolbar-site>
         </ul>
         <div id="manageSidebar">
           <a href="#">Manage Sidebar</a>

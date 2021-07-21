@@ -1,14 +1,6 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit-element?module';
 
 export class SakaiToolbarSite extends LitElement {
-  constructor() {
-    super();
-    this.open = false;
-    this.emoji = '';
-    this.courseId = '';
-    this.courseTitle = '';
-    this.isCurrent = false;
-  }
   static get properties() {
     return {
       open: { type: Boolean },
@@ -17,6 +9,24 @@ export class SakaiToolbarSite extends LitElement {
       courseTitle: { type: String },
       isCurrent: { type: Boolean },
     };
+  }
+  set emoji(val) {
+    let oldVal = this._emoji;
+    this._emoji = val;
+    let newVal = val === '' ? '<ion-icon name="star"></ion-icon>' : oldVal;
+    console.log(typeof val, val, typeof oldVal, oldVal, typeof newVal, newVal);
+    this.requestUpdate('emoji', newVal);
+  }
+  get emoji() {
+    return this._emoji;
+  }
+  constructor() {
+    super();
+    this.open = false;
+    this._emoji = '';
+    this.courseId = '';
+    this.courseTitle = '';
+    this.isCurrent = false;
   }
   attributeChangedCallback(name, oldVal, newVal) {
     console.log('attribute change: ', name, newVal);
@@ -29,7 +39,6 @@ export class SakaiToolbarSite extends LitElement {
   }
   connectedCallback() {
     super.connectedCallback();
-    // this.toggleOpen();
   }
   static get styles() {
     return css`
@@ -86,9 +95,13 @@ export class SakaiToolbarSite extends LitElement {
         text-decoration: none;
       }
       .sakai-sitesNav__submenuitem-link {
-        padding: 8px;
+        padding: 4px;
         padding-left: 16px;
         display: block;
+      }
+
+      .sakai-sitesNav__submenuitem-title {
+        display: inline-block;
       }
       .sakai-sitesNav__submenuitem-link:hover,
       .sakai-sitesNav__submenuitem-link:active {
@@ -98,8 +111,11 @@ export class SakaiToolbarSite extends LitElement {
         background: var(--link-background--active);
       }
       .link-container {
-        /* display: inline-block; */
-        flex-grow: 3;
+        display: flex;
+        flex-flow: row wrap;
+        width: calc(
+          var(--toolBarWidth) - 40px - 16px - 18px
+        ); /* 16px for padding, 18px for border */
         padding: 8px;
       }
       .link-container span {
@@ -110,17 +126,21 @@ export class SakaiToolbarSite extends LitElement {
       }
       .sakai-sitesNav__favbtn,
       .sakai-sitesNav__settingsLink {
-        /* display: inline-block; */
-        width: 16px;
-        height: 18px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
       }
       .sakai-sitesNav__settingsLink {
         padding: 8px;
         position: relative;
+        text-align: center;
       }
-      .sakai-sitesNav__favbtn {
-        width: 24px;
-        display: inline-block;
+      .sakai-sitesNav__favbtn:empty {
+        content: url('../icons/star.svg');
+        padding: 2px;
+      }
+      .sakai-sitesNav__favbtn svg {
+        fill: gold;
       }
       .link-container:hover .sakai-sitesNav__favbtn {
         content: url('../icons/caret-forward-outline.svg');
@@ -142,14 +162,15 @@ export class SakaiToolbarSite extends LitElement {
       .is-expanded .link-container:hover .sakai-sitesNav__favbtn {
         content: url('../icons/caret-down-outline.svg');
       }
-      .is-expanded {
-      }
       .courseId,
       .courseTitle {
         display: inline-block;
       }
       .courseTitle {
         margin-left: 28px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
       .is-current .is-current a {
         background: var(--current-background);
@@ -163,7 +184,7 @@ export class SakaiToolbarSite extends LitElement {
       }
     `;
   }
-  _onClick() {}
+
   render() {
     return html` <li class="sakai-sitesNav__menuitem">
       <div class="sakai-sitesNav__menuitemtitle">

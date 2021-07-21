@@ -58,6 +58,7 @@ export class SakaiToolbar extends LitElement {
         justify-content: space-between;
         overflow-y: scroll;
         height: 1vh;
+        min-height: 100%;
 
       }
 
@@ -68,6 +69,7 @@ export class SakaiToolbar extends LitElement {
         justify-content: space-between;
         min-height: inherit;
         background: var(--background);
+        flex-grow: 1;
       }
 
       .sakai-toolBar a {
@@ -80,20 +82,32 @@ export class SakaiToolbar extends LitElement {
       }
       
       #manageSidebar {
-        height: 64px;
+        height: 48px;
         background-color: #ddd;
         display: flex;
         align-items: center;
         justify-content: left;
         padding: 8px;
+        flex-shrink: 0;
+        position: sticky;
+        bottom: 0;
+        padding: 16px 8px;
+      }
+      #manageSidebar > a {
+        text-decoration: none;
+        padding: 8px;
       }
       #mySites {
         display: none;
       }
-      #manageSidebar {
-        position: sticky;
-        bottom: 0;
-        padding: 16px 8px;
+      #membership {
+        padding: 8px;
+      }
+      #membership a {
+        text-decoration: none;
+      }
+      #membership span {
+        padding-left: 4px;
     `;
   }
 
@@ -106,48 +120,55 @@ export class SakaiToolbar extends LitElement {
           aria-label="Sites list begins here"
         >
           <sakai-toolbar-site
-            emoji="🇧🇷"
+            emoji=""
             courseId="PT-D 901 - 01 Sp21"
             courseTitle="Foreign Educated Pt Course"
             open
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🐒"
-            courseId="BIOLOGY 320 - 07 - 01 Sp21"
+            courseId="BIOLOGY 320 - 07 Sp21"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="👩‍⚕️"
-            courseId="NURSING 680 - 01 - 01 Sp21"
+            courseId="NURSING 680 - 01 Sp21"
             courseTitle=""
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🖥️"
-            courseId="ENGR 101 - 01 - 01 Sp21"
+            courseId="ENGR 101 - 01 Sp21"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🎭"
-            courseId="GREEK 103 - 01 - 01 Sp21"
+            courseId="GREEK 103 - 01 Sp21"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="💉"
-            courseId="ANESTH 440C - 41 - 01 Sp21"
+            courseId="ANESTH 440C - 41 Sp21"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="💃🏼"
-            courseId="SPANISH 412 - 01 - 01 Sp21"
+            courseId="SPANISH 412 - 01 Sp21"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🌎"
-            courseId="ENVIR 101 - 01 - 01 Sp21"
+            courseId="ENVIR 101 - 01 Sp21"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
+          <li id="membership">
+            <a href="/sakai-trinity/membership.html">
+              <ion-icon name="apps-outline"></ion-icon>
+              <span>View all my sites</span></a
+            >
+          </li>
         </ul>
         <div id="manageSidebar">
+          <ion-icon name="star-half-outline"></ion-icon>
           <a href="#">Manage Sidebar</a>
           <div
             class="tab-box"

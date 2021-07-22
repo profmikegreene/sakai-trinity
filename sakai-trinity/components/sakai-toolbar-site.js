@@ -48,7 +48,7 @@ export class SakaiToolbarSite extends LitElement {
 
   render() {
     return html`
-    <link href="../components/sakai-toolbar-site.css" rel="stylesheet" type="text/css"> 
+    <link href="/sakai-trinity/components/sakai-toolbar-site.css" rel="stylesheet" type="text/css"> 
     <li class="sakai-sitesNav__menuitem">
       <div class="sakai-sitesNav__menuitemtitle">
         <a

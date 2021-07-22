@@ -19,10 +19,10 @@ export class SakaiWidgetUser extends LitElement {
   _onClick() {}
   render() {
     return html`
-    <link href="../components/sakai-widget-user.css" rel="stylesheet" type="text/css"> 
+    <link href="/sakai-trinity/components/sakai-widget-user.css" rel="stylesheet" type="text/css"> 
     <div class="Mrphs-userNav__submenuitem--profile-and-image has-avatar">
     <img
-      src="../images/profile02.jpg"
+      src="/sakai-trinity/images/profile02.jpg"
       title="My Account"
     />
         <div class="sr-only">Change Profile Picture</div>

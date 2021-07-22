@@ -20,7 +20,7 @@ export class SakaiCard extends LitElement {
   _onClick() {}
   render() {
     return html`
-      <link href="../components/sakai-card.css" rel="stylesheet" type="text/css"> 
+      <link href="/sakai-trinity/components/sakai-card.css" rel="stylesheet" type="text/css"> 
       <slot></slot> `;
   }
 }

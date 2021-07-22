@@ -22,7 +22,7 @@ export class SakaiFooter extends LitElement {
   }
   render() {
     return html`
-      <link href="../components/sakai-footer.css" rel="stylesheet" type="text/css"> 
+      <link href="/sakai-trinity/components/sakai-footer.css" rel="stylesheet" type="text/css"> 
       <div class="sakai-footer">
         <ul class="sakai-footer--nav">
           <li>

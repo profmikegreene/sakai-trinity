@@ -9,7 +9,7 @@
     "build-storybook": "build-storybook",
     "eslint:config": "eslint config",
     "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:prettier-css",
-    "format": "npm run format:eslint && npm run format:prettier && npm run format:prettier:css",
+    "format": "npm run format:eslint && npm run format:prettier && npm run format:prettier-css",
     "format:lit": "prettier my-element.js test/* --write",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",

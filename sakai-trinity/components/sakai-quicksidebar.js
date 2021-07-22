@@ -39,9 +39,7 @@ export class SakaiQuickSidebar extends LitElement {
   }
 
   static get styles() {
-    return css`
-
-    `;
+    return css``;
   }
   // _onClick() {
   //   const portalWrapper = document.querySelector('.sakai-portalWrapper');
@@ -52,7 +50,11 @@ export class SakaiQuickSidebar extends LitElement {
   // }
   render() {
     return html`
-      <link href="/sakai-trinity/components/sakai-quicksidebar.css" rel="stylesheet" type="text/css"> 
+      <link
+        href="/sakai-trinity/components/sakai-quicksidebar.css"
+        rel="stylesheet"
+        type="text/css"
+      />
       <div id="sakai-quickSideBar" class="sakai-quickSideBar">
         <ul id="widgets">
           <sakai-card>

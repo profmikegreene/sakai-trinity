@@ -1,21 +1,24 @@
 :host {
-    margin-top: auto;
-	padding: 16px;
-	border-top: 1px solid #eee;
-	font-size: 0.75em;
+  margin-top: auto;
+  padding: 16px;
+  border-top: 1px solid #eee;
+  font-size: 0.75em;
+}
+li {
+  list-style: none;
 }
 .sakai-footer--nav {
-	display: flex;
+  display: flex;
 }
 .sakai-footer--nav li {
-	margin-right: 8px;
-	padding-right: 8px;
-	border-right: 1px solid #eee; 
+  margin-right: 8px;
+  padding-right: 8px;
+  border-right: 1px solid #eee;
 }
 .sakai-footer--nav li:last-of-type {
-	border-right: 0 none;
+  border-right: 0 none;
 }
 .sakai-footer--copyright {
-	margin:0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }

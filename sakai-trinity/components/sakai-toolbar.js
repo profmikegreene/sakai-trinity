@@ -46,14 +46,16 @@ export class SakaiToolbar extends LitElement {
     this.toggleOpen();
   }
   static get styles() {
-    return css`
-
-    `;
+    return css``;
   }
 
   render() {
     return html`
-      <link href="/sakai-trinity/components/sakai-toolbar.css" rel="stylesheet" type="text/css"> 
+      <link
+        href="/sakai-trinity/components/sakai-toolbar.css"
+        rel="stylesheet"
+        type="text/css"
+      />
       <div class="sakai-toolBar" id="sakaiToolBar">
         <ul
           class="sakai-sitesNav__menu"

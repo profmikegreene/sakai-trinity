@@ -1,144 +1,144 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: inherit;
 
-    --current-background: #d4ebf9;
-    --current-background--hover: #a0d3f2;
-    --current-background--active: #6cbbeb;
-    --link-background--hover: #a0d3f2;
-    --link-current-background--active: #6cbbeb;
-  }
-  :host([open]) {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  a,
-  a:visited {
-    color: #212121;
-  }
-  .sakai-sitesNav__menuitem {
-    /* display: flex; */
-    align-items: center;
-    justify-content: left;
-    margin: 0;
-    border-bottom: 2px solid #ddd;
-    overflow: hidden;
-    list-style: none;
-  }
-  .sakai-sitesNav__menuitem:first-of-type {
-    margin-top: 0;
-  }
-  .sakai-sitesNav__submenuitem {
-    margin: 4px 0;
-    list-style: none;
-    display: block;
-  }
-  .sakai-sitesNav__submenu {
-    display: none;
-    padding: 0;
-    margin: 0;
-  }
-  :host([open]) .sakai-sitesNav__submenu {
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .sakai-sitesNav__menuitem a {
-    text-decoration: none;
-  }
-  .sakai-sitesNav__submenuitem-link {
-    padding: 4px;
-    padding-left: 16px;
-    display: block;
-  }
+  --current-background: #d4ebf9;
+  --current-background--hover: #a0d3f2;
+  --current-background--active: #6cbbeb;
+  --link-background--hover: #a0d3f2;
+  --link-current-background--active: #6cbbeb;
+}
+:host([open]) {
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+}
+a,
+a:visited {
+  color: #212121;
+}
+.sakai-sitesNav__menuitem {
+  /* display: flex; */
+  align-items: center;
+  justify-content: left;
+  margin: 0;
+  border-bottom: 2px solid #ddd;
+  overflow: hidden;
+  list-style: none;
+}
+.sakai-sitesNav__menuitem:first-of-type {
+  margin-top: 0;
+}
+.sakai-sitesNav__submenuitem {
+  margin: 4px 0;
+  list-style: none;
+  display: block;
+}
+.sakai-sitesNav__submenu {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+:host([open]) .sakai-sitesNav__submenu {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+.sakai-sitesNav__menuitem a {
+  text-decoration: none;
+}
+.sakai-sitesNav__submenuitem-link {
+  padding: 4px;
+  padding-left: 16px;
+  display: block;
+}
 
-  .sakai-sitesNav__submenuitem-title {
-    display: inline-block;
-  }
-  .sakai-sitesNav__submenuitem-link:hover,
-  .sakai-sitesNav__submenuitem-link:active {
-    background: var(--link-background--hover);
-  }
-  .sakai-sitesNav__submenuitem-link:active {
-    background: var(--link-background--active);
-  }
-  .link-container {
-    display: flex;
-    flex-flow: row wrap;
-    width: calc(
-      var(--toolBarWidth) - 40px - 16px - 18px
-    ); /* 16px for padding, 18px for border */
-    padding: 8px;
-  }
-  .link-container span {
-    line-height: 1.5;
-  }
-  .sakai-sitesNav__menuitemtitle {
-    display: flex;
-  }
-  .sakai-sitesNav__favbtn,
-  .sakai-sitesNav__settingsLink {
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-  }
-  .sakai-sitesNav__settingsLink {
-    padding: 8px;
-    position: relative;
-    text-align: center;
-  }
-  /* .sakai-sitesNav__favbtn:empty {
+.sakai-sitesNav__submenuitem-title {
+  display: inline-block;
+}
+.sakai-sitesNav__submenuitem-link:hover,
+.sakai-sitesNav__submenuitem-link:active {
+  background: var(--link-background--hover);
+}
+.sakai-sitesNav__submenuitem-link:active {
+  background: var(--link-background--active);
+}
+.link-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: calc(
+    var(--toolBarWidth) - 40px - 16px - 18px
+  ); /* 16px for padding, 18px for border */
+  padding: 8px;
+}
+.link-container span {
+  line-height: 1.5;
+}
+.sakai-sitesNav__menuitemtitle {
+  display: flex;
+}
+.sakai-sitesNav__favbtn,
+.sakai-sitesNav__settingsLink {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.sakai-sitesNav__settingsLink {
+  padding: 8px;
+  position: relative;
+  text-align: center;
+}
+/* .sakai-sitesNav__favbtn:empty {
     content: url('../icons/star.svg');
     padding: 2px;
   } */
-  .favStar {
-    fill: gold;
-    display:none;
-  }
-  .fav:empty + .favStar {
-    display:inline-block;
-  }
-  .link-container:hover .sakai-sitesNav__favbtn {
-    content: url('../icons/caret-forward-outline.svg');
-  }
-  .sakai-sitesNav__settingsTitle {
-    display: none;
-  }
-  .sakai-sitesNav__settingsLink:hover .sakai-sitesNav__settingsTitle,
-  .sakai-sitesNav__settingsLink:active .sakai-sitesNav__settingsTitle,
-  .sakai-sitesNav__settingsLink:focus .sakai-sitesNav__settingsTitle {
-    display: inline-block;
-    position: absolute;
-    left: -75px;
-    top: 0;
-    background: #333;
-    color: #fefefe;
-    padding: 8px;
-  }
-  .is-expanded .link-container:hover .sakai-sitesNav__favbtn {
-    content: url('../icons/caret-down-outline.svg');
-  }
-  .courseId,
-  .courseTitle {
-    display: inline-block;
-  }
-  .courseTitle {
-    margin-left: 28px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  .is-current .is-current a {
-    background: var(--current-background);
-  }
-  .is-current .is-current a:hover,
-  .is-current .is-current a:focus {
-    background: var(--current-background--hover);
-  }
-  .is-current .is-current a:active {
-    background: var(--current-background--active);
-  }
+.favStar {
+  fill: gold;
+  display: none;
+}
+.fav:empty + .favStar {
+  display: inline-block;
+}
+.link-container:hover .sakai-sitesNav__favbtn {
+  content: url('../icons/caret-forward-outline.svg');
+}
+.sakai-sitesNav__settingsTitle {
+  display: none;
+}
+.sakai-sitesNav__settingsLink:hover .sakai-sitesNav__settingsTitle,
+.sakai-sitesNav__settingsLink:active .sakai-sitesNav__settingsTitle,
+.sakai-sitesNav__settingsLink:focus .sakai-sitesNav__settingsTitle {
+  display: inline-block;
+  position: absolute;
+  left: -75px;
+  top: 0;
+  background: #333;
+  color: #fefefe;
+  padding: 8px;
+}
+.is-expanded .link-container:hover .sakai-sitesNav__favbtn {
+  content: url('../icons/caret-down-outline.svg');
+}
+.courseId,
+.courseTitle {
+  display: inline-block;
+}
+.courseTitle {
+  margin-left: 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.is-current .is-current a {
+  background: var(--current-background);
+}
+.is-current .is-current a:hover,
+.is-current .is-current a:focus {
+  background: var(--current-background--hover);
+}
+.is-current .is-current a:active {
+  background: var(--current-background--active);
+}

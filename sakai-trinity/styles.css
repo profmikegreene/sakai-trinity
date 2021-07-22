@@ -78,7 +78,6 @@ sakai-toolbar {
 sakai-quick-sidebar {
 	grid-area: sidebar;
 	border-left: 1px solid #eee;
-	transition: width 200ms ease-in;
 }
 header.sakai-topHeader,
 sakai-header {

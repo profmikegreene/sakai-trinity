@@ -15,6 +15,18 @@ export class SakaiWidgetUser extends LitElement {
     return css`
       :host {
         display: flex;
+        flex-direction: column;
+      }
+      .has-avatar,
+      .userNav {
+        width: 371px;
+      }
+      .has-avatar {
+      }
+      .userNav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
       }
     `;
   }
@@ -26,7 +38,7 @@ export class SakaiWidgetUser extends LitElement {
       src="../images/profile02.jpg"
       title="My Account"
     />
-        <span class="sr-only">Change Profile Picture</span>
+        <div class="sr-only">Change Profile Picture</div>
     <div class="Mrphs-userNav__submenuitem--fullname">
       Sakai Instructor
     </div>

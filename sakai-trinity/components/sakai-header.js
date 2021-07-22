@@ -12,7 +12,7 @@ export class SakaiHeader extends LitElement {
       }
       ion-icon {
         color: white;
-        --ionicon-stroke-width: 16px;
+        /* --ionicon-stroke-width: 16px; */
       }
     `;
   }
@@ -51,10 +51,14 @@ export class SakaiHeader extends LitElement {
           class="sakai-headerItem toggle-toolbar"
           id="toggleToolbar"
           @click=${this._toggleToolBar}
-          ><ion-icon name="apps-outline" size="large"></ion-icon
+          ><ion-icon name="menu-outline" size="large"></ion-icon
         ></a>
         <div class="sakai-headerLogo">
-          <a href="/index.html" class="sakai-headerLogo--institution">Sakai</a>
+          <a
+            href="/sakai-trinity/index.html"
+            class="sakai-headerLogo--institution"
+            >Sakai</a
+          >
         </div>
 
         <div class="sakai-headerSearch">

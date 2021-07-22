@@ -1,0 +1,72 @@
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: header;
+    width: 100%;
+    height: 50px;
+    background-color: #003a6b;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
+  }
+
+  ion-icon {
+    color: white;
+    /* --ionicon-stroke-width: 16px; */
+  }
+li {
+    list-style: none;
+}
+.sakai-headerItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin:0 4px;
+	overflow: hidden;
+	border-radius: 20px;
+	font-size: 0;
+	text-decoration: none;
+}
+.sakai-headerItem:hover, .sakai-headerItem:focus {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.sakai-headerItem img {
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(100%) contrast(102%);
+}
+.sakai-headerLogo--institution {
+	display: block;
+	width: var(--toolBarOpenWidth);
+	height: 50px;
+	background: url('https://trunk-mysql.nightly.sakaiproject.org/library/skin/morpheus-default/images/logo-jewel.png') no-repeat center center;
+	background-size: auto 40px;
+	font-size: 0;
+}
+.sakai-headerSearch {
+	display: flex;
+	flex-grow: 2;
+	justify-content: center;
+}
+.sakai-headerSearch .sakaiSearch {
+	align-self: stretch;
+	width: 67%;
+	margin-right: 4px;
+}
+
+.sakai-systemIndicators {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+.sak-sysInd-account {
+	box-sizing: border-box;
+	border: 2px solid #fff;	
+}
+.sak-sysInd-account img {
+	filter: none;
+	width: 40px;
+}

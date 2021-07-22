@@ -1,0 +1,607 @@
+:root {
+	--toolBarWidth: 0;
+	--toolBarClosedWidth: 0;
+	--toolBarOpenWidth: 300px;
+	--quickSideBarWidth: 0;
+	--quickSideBarClosedWidth: 0;
+	--quickSideBarOpenWidth: 372px;
+}
+/* Grid */
+sakai-header {
+	grid-area: header;
+}
+sakai-toolbar {
+	grid-area: toolbar;
+	box-sizing: border-box;
+	min-height: calc(100vh - 50px);
+	padding: 0;
+	justify-content: stretch;
+}
+sakai-quick-sidebar {
+	grid-area: sidebar;
+}
+sakai-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #212121;
+}
+/* Non webcomponent shared styles */
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a {
+	color: #003a6b;
+}
+button, input[type="button"] {
+	display: inline-block;
+	margin: 0;
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fefefe;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 16px;
+	color: #212121;
+	text-decoration: none;
+	text-transform: none;
+	cursor: pointer;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+select, input[type="text"], input[type="date"] {
+	box-sizing: border-box;
+	height: 2.3em;
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	padding-right: 1em;
+	background-color: #fff;
+	background-image: url("/sakai-trinity/icons/caret-down-outline.svg");
+	background-size: 1em;
+	background-position: top 50% right 4px;
+	background-repeat: no-repeat;
+}
+.sakai-portalWrapper {
+	display: grid;
+	grid-template-columns: var(--toolBarWidth) auto var(--quickSideBarWidth);
+	grid-template-rows: 50px auto;
+	grid-template-areas: 
+	"header header header"
+	"toolbar main sidebar";
+}
+/* 
+.sakai-sitesNav__menuitem {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	margin: 4px 0;
+	padding: 8px;
+	border: 2px solid #ddd;
+	background-color: #eee;
+	overflow: hidden;
+}
+.sakai-sitesNav__menuitem:first-of-type {
+	margin-top: 0;
+}
+.sakai-sitesNav__submenuitem {
+	margin: 8px 0;
+}
+.sakai-sitesNav__submenu {
+	display: none;
+}
+.sakai-sitesNav__menuitem.is-current {
+	height: auto;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.is-current .sakai-sitesNav__submenu {
+	display: block;
+	margin-left: 16px;
+}
+.sakai-sitesNav__menuitem a {
+	text-decoration: none;
+} */
+.is-expanded {
+	overflow: visible;
+	height: auto;
+}
+.sakai-mainContainer {
+	display: flex;
+	flex-direction: column;
+	grid-area: main;
+}
+.sakai-pageBody {
+	padding: 16px;
+}
+.sakai-breadcrumbs ul {
+	display: flex;
+	margin-bottom: 16px;
+	font-size: 0.75em;
+}
+.sakai-breadcrumbs ul li {
+	margin-right: 4px;
+	padding-right: 4px
+}
+.sakai-breadcrumb::after { 
+	content: " "; 
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin-left: 4px;
+	border: 1px solid #212121;
+	border-bottom: 0;
+	border-left: 0;
+	border-radius: 1px;
+	transform: rotate(45deg);
+}
+.sakai-pageHeader {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 16px;
+}
+.sakai-pageHeader h1 {
+	margin: 0 0 16px 0;
+	font-size: 2em;
+	font-weight: normal;
+}
+.sakai-pageOptions {
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+}
+.sakai-toolOptions {
+	margin-top:8px;
+	border: 0 none;
+	text-align: right;
+}
+.sakai-toolOptions::before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url("/sakai-trinity/icons/settings.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+button.primary, .sakai-toolCreationButton {
+	border-color: #003a6b;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	background: #003a6b;
+	font-weight: bold;
+	color: #fff;
+}
+.sakai-actionsBar {
+	position: sticky;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	margin: 16px -16px 0 -16px;
+	padding: 16px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f5f5f5;
+}
+.sakai-actionsBar * {
+	margin-right: 8px;
+}
+.sakai-table {
+	width: 100%;
+	margin: 0 0 8px 0;
+	padding: 0;
+	border: 1px solid #eee;
+	border-collapse: collapse;
+}
+.sakai-table thead {
+	border: 1px solid #ccc;
+}
+.sakai-table th, .sakai-table td {
+	padding: 12px 8px;
+}
+.sakai-table thead th {
+	border-color: #aaa;
+	background-color: #ddd;
+	text-align: left;
+	white-space: nowrap;
+}
+.sakai-table thead th a {
+	font-weight: bold;
+	text-decoration: none;
+}
+.sakai-table tr:hover td {
+	background-color: #f3f3f3;
+}
+
+.sakai-table-toolBar {
+	display: flex;
+	align-items: flex-end;
+	margin: 0 0 8px 0;
+}
+.sakai-table-filterContainer {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto 0 0;
+	padding-right: 16px;
+}
+.sakai-table-filterContainer label {
+	margin: 0 4px 0 0;
+	white-space: nowrap;
+}
+.sakai-table-viewFilter, .sakai-table-searchFilter {
+	display: flex;
+	align-items: center;
+}
+.sakai-table-viewFilter ~ .sakai-table-searchFilter, .sakai-table-viewFilter ~ .sakai-table-viewFilter {
+	margin-top: 8px;
+}
+.sakai-table-searchFilter {
+	flex-grow: 1;
+}
+.sakai-table-searchFilter-searchField {
+	flex-grow: 1;
+	width: 200px;
+	margin-right: 4px;
+}
+.sakai-table-searchFilter-searchField input[type=button], .sakai-table-searchFilter-searchField input[type=submit],
+	.sakai-table-searchFilter-searchField input[type=button]:disabled, .sakai-table-searchFilter-searchField input[type=submit]:disabled,
+	.sakai-table-searchFilter-searchField button, .sakai-table-searchFilter-searchField button:disabled {
+		margin: 0 4px 0 0;
+}
+.sakai-table-pagerContainer	{
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 0 auto;
+	text-align: center;
+}
+.sakai-table-pagerLabel {
+	padding: 4px;
+	font-size: 0.75em;
+	text-align: center;
+}
+.sakai-table-pagerControls {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
+.sakai-table-pagerControls label {
+	display: none;
+}
+.sakai-table-pagerControls input, .sakai-table-pagerControls button {
+	display: inline-block;
+	min-width: 42px;
+	font-size: 0;
+	line-height: 1;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 75%;
+}
+.sakai-table-pagerControls-previous {
+	background-image: url("/sakai-trinity/icons/chevron-back-outline.svg");
+}
+.sakai-table-pagerControls-next {
+	background-image: url("/sakai-trinity/icons/chevron-forward-outline.svg");
+}
+.sakai-table-pagerControls input:first-of-type, .sakai-table-pagerControls button:first-of-type {
+	margin-left: 0;
+}
+.sakai-table-pagerControls input, .sakai-table-pagerControls select, .sakai-table-pagerControls button {
+	margin: 0 0 0 4px;
+}
+.sakai-table-viewFilter select {
+	width: 100%;
+}
+.sakai-table-viewFilter input[type=button], .sakai-table-viewFilter input[type=submit], .sakai-table-viewFilter button {
+	margin: 4px;
+}
+.sakai-table-viewFilter input[type=radio], .sakai-table-viewFilter input[type=checkbox] {
+	margin: 0;
+}
+.sakai-table-viewFilter input[type=radio] ~ label, .sakai-table-viewFilter input[type=checkbox] ~ label {
+	margin-right: 4px;
+}
+.sakai-table-searchFilterControls {
+	display: flex;
+	width: 100%;
+}
+.sakai-table-searchFilterControls input:last-of-type, .sakai-table-searchFilterControls button:last-of-type {
+	margin-right: 0;
+}
+.sakai-table .sakai-table-selectItem {
+	text-align: center;
+}
+ .sakai-table .sakai-table-gradeItem {
+	text-align: right;
+}
+.sakai-table-endBar {
+	display: flex;
+	justify-content: flex-end;
+}
+.sakai-table-pages {
+	display: flex;
+}
+.sakai-table-pages li {
+	margin: 0;
+	padding: 0;
+}
+.sakai-table-pages li a {
+	display: inline-block;
+	min-width: 42px;
+	margin-left: -1px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	background-color: #fefefe;
+	text-decoration: none;
+	text-align: center;
+}
+.sakai-table-pages li:first-of-type a {
+	border-radius: 4px 0 0 4px;
+}
+.sakai-table-pages li:last-of-type a {
+	border-radius: 0 4px 4px 0;;
+}
+.sakai-table-pages .current a {
+	border-color: #003a6b;
+	background-color: #003a6b;
+	color: #fff;
+}
+.sakai-table-pages .disabled a {
+	color: #ccc;
+	cursor: default;
+}
+.sakai-table-pages span {
+	font-size: 0;
+}
+.sakai-table-actionsBar {
+	display: none;
+	align-items: center;
+	background-color: #333;
+	color: #fff;
+}
+.sakai-table-actionsBar.enabled {
+	display: flex;
+}
+.sakai-table-actionsBar a {
+	color: #fff;
+}
+.sakai-table-actionsBar-selected {
+	margin: 0 16px 0 0;
+	padding: 16px;
+	border-right: 1px solid #999;
+}
+.sakai-table-actionsBar-actions {
+	display: flex;
+}
+.sakai-table-actionsBar-actions li {
+	margin-right: 16px;
+}
+.sakai-table-actionsBar-cancel {
+	position: relative;
+	margin-left: auto;
+	padding: 16px;
+	font-size: 0;
+	color: #fff;
+}
+.sakai-table-actionsBar-cancel::before {
+	content: "";
+	display: inline-block;
+	font-size: 16px;
+	width: 2em;
+	height: 1em;
+	background-image: url("/sakai-trinity/icons/close-outline.svg");
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(100%) contrast(102%);
+}
+.sakai-form {
+	
+}
+.sakai-form fieldset {
+	margin: 0 0 16px 0;
+	padding: 0;
+	border: 0 none;
+}
+.sakai-form-option {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+}
+.sakai-form legend {
+	display: block;
+	width: 100%;
+	margin: 0 0 8px 0;
+	padding: 0;
+}
+.sakai-form legend h2 {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ddd;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+.sakai-form fieldset fieldset {
+	display: flex;
+}
+.sakai-form label {
+	display: inline-block;
+}
+.sakai-form-option > label, .sakai-form fieldset fieldset legend {
+	width: 25%;
+	max-width: 200px;
+	font-weight: bold;
+}
+.sakai-form input[type="text"], .sakai-form textarea {
+	flex-grow: 2;
+	padding: 4px;
+}
+.sakai-form input[type="date"] {
+	max-width: 200px;
+}
+.sakai-form-spacer {
+	width: 25%;
+	max-width: 200px;
+}
+.sakai-form-options {
+	
+}
+.sakai-status-success, .sakai-status-warn, .sakai-status-error {
+	padding: 8px;
+	border-radius: 4px;
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+}
+.sakai-status-success {
+	background-color: #425440;
+	color: #aaec78;
+} 
+.sakai-status-warn {
+	background-color: #6b6326;
+	color: #f8f000;
+}
+.sakai-status-error {
+	background-color: #520000;
+	color: #e56673;
+}
+.sakai-grader {
+	display: flex;
+}
+.sakai-grader-navigator {
+	width: 400px;
+	box-sizing: border-box;
+}
+.sakai-grader-navigator select {
+	width: calc(400px - 92px);
+}
+.sakai-grader iframe {
+	width: calc(100% - 400px);
+	height: calc(100vh - 50px);
+	box-sizing: border-box;
+}
+.sakai-grader-gradingBar {
+	display: flex;
+	width: 400px;
+	box-sizing: border-box;
+	margin-left: 8px;
+	padding: 16px;
+	border: 1px solid #ddd;
+	background-color: #eee;
+}
+.sakai-grader-submissionDetails h2, .sakai-grader-submissionDetails h3 {
+	margin: 0 0 4px 0;
+	padding: 0;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+.sakai-grader-submissionDetails h3 {
+	margin-top: 16px;
+	font-size: 1em;
+}
+.sakai-grader-submissionDetails p {
+	margin: 0;
+	padding: 0;
+}
+.sakai-grader-submissionDetails ol {
+	margin: 8px 0 16px 0;
+}
+.sakai-grader-submissionDetails .act {
+	margin: 16px 0;
+}
+.sakai-grader-submissionDetails .act .active {
+	margin-bottom:8px;
+	border-color: #003a6b;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	background: #003a6b;
+	font-weight: bold;
+	color: #fff;
+}
+.sakai-dashboard-container {
+	display: flex;
+}
+.sakai-dashboard-sitesContainer {
+	display: flex;
+	flex-direction: column;
+	min-width: 350px;
+	max-width: 33%;
+	margin-right: 16px;
+}
+.sakai-dashboard-siteCard {
+	margin: 0 0 16px 0;
+	border-radius: 4px;
+	background-color: #1f2b32;
+	color: #fff;
+}
+.sakai-dashboard-siteCard h2 {
+	margin: 16px 16px 0 16px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: normal;
+}
+.sakai-dashboard-siteCard h2 a {
+	color: #fff;
+	text-decoration: none;
+}
+.sakai-dashboard-siteCard h3 {
+	margin: 0 16px 16px 16px;
+	font-size: 1em;
+}
+.sakai-dashboard-siteCard-iconBar {
+	display: flex;
+	align-items: center;
+	height: 2em;
+	border-radius: 0 0 4px 4px;
+	background-color: #eee;
+}
+.sakai-dashboard-siteCard-toolIconIndicator {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background-color: #003a6b;
+	margin: 8px;
+}
+.sakai-dashboard-widgetContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 16px;
+	width: 100%;
+}
+.sakai-dashboard-widget {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+}
+.sakai-dashboard-widget h2 {
+	margin: 0;
+	padding: 16px;
+	background-color: #eee;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+.sakai-dashboard-widgetContents {
+	padding: 16px;
+}
+.sakai-dashboard-widgetContents p {
+	margin: 0;
+}

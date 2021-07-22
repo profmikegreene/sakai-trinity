@@ -1,0 +1,109 @@
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sakai: Home</title>
+		<script type="module" src="components/sakai-header.js"></script>
+        <script type="module" src="components/sakai-toolbar.js"></script>
+        <script type="module" src="components/sakai-quicksidebar.js"></script>
+        <script type="module" src="components/sakai-footer.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+		<script type="module" src="https://unpkg.com/@lion/pagination@0.5.0/lion-pagination.js?module"></script>
+		<link type="text/css" rel="stylesheet" href="styles.css">
+	</head>
+
+	<body class="sakai-portalBody">
+		<div class="sakai-portalWrapper">
+            <sakai-header></sakai-header>
+			<sakai-toolbar open></sakai-toolbar>
+			<sakai-quick-sidebar></sakai-quick-sidebar>
+			<div class="sakai-mainContainer">
+				<div class="sakai-pageBody">
+					<div class="sakai-pageHeader">
+						<nav class="sakai-breadcrumbs">
+							<h1>Welcome Home</h1>
+						</nav>
+						<div class="sakai-pageOptions">
+							<button class="sakai-toolCreationButton">Manage Dashboard</button>
+						</div>
+					</div>
+					<div class="sakai-dashboard-container">
+						<div class="sakai-dashboard-sitesContainer">
+							<div class="sakai-dashboard-siteCard">
+								<h2><a href="courseIndex.html">Introduction to Calculus</a></h2>
+								<h3>CALCULUS 1001 001 SP21</h3>
+								<div class="sakai-dashboard-siteCard-iconBar">
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+								</div>
+							</div>
+							<div class="sakai-dashboard-siteCard">
+								<h2><a href="courseIndex.html">Physical Ocean - Evolutionary Biology</a></h2>
+								<h3>EVOLBIO 2001 001 FW21</h3>
+								<div class="sakai-dashboard-siteCard-iconBar">
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+								</div>
+							</div>
+							<div class="sakai-dashboard-siteCard">
+								<h2><a href="courseIndex.html">Introduction to Biology</a></h2>
+								<h3>BIOLOGY 1001 005 SU21</h3>
+								<div class="sakai-dashboard-siteCard-iconBar">
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+									<span class="sakai-dashboard-siteCard-toolIconIndicator"></span>
+								</div>
+							</div>
+							<div class="sakai-dashboard-siteCard">
+								<h2><a href="courseIndex.html">Ocean Dynamics</a></h2>
+								<h3>ENVSCI 2024 001 FW21</h3>
+								<div class="sakai-dashboard-siteCard-iconBar">
+								</div>
+							</div>
+							<div class="sakai-dashboard-siteCard">
+								<h2><a href="courseIndex.html">Renewable Engergy</a></h2>
+								<h3>ENVSCI 2100 001 FW21</h3>
+								<div class="sakai-dashboard-siteCard-iconBar">
+								</div>
+							</div>
+						</div>
+						<div class="sakai-dashboard-widgetContainer">
+							<div class="sakai-dashboard-widget">
+								<h2>My Tasks</h2>
+								<div class="sakai-dashboard-widgetContents">
+									<p>Content will go here</p>
+								</div>
+							</div>
+							<div class="sakai-dashboard-widget">
+								<h2>My Sites' Announcements</h2>
+								<div class="sakai-dashboard-widgetContents">
+									<p>Content will go here</p>
+								</div>
+							</div>
+							<div class="sakai-dashboard-widget">
+								<h2>My Calendar</h2>
+								<div class="sakai-dashboard-widgetContents">
+									<p>Content will go here</p>
+								</div>
+							</div>
+							<div class="sakai-dashboard-widget">
+								<h2>My Grades</h2>
+								<div class="sakai-dashboard-widgetContents">
+									<p>Content will go here</p>
+								</div>
+							</div>
+							<div class="sakai-dashboard-widget">
+								<h2>Forums Updates</h2>
+								<div class="sakai-dashboard-widgetContents">
+									<p>Content will go here</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<sakai-footer></sakai-footer>
+			</div>
+		</div>
+		<script src="scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+:host {
+    display: none;
+    --background: #fafafa;
+  }
+  :host([open]) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+    height: 1vh;
+    min-height: 100%;
+
+  }
+
+
+  #sakaiToolBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: inherit;
+    background: var(--background);
+    flex-grow: 1;
+  }
+
+  .sakai-toolBar a {
+    color: #333;
+  }
+  .sakai-sitesNav__menu,
+  .sakai-sitesNav__submenu {
+    padding: 8px 0 0;
+    margin: 0;
+  }
+  
+  #manageSidebar {
+    height: 48px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 8px;
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    padding: 16px 8px;
+  }
+  #manageSidebar > a {
+    text-decoration: none;
+    padding: 8px;
+  }
+  #mySites {
+    display: none;
+  }
+  #membership {
+    padding: 8px;
+  }
+  #membership a {
+    text-decoration: none;
+  }
+  #membership span {
+    padding-left: 4px;
+  }

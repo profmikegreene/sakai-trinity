@@ -7,13 +7,7 @@ export class SakaiHeader extends LitElement {
 
   static get styles() {
     return css`
-      :host {
-        background-color: #eee;
-      }
-      ion-icon {
-        color: white;
-        /* --ionicon-stroke-width: 16px; */
-      }
+
     `;
   }
 
@@ -42,9 +36,7 @@ export class SakaiHeader extends LitElement {
 
   render() {
     return html`
-      <style>
-        @import '../styles.css';
-      </style>
+      <link href="/sakai-trinity/components/sakai-header.css" rel="stylesheet" type="text/css"> 
       <header role="banner" class="sakai-topHeader">
         <a
           href="#"
@@ -70,7 +62,7 @@ export class SakaiHeader extends LitElement {
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-help"
               ><img
-                src="../icons/help-circle-outline.svg"
+                src="/sakai-trinity/icons/help-circle-outline.svg"
                 title="Get help with this tool"
               />Help</a
             >
@@ -78,7 +70,7 @@ export class SakaiHeader extends LitElement {
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-systemAlerts"
               ><img
-                src="../icons/alert-circle-outline.svg"
+                src="/sakai-trinity/icons/alert-circle-outline.svg"
                 title="System Alerts"
               />System Alerts</a
             >
@@ -86,7 +78,7 @@ export class SakaiHeader extends LitElement {
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-notifications"
               ><img
-                src="../icons/notifications-circle-outline.svg"
+                src="/sakai-trinity/icons/notifications-circle-outline.svg"
                 title="Notifications of site activity"
               />Notifications</a
             >
@@ -94,7 +86,7 @@ export class SakaiHeader extends LitElement {
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-quickLinks"
               ><img
-                src="../icons/globe.svg"
+                src="/sakai-trinity/icons/globe.svg"
                 title="Quick links to institutional resources"
               />Quick Links</a
             >
@@ -105,7 +97,7 @@ export class SakaiHeader extends LitElement {
               class="sakai-headerItem sak-sysInd-account"
               @click=${e => this._toggleQuickSideBar(e)}
               ><img
-                src="../images/profile02.jpg"
+                src="/sakai-trinity/images/profile02.jpg"
                 title="My Account"
               />Account</a
             >

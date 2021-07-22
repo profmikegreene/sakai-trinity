@@ -1,3 +1,30 @@
+:root {
+	--toolBarWidth: 0;
+	--toolBarClosedWidth: 0;
+	--toolBarOpenWidth: 300px;
+	--quickSideBarWidth: 0;
+	--quickSideBarClosedWidth: 0;
+	--quickSideBarOpenWidth: 372px;
+}
+/* Grid */
+sakai-header {
+	grid-area: header;
+}
+sakai-toolbar {
+	grid-area: toolbar;
+	box-sizing: border-box;
+	min-height: calc(100vh - 50px);
+	padding: 0;
+	justify-content: stretch;
+}
+sakai-quick-sidebar {
+	grid-area: sidebar;
+}
+sakai-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -6,7 +33,7 @@ body {
 	line-height: 1.4;
 	color: #212121;
 }
-
+/* Non webcomponent shared styles */
 ul {
 	margin: 0;
 	padding: 0;
@@ -45,18 +72,10 @@ select {
 	-webkit-appearance: none;
 	padding-right: 1em;
 	background-color: #fff;
-	background-image: url("icons/caret-down-outline.svg");
+	background-image: url("/sakai-trinity/icons/caret-down-outline.svg");
 	background-size: 1em;
 	background-position: top 50% right 4px;
 	background-repeat: no-repeat;
-}
-:root {
-	--toolBarWidth: 0;
-	--toolBarClosedWidth: 0;
-	--toolBarOpenWidth: 300px;
-	--quickSideBarWidth: 0;
-	--quickSideBarClosedWidth: 0;
-	--quickSideBarOpenWidth: 372px;
 }
 .sakai-portalWrapper {
 	display: grid;
@@ -66,90 +85,7 @@ select {
 	"header header header"
 	"toolbar main sidebar";
 }
-
-sakai-toolbar {
-	grid-area: toolbar;
-	box-sizing: border-box;
-	min-height: calc(100vh - 50px);
-	padding: 0;
-	border-right: 1px solid #eee;
-	justify-content: stretch;
-}
-sakai-quick-sidebar {
-	grid-area: sidebar;
-	border-left: 1px solid #eee;
-}
-header.sakai-topHeader,
-sakai-header {
-	position: sticky;
-	top: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	grid-area: header;
-	width: 100%;
-	height: 50px;
-	background-color: #003a6b;
-	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-.sakai-headerLogo--institution {
-	display: block;
-	width: var(--toolBarOpenWidth);
-	height: 50px;
-	background: url('https://trunk-mysql.nightly.sakaiproject.org/library/skin/morpheus-default/images/logo-jewel.png') no-repeat center center;
-	background-size: auto 40px;
-	font-size: 0;
-}
-.sakai-headerSearch {
-	display: flex;
-	flex-grow: 2;
-	justify-content: center;
-}
-.sakai-headerSearch .sakaiSearch {
-	align-self: stretch;
-	width: 67%;
-	margin-right: 4px;
-}
-.sakai-systemIndicators {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	color: #fff;
-}
-.sakai-headerItem {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	margin:0 4px;
-	overflow: hidden;
-	border-radius: 20px;
-	font-size: 0;
-	text-decoration: none;
-}
-.sakai-headerItem:hover, .sakai-headerItem:focus {
-	background-color: rgba(255, 255, 255, 0.2);
-}
-.sakai-headerItem img {
-	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(100%) contrast(102%);
-}
-.sak-sysInd-account {
-	box-sizing: border-box;
-	border: 2px solid #fff;	
-}
-.sak-sysInd-account img {
-	filter: none;
-	width: 40px;
-}
-.sakai-toolBar {
-	grid-area: toolbar;
-	box-sizing: border-box;
-	min-height: calc(100vh - 50px);
-	padding: 16px;
-	border-right: 1px solid #eee;
-}
-
+/* 
 .sakai-sitesNav__menuitem {
 	display: flex;
 	align-items: center;
@@ -180,7 +116,7 @@ sakai-header {
 }
 .sakai-sitesNav__menuitem a {
 	text-decoration: none;
-}
+} */
 .is-expanded {
 	overflow: visible;
 	height: auto;
@@ -240,7 +176,7 @@ sakai-header {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
-	background-image: url("icons/settings.svg");
+	background-image: url("/sakai-trinity/icons/settings.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -290,61 +226,6 @@ button.primary, .sakai-toolCreationButton {
 }
 .sakai-table tr:hover td {
 	background-color: #f3f3f3;
-}
-.sakai-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: auto;
-	padding: 16px;
-	border-top: 1px solid #eee;
-	font-size: 0.75em;
-}
-.sakai-footer--nav {
-	display: flex;
-}
-.sakai-footer--nav li {
-	margin-right: 8px;
-	padding-right: 8px;
-	border-right: 1px solid #eee; 
-}
-.sakai-footer--nav li:last-of-type {
-	border-right: 0 none;
-}
-.sakai-footer--copyright {
-	margin:0;
-	padding: 0;
-}
-.sakai-quickSideBar {
-	grid-area: sidebar;
-	display:flex;
-	border-left: 1px solid #eee;
-	transition: width 200ms ease-in;
-}
-.sakai-quickSideBar ul {
-	position: fixed;
-	display: flex;
-	flex-direction: column;	
-}
-.sakai-quickIt {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 30px;
-	height: 30px;
-	margin: 4px;
-	padding: 4px;
-	border: 2px solid #ddd;
-	background-color: #eee;
-	overflow: hidden;
-	font-size: 0;
-}
-.sakai-sideWidget {
-	display: none;
-}
-.quickSideBarExpanded .sakai-sideWidget {
-	display: block;
-	padding-left: 50px;
 }
 
 .sakai-table-toolBar {
@@ -411,10 +292,10 @@ button.primary, .sakai-toolCreationButton {
 	background-size: auto 75%;
 }
 .sakai-table-pagerControls-previous {
-	background-image: url("icons/chevron-back-outline.svg");
+	background-image: url("/sakai-trinity/icons/chevron-back-outline.svg");
 }
 .sakai-table-pagerControls-next {
-	background-image: url("icons/chevron-forward-outline.svg");
+	background-image: url("/sakai-trinity/icons/chevron-forward-outline.svg");
 }
 .sakai-table-pagerControls input:first-of-type, .sakai-table-pagerControls button:first-of-type {
 	margin-left: 0;
@@ -522,7 +403,7 @@ button.primary, .sakai-toolCreationButton {
 	font-size: 16px;
 	width: 2em;
 	height: 1em;
-	background-image: url("icons/close-outline.svg");
+	background-image: url("/sakai-trinity/icons/close-outline.svg");
 	background-position: center center;
 	background-size: 100%;
 	background-repeat: no-repeat;

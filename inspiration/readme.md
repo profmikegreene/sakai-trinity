@@ -61,3 +61,5 @@ Google News
 ![](profilecard-docs.png)
 
 ![](profilecard-teams.png)
+
+![](profilecard-teams2.png)

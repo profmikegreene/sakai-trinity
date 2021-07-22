@@ -13,29 +13,16 @@ export class SakaiWidgetUser extends LitElement {
   }
   static get styles() {
     return css`
-      :host {
-        display: flex;
-        flex-direction: column;
-      }
-      .has-avatar,
-      .userNav {
-        width: 371px;
-      }
-      .has-avatar {
-      }
-      .userNav {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
+
     `;
   }
   _onClick() {}
   render() {
     return html`
+    <link href="/sakai-trinity/components/sakai-widget-user.css" rel="stylesheet" type="text/css"> 
     <div class="Mrphs-userNav__submenuitem--profile-and-image has-avatar">
     <img
-      src="../images/profile02.jpg"
+      src="/sakai-trinity/images/profile02.jpg"
       title="My Account"
     />
         <div class="sr-only">Change Profile Picture</div>

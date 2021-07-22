@@ -6,9 +6,7 @@ export class SakaiHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
-
-    `;
+    return css``;
   }
 
   _onClick() {
@@ -36,7 +34,11 @@ export class SakaiHeader extends LitElement {
 
   render() {
     return html`
-      <link href="/sakai-trinity/components/sakai-header.css" rel="stylesheet" type="text/css"> 
+      <link
+        href="/sakai-trinity/components/sakai-header.css"
+        rel="stylesheet"
+        type="text/css"
+      />
       <header role="banner" class="sakai-topHeader">
         <a
           href="#"

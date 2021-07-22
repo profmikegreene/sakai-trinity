@@ -12,9 +12,7 @@ export class SakaiWidgetUser extends LitElement {
     };
   }
   static get styles() {
-    return css`
-
-    `;
+    return css``;
   }
   _onClick() {}
   render() {

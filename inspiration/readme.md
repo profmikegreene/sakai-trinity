@@ -43,3 +43,15 @@ Google News
 [Invision's Guide to Building an MVP Design System](https://drive.google.com/file/d/1r1wRj6TcQFL5c37a6Tb0BQQ1kMN_5wJV/view?usp=sharing)
 
 [Form Design Patterns - Adam Silver - Smashing Magazine](https://www.sitepoint.com/premium/books/form-design-patterns/read/1)
+
+## Profile Cards
+
+![](profilecard-github.png)
+
+![](profilecard-google.png)
+
+![](profilecard-outlook.png)
+
+![](profilecard-reddit.png)
+
+![](profilecard-slack.png)

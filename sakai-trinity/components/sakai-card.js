@@ -14,14 +14,14 @@ export class SakaiCard extends LitElement {
   }
   static get styles() {
     return css`
-      :host {
-        display: flex;
-      }
+
     `;
   }
   _onClick() {}
   render() {
-    return html` <slot></slot> `;
+    return html`
+      <link href="../components/sakai-card.css" rel="stylesheet" type="text/css"> 
+      <slot></slot> `;
   }
 }
 

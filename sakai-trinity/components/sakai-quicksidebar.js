@@ -40,49 +40,7 @@ export class SakaiQuickSidebar extends LitElement {
 
   static get styles() {
     return css`
-      :host {
-        display: none;
-      }
-      :host([open]) {
-        display: flex;
-        flex-direction: column;
-      }
-      .sakai-quickSideBar ul {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        margin: 4px 0 0;
-      }
-      #userNav {
-        position: fixed;
-        flex-direction: column;
-      }
-      .sakai-quickSideBar li {
-        list-style: none;
-      }
-      .sakai-quickIt {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
-        margin: 4px;
-        padding: 4px;
-        border: 2px solid #ddd;
-        background-color: #eee;
-        overflow: hidden;
-        font-size: 0;
-      }
-      .sakai-sideWidget {
-        display: none;
-      }
-      .isExpanded .sakai-sideWidget {
-        display: block;
-        padding-left: 50px;
-      }
-      ion-icon {
-        color: #222;
-      }
+
     `;
   }
   // _onClick() {
@@ -94,6 +52,7 @@ export class SakaiQuickSidebar extends LitElement {
   // }
   render() {
     return html`
+      <link href="../components/sakai-quicksidebar.css" rel="stylesheet" type="text/css"> 
       <div id="sakai-quickSideBar" class="sakai-quickSideBar">
         <ul id="widgets">
           <sakai-card>

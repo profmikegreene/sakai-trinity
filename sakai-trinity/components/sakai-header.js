@@ -7,13 +7,7 @@ export class SakaiHeader extends LitElement {
 
   static get styles() {
     return css`
-      :host {
-        background-color: #eee;
-      }
-      ion-icon {
-        color: white;
-        /* --ionicon-stroke-width: 16px; */
-      }
+
     `;
   }
 
@@ -42,9 +36,7 @@ export class SakaiHeader extends LitElement {
 
   render() {
     return html`
-      <style>
-        @import '../styles.css';
-      </style>
+      <link href="../components/sakai-header.css" rel="stylesheet" type="text/css"> 
       <header role="banner" class="sakai-topHeader">
         <a
           href="#"

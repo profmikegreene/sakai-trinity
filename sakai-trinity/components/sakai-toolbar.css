@@ -18,6 +18,7 @@
   min-height: inherit;
   background: var(--background);
   flex-grow: 1;
+  margin-bottom: 48px;
 }
 
 .sakai-toolBar a {

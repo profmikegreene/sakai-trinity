@@ -25,6 +25,7 @@ sakai-toolbar {
 }
 sakai-quick-sidebar {
   grid-area: sidebar;
+  background-color: #fafafa;
 }
 sakai-footer {
   display: flex;

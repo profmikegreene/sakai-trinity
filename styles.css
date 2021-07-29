@@ -9,15 +9,9 @@
 /* Grid */
 sakai-header {
   grid-area: header;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  z-index: 10;
 }
 sakai-toolbar {
   grid-area: toolbar;
-  position: sticky;
-  top: 50px;
   box-sizing: border-box;
   min-height: calc(100vh - 50px);
   padding: 0;

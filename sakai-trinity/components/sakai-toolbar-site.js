@@ -52,7 +52,6 @@ export class SakaiToolbarSite extends LitElement {
   }
 
   render() {
-    let cssClass = (this.showSelected) ? 'showSelected' : '';
     return html` <link
         href="/sakai-trinity/components/sakai-toolbar-site.css"
         rel="stylesheet"
@@ -139,7 +138,7 @@ export class SakaiToolbarSite extends LitElement {
               >
             </a>
           </li>
-          <li class="sakai-sitesNav__submenuitem" >
+          <li class="sakai-sitesNav__submenuitem">
             <a
               tabindex="-1"
               class="sakai-sitesNav__submenuitem-link"
@@ -147,7 +146,6 @@ export class SakaiToolbarSite extends LitElement {
               href="/sakai-trinity/assignments/index.html"
               title="Assignments"
               ?isCurrent=${this.isCurrentTool('Assignments')}
-
             >
               <ion-icon name="newspaper-outline"></ion-icon>
               <span class="sakai-sitesNav__submenuitem-title">Assignments</span>

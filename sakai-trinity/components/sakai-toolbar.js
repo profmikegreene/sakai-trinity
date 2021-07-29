@@ -16,7 +16,7 @@ export class SakaiToolbar extends LitElement {
       isToolPage: { type: Boolean },
       courseId: { type: String },
       courseTitle: { type: String },
-      toolId: { type: String }
+      toolId: { type: String },
     };
   }
   attributeChangedCallback(name, oldVal, newVal) {
@@ -79,7 +79,8 @@ export class SakaiToolbar extends LitElement {
             courseId="${this.courseId}"
             courseTitle="${this.courseTitle}"
             ?open=${this.open}
-            ?isCurrent=${this.isToolPage && this.isCurrentCourse("CALCULUS 101 - 001 Sp21")}
+            ?isCurrent=${this.isToolPage &&
+            this.isCurrentCourse('CALCULUS 101 - 001 Sp21')}
             ?showSelected=${this.isToolPage}
             .toolId=${this.toolId}
           ></sakai-toolbar-site>

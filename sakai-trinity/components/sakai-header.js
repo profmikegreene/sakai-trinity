@@ -45,7 +45,7 @@ export class SakaiHeader extends LitElement {
           class="sakai-headerItem toggle-toolbar"
           id="toggleToolbar"
           @click=${this._toggleToolBar}
-          ><ion-icon name="menu-outline" ></ion-icon
+          ><ion-icon name="menu-outline"></ion-icon
         ></a>
         <div class="sakai-headerLogo">
           <a
@@ -54,7 +54,7 @@ export class SakaiHeader extends LitElement {
             >Sakai</a
           >
         </div>
-        
+
         <!-- <sakai-breadcrumbs>
         <nav class="sakai-breadcrumbs">
           <ul>
@@ -72,21 +72,18 @@ export class SakaiHeader extends LitElement {
         <ul class="sakai-systemIndicators">
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-help"
-              ><ion-icon name="help-circle-outline" ></ion-icon
-              >Help</a
+              ><ion-icon name="help-circle-outline"></ion-icon>Help</a
             >
           </li>
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-systemAlerts"
-              ><ion-icon name="alert-circle-outline" ></ion-icon
-        >System Alerts</a
+              ><ion-icon name="alert-circle-outline"></ion-icon>System Alerts</a
             >
           </li>
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-notifications"
-              ><ion-icon name="notifications-circle-outline"
-                  ></ion-icon
-            >Notifications</a
+              ><ion-icon name="notifications-circle-outline"></ion-icon
+              >Notifications</a
             >
           </li>
           <li>

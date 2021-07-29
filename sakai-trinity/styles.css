@@ -49,7 +49,8 @@ a {
   color: #003a6b;
 }
 button,
-input[type='button'] {
+input[type='button'],
+.sakai-toolOptions {
   display: inline-block;
   margin: 0;
   padding: 8px 12px;
@@ -146,6 +147,12 @@ select {
 .sakai-breadcrumbs ul li {
   margin-right: 4px;
   padding-right: 4px;
+  align-self: center;
+}
+.sakai-breadcrumbs ul li,
+.sakai-breadcrumbs ul li a {
+
+  
 }
 .sakai-breadcrumb::after {
   content: ' ';
@@ -177,7 +184,7 @@ select {
 }
 .sakai-toolOptions {
   margin-top: 8px;
-  border: 0 none;
+  /* border: 0 none; */
   text-align: right;
 }
 .sakai-toolOptions::before {

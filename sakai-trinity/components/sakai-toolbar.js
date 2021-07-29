@@ -5,10 +5,18 @@ export class SakaiToolbar extends LitElement {
   constructor() {
     super();
     this.open = false;
+    this.isToolPage = false;
+    this.courseId = '';
+    this.courseTitle = '';
+    this.toolId = '';
   }
   static get properties() {
     return {
       open: { type: Boolean },
+      isToolPage: { type: Boolean },
+      courseId: { type: String },
+      courseTitle: { type: String },
+      toolId: { type: String }
     };
   }
   attributeChangedCallback(name, oldVal, newVal) {
@@ -35,6 +43,10 @@ export class SakaiToolbar extends LitElement {
     e.path[1].classList.toggle('is-expanded');
     e.path[1].toggleAttribute('open');
     console.log(e.path[1].classList);
+  }
+
+  isCurrentCourse(courseId) {
+    return this.courseId === courseId;
   }
 
   // _onClick(e) {
@@ -64,29 +76,32 @@ export class SakaiToolbar extends LitElement {
         >
           <sakai-toolbar-site
             emoji=""
-            courseId="PT-D 901 - 01 Sp21"
-            courseTitle="Foreign Educated Pt Course"
-            open
+            courseId="${this.courseId}"
+            courseTitle="${this.courseTitle}"
+            ?open=${this.open}
+            ?isCurrent=${this.isToolPage && this.isCurrentCourse("CALCULUS 101 - 001 Sp21")}
+            ?showSelected=${this.isToolPage}
+            .toolId=${this.toolId}
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🐒"
-            courseId="BIOLOGY 320 - 07 Sp21"
-            courseTitle="Foreign Educated Pt Course"
+            courseId="EVOLBIO 2001 001 FW21"
+            courseTitle="Physical Ocean - Evolutionary Biology"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="👩‍⚕️"
             courseId="NURSING 680 - 01 Sp21"
-            courseTitle=""
+            courseTitle="Nurse Practice III"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🖥️"
             courseId="ENGR 101 - 01 Sp21"
-            courseTitle="Foreign Educated Pt Course"
+            courseTitle="Fluid Dynamics"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🎭"
             courseId="GREEK 103 - 01 Sp21"
-            courseTitle="Foreign Educated Pt Course"
+            courseTitle="Greek Theatre"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="💉"
@@ -100,7 +115,7 @@ export class SakaiToolbar extends LitElement {
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🌎"
-            courseId="ENVIR 101 - 01 Sp21"
+            courseId="SMPL101 Spring 2021"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
           <li id="membership">

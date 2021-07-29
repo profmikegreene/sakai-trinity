@@ -65,7 +65,7 @@ input[type='date'] {
   display: block;
   width: var(--toolBarOpenWidth);
   height: 50px;
-  background: url('https://trunk-mysql.nightly.sakaiproject.org/library/skin/morpheus-default/images/logo-jewel.png')
+  background: url('../images/logo-jewel.png')
     no-repeat center center;
   background-size: auto 40px;
   font-size: 0;

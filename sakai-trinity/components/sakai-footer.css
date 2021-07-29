@@ -7,8 +7,16 @@
 li {
   list-style: none;
 }
+.sakai-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .sakai-footer--nav {
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 .sakai-footer--nav li {
   margin-right: 8px;

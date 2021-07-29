@@ -19,6 +19,33 @@ ion-icon {
 li {
   list-style: none;
 }
+button,
+input[type='button'] {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fefefe;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 16px;
+  color: #212121;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+select,
+input[type='text'],
+input[type='date'] {
+  box-sizing: border-box;
+  height: 2.3em;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 .sakai-headerItem {
   display: flex;
   align-items: center;
@@ -56,6 +83,7 @@ li {
 .sakai-headerSearch .sakaiSearch {
   align-self: stretch;
   width: 67%;
+  height: auto;
   margin-right: 4px;
 }
 

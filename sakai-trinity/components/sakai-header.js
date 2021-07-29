@@ -45,7 +45,7 @@ export class SakaiHeader extends LitElement {
           class="sakai-headerItem toggle-toolbar"
           id="toggleToolbar"
           @click=${this._toggleToolBar}
-          ><ion-icon name="menu-outline" size="large"></ion-icon
+          ><ion-icon name="menu-outline"></ion-icon
         ></a>
         <div class="sakai-headerLogo">
           <a
@@ -55,6 +55,15 @@ export class SakaiHeader extends LitElement {
           >
         </div>
 
+        <!-- <sakai-breadcrumbs>
+        <nav class="sakai-breadcrumbs">
+          <ul>
+            <li><a href="../index.html" class="sakai-breadcrumb">Home</a></li>
+            <li><a href="../courseIndex.html" class="sakai-breadcrumb">CALCULUS 1001 001 SP21</a></li>
+            <li>Assignments</li>
+					</ul>
+				</nav>
+        </sakai-breadcrumbs> -->
         <div class="sakai-headerSearch">
           <input type="text" class="sakaiSearch" />
           <button>Search Sakai</button>
@@ -63,34 +72,18 @@ export class SakaiHeader extends LitElement {
         <ul class="sakai-systemIndicators">
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-help"
-              ><img
-                src="/sakai-trinity/icons/help-circle-outline.svg"
-                title="Get help with this tool"
-              />Help</a
+              ><ion-icon name="help-circle-outline"></ion-icon>Help</a
             >
           </li>
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-systemAlerts"
-              ><img
-                src="/sakai-trinity/icons/alert-circle-outline.svg"
-                title="System Alerts"
-              />System Alerts</a
+              ><ion-icon name="alert-circle-outline"></ion-icon>System Alerts</a
             >
           </li>
           <li>
             <a href="#" class="sakai-headerItem sak-sysInd-notifications"
-              ><img
-                src="/sakai-trinity/icons/notifications-circle-outline.svg"
-                title="Notifications of site activity"
-              />Notifications</a
-            >
-          </li>
-          <li>
-            <a href="#" class="sakai-headerItem sak-sysInd-quickLinks"
-              ><img
-                src="/sakai-trinity/icons/globe.svg"
-                title="Quick links to institutional resources"
-              />Quick Links</a
+              ><ion-icon name="notifications-circle-outline"></ion-icon
+              >Notifications</a
             >
           </li>
           <li>

@@ -8,6 +8,8 @@ export class SakaiToolbarSite extends LitElement {
       courseId: { type: String },
       courseTitle: { type: String },
       isCurrent: { type: Boolean },
+      showSelected: { type: Boolean },
+      toolId: { type: String },
     };
   }
   set emoji(val) {
@@ -27,6 +29,8 @@ export class SakaiToolbarSite extends LitElement {
     this.courseId = '';
     this.courseTitle = '';
     this.isCurrent = false;
+    this.showSelected = false;
+    this.toolId = '';
   }
   attributeChangedCallback(name, oldVal, newVal) {
     console.log('attribute change: ', name, newVal);
@@ -36,6 +40,9 @@ export class SakaiToolbarSite extends LitElement {
   toggleOpen(e) {
     console.log(e);
     this.toggleAttribute('open');
+  }
+  isCurrentTool(toolId) {
+    return this.toolId === toolId;
   }
   connectedCallback() {
     super.connectedCallback();
@@ -98,6 +105,7 @@ export class SakaiToolbarSite extends LitElement {
               role="menuitem"
               href="/sakai-trinity/courseIndex.html"
               title="Dashboard"
+              ?isCurrent=${this.isCurrentTool('Dashboard')}
             >
               <ion-icon name="speedometer-outline"></ion-icon>
               <span class="sakai-sitesNav__submenuitem-title">Dashboard</span>
@@ -130,13 +138,14 @@ export class SakaiToolbarSite extends LitElement {
               >
             </a>
           </li>
-          <li class="sakai-sitesNav__submenuitem is-current">
+          <li class="sakai-sitesNav__submenuitem">
             <a
               tabindex="-1"
               class="sakai-sitesNav__submenuitem-link"
               role="menuitem"
               href="/sakai-trinity/assignments/index.html"
               title="Assignments"
+              ?isCurrent=${this.isCurrentTool('Assignments')}
             >
               <ion-icon name="newspaper-outline"></ion-icon>
               <span class="sakai-sitesNav__submenuitem-title">Assignments</span>

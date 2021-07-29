@@ -132,13 +132,18 @@ a:visited {
   white-space: nowrap;
   overflow: hidden;
 }
-.is-current .is-current a {
+.showSelected.is-current a {
   background: var(--current-background);
 }
-.is-current .is-current a:hover,
-.is-current .is-current a:focus {
+.showSelected.is-current a:hover,
+.showSelected.is-current a:focus {
   background: var(--current-background--hover);
 }
-.is-current .is-current a:active {
+.showSelected.is-current a:active {
   background: var(--current-background--active);
+}
+
+:host([iscurrent]) .courseId,
+.sakai-sitesNav__submenuitem-link[iscurrent] {
+  background-color: var(--current-background);
 }

@@ -57,6 +57,7 @@ export class SakaiToolbar extends LitElement {
     super.connectedCallback();
     this.toggleOpen();
   }
+
   static get styles() {
     return css``;
   }
@@ -119,16 +120,15 @@ export class SakaiToolbar extends LitElement {
             courseId="SMPL101 Spring 2021"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site>
-          <li id="membership">
-            <a href="/sakai-trinity/membership.html">
-              <ion-icon name="apps-outline"></ion-icon>
-              <span>View all my sites</span></a
-            >
-          </li>
+          <li id="membership"></li>
         </ul>
         <div id="manageSidebar">
-          <ion-icon name="star-half-outline"></ion-icon>
-          <a href="#">Manage Sidebar</a>
+          <a href="/sakai-trinity/membership.html">
+            <ion-icon name="apps-outline"></ion-icon>
+            <span>View all my sites</span></a
+          >
+          <!-- <ion-icon name="star-half-outline"></ion-icon>
+          <a href="#">Manage Sidebar</a> -->
           <div
             class="tab-box"
             id="mySites"

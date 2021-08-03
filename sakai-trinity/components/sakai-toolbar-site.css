@@ -98,9 +98,15 @@ a:visited {
 .favStar {
   fill: gold;
   display: none;
+  padding: 4px;
 }
-.fav:empty + .favStar {
+.fav:empty + .favStar,
+.link-container:hover .fav:empty {
   display: inline-block;
+}
+.link-container .fav:empty,
+.link-container:hover .favStar {
+  display: none;
 }
 .link-container:hover .sakai-sitesNav__favbtn {
   content: url('../icons/caret-forward-outline.svg');
@@ -143,7 +149,9 @@ a:visited {
   background: var(--current-background--active);
 }
 
-:host([iscurrent]) .courseId,
-.sakai-sitesNav__submenuitem-link[iscurrent] {
+:host([iscurrent]) .sakai-sitesNav__menuitem {
   background-color: var(--current-background);
+}
+.sakai-sitesNav__submenuitem-link[iscurrent] {
+  background: var(--current-background--active);
 }

@@ -117,19 +117,6 @@ export class SakaiToolbarSite extends LitElement {
               class="sakai-sitesNav__submenuitem-link"
               role="menuitem"
               href="#"
-              title="Site Info"
-            >
-              <ion-icon name="cog-outline"></ion-icon>
-
-              <span class="sakai-sitesNav__submenuitem-title">Site Info</span>
-            </a>
-          </li>
-          <li class="sakai-sitesNav__submenuitem">
-            <a
-              tabindex="-1"
-              class="sakai-sitesNav__submenuitem-link"
-              role="menuitem"
-              href="#"
               title="Announcements"
             >
               <ion-icon name="megaphone-outline"></ion-icon>

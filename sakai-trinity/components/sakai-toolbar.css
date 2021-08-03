@@ -41,7 +41,9 @@
   position: sticky;
   bottom: 0;
   padding: 16px 8px;
+  box-shadow: 0 -8px 16px 8px rgb(0 0 0 / 20%);
 }
+
 #manageSidebar > a {
   text-decoration: none;
   padding: 8px;

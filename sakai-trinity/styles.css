@@ -643,3 +643,8 @@ button.primary,
 .sakai-dashboard-widgetContents p {
   margin: 0;
 }
+
+.columns-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

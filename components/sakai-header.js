@@ -59,7 +59,7 @@ export class SakaiHeader extends LitElement {
         <nav class="sakai-breadcrumbs">
           <ul>
             <li><a href="../index.html" class="sakai-breadcrumb">Home</a></li>
-            <li><a href="../courseIndex.html" class="sakai-breadcrumb">CALCULUS 1001 001 SP21</a></li>
+            <li><a href="../courseIndex.html" class="sakai-breadcrumb">CALCULUS 101 - 001 Sp21</a></li>
             <li>Assignments</li>
 					</ul>
 				</nav>

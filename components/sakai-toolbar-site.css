@@ -32,7 +32,7 @@ a:visited {
   margin-top: 0;
 }
 .sakai-sitesNav__submenuitem {
-  margin: 4px 0;
+  margin: 0;
   list-style: none;
   display: block;
 }
@@ -51,11 +51,13 @@ a:visited {
   text-decoration: none;
 }
 .sakai-sitesNav__submenuitem-link {
-  padding: 4px;
-  padding-left: 16px;
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
 }
-
+.sakai-sitesNav__submenuitem-link ion-icon {
+    margin-right: 8px;
+}
 .sakai-sitesNav__submenuitem-title {
   display: inline-block;
 }

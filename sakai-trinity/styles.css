@@ -184,8 +184,6 @@ select {
 }
 .sakai-toolOptions {
   margin-top: 8px;
-  /* border: 0 none; */
-  text-align: right;
 }
 .sakai-toolOptions::before {
   content: '';
@@ -274,7 +272,7 @@ button.primary,
 .sakai-table-searchFilter {
   flex-grow: 1;
 }
-.sakai-table-searchFilter-searchField {
+input.sakai-table-searchFilter-searchField {
   flex-grow: 1;
   width: 200px;
   margin-right: 4px;

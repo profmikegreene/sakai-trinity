@@ -32,28 +32,28 @@ export class SakaiWidgetUser extends LitElement {
       </div>
       <ul class="userNav" role="menu">
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Account Info</a>
+          <a href="#" class="sakai-userNav__link">Account Info</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Profile</a>
+          <a href="#" class="sakai-userNav__link">Profile</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">My Connections</a>
+          <a href="#" class="sakai-userNav__link">My Connections</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Calendar</a>
+          <a href="#" class="sakai-userNav__link">Calendar</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Preferences</a>
+          <a href="#" class="sakai-userNav__link">Preferences</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Tutorial</a>
+          <a href="#" class="sakai-userNav__link">Tutorial</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Themes</a>
+          <a href="#" class="sakai-userNav__link">Themes</a>
         </li>
         <li class="sakai-userNav__submenuitem">
-          <a href="#" class="sakai-headerItem">Log Out</a>
+          <a href="#" class="sakai-userNav__link">Log Out</a>
         </li>
       </ul>
     `;

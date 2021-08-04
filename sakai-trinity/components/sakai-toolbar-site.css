@@ -24,7 +24,7 @@ a:visited {
   align-items: center;
   justify-content: left;
   margin: 0;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid var(--layoutBorderColor);
   overflow: hidden;
   list-style: none;
 }

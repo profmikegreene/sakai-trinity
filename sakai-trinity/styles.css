@@ -5,6 +5,25 @@
   --quickSideBarWidth: 0;
   --quickSideBarClosedWidth: 0;
   --quickSideBarOpenWidth: 372px;
+  --layoutBorderColor: rgba(150, 150, 150, 0.2);
+  --formBorderColor: rgba(150, 150, 150, 0.6);
+  --contentBackgroundColor: rgba(255, 255, 255, 0.9);
+  --layoutBackgroundColor: rgba(225, 225, 225, 1);
+  --brandOpacity: 1;
+  --brand: #27aae1;
+  --brandRGB: '39, 170, 225';
+  --brandRGBA: rgba(var(var(--brandRGB)), var(--brandOpacity));
+  --white: #fff;
+  --brand-100: #d4eef9;
+  --brand-200: #a9ddf3;
+  --brand-300: #7dcced;
+  --brand-400: #5dbfe8;
+  --brand-500: #27aae1;
+  --brand-600: #1a8ab9;
+  --brand-700: #13688b;
+  --brand-800: #0d455d;
+  --brand-900: #06232e;
+  --black: #000;
 }
 /* Grid */
 sakai-header {
@@ -48,15 +67,16 @@ ul {
   list-style: none;
 }
 a {
-  color: #003a6b;
+  color: var(--brandColor);
 }
 button,
 input[type='button'],
+textarea,
 .sakai-toolOptions {
   display: inline-block;
   margin: 0;
   padding: 8px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--formBorderColor);
   border-radius: 4px;
   background-color: #fefefe;
   font-size: 1em;
@@ -75,7 +95,7 @@ input[type='date'] {
   box-sizing: border-box;
   height: 2.3em;
   padding: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--formBorderColor);
   border-radius: 3px;
 }
 select {
@@ -97,38 +117,7 @@ select {
     'header header header'
     'toolbar main sidebar';
 }
-/* 
-.sakai-sitesNav__menuitem {
-	display: flex;
-	align-items: center;
-	justify-content: left;
-	margin: 4px 0;
-	padding: 8px;
-	border: 2px solid #ddd;
-	background-color: #eee;
-	overflow: hidden;
-}
-.sakai-sitesNav__menuitem:first-of-type {
-	margin-top: 0;
-}
-.sakai-sitesNav__submenuitem {
-	margin: 8px 0;
-}
-.sakai-sitesNav__submenu {
-	display: none;
-}
-.sakai-sitesNav__menuitem.is-current {
-	height: auto;
-	flex-direction: column;
-	align-items: flex-start;
-}
-.is-current .sakai-sitesNav__submenu {
-	display: block;
-	margin-left: 16px;
-}
-.sakai-sitesNav__menuitem a {
-	text-decoration: none;
-} */
+
 .is-expanded {
   overflow: visible;
   height: auto;
@@ -169,7 +158,7 @@ select {
 .sakai-pageHeader {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--layoutBorderColor);
   margin-bottom: 16px;
 }
 .sakai-pageHeader h1 {
@@ -210,8 +199,6 @@ button.primary,
   align-items: center;
   margin: 16px -16px 0 -16px;
   padding: 16px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
   background-color: #f5f5f5;
 }
 .sakai-actionsBar * {
@@ -221,18 +208,18 @@ button.primary,
   width: 100%;
   margin: 0 0 8px 0;
   padding: 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--layoutBorderColor);
   border-collapse: collapse;
 }
 .sakai-table thead {
-  border: 1px solid #ccc;
+  border: 1px solid var(--layoutBorderColor);
 }
 .sakai-table th,
 .sakai-table td {
   padding: 12px 8px;
 }
 .sakai-table thead th {
-  border-color: #aaa;
+  border-color: var(--layoutBorderColor);
   background-color: #ddd;
   text-align: left;
   white-space: nowrap;
@@ -363,41 +350,6 @@ input.sakai-table-searchFilter-searchField {
   display: flex;
   justify-content: flex-end;
 }
-.sakai-table-pages {
-  display: flex;
-}
-.sakai-table-pages li {
-  margin: 0;
-  padding: 0;
-}
-.sakai-table-pages li a {
-  display: inline-block;
-  min-width: 42px;
-  margin-left: -1px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  background-color: #fefefe;
-  text-decoration: none;
-  text-align: center;
-}
-.sakai-table-pages li:first-of-type a {
-  border-radius: 4px 0 0 4px;
-}
-.sakai-table-pages li:last-of-type a {
-  border-radius: 0 4px 4px 0;
-}
-.sakai-table-pages .current a {
-  border-color: #003a6b;
-  background-color: #003a6b;
-  color: #fff;
-}
-.sakai-table-pages .disabled a {
-  color: #ccc;
-  cursor: default;
-}
-.sakai-table-pages span {
-  font-size: 0;
-}
 .sakai-table-actionsBar {
   display: none;
   align-items: center;
@@ -413,7 +365,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-table-actionsBar-selected {
   margin: 0 16px 0 0;
   padding: 16px;
-  border-right: 1px solid #999;
+  border-right: 1px solid var(--layoutBorderColor);
 }
 .sakai-table-actionsBar-actions {
   display: flex;
@@ -463,7 +415,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-form legend h2 {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--layoutBorderColor);
   font-size: 1.5em;
   font-weight: normal;
 }
@@ -536,7 +488,7 @@ input.sakai-table-searchFilter-searchField {
   box-sizing: border-box;
   margin-left: 8px;
   padding: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--layoutBorderColor);
   background-color: #eee;
 }
 .sakai-grader-submissionDetails h2,
@@ -626,7 +578,7 @@ input.sakai-table-searchFilter-searchField {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid var(--layoutBorderColor);
 }
 .sakai-dashboard-widget h2 {
   margin: 0;

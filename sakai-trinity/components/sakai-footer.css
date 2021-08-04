@@ -1,7 +1,7 @@
 :host {
   margin-top: auto;
   padding: 16px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--layoutBorderColor);
   font-size: 0.75em;
 }
 li {
@@ -21,7 +21,7 @@ li {
 .sakai-footer--nav li {
   margin-right: 8px;
   padding-right: 8px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid var(--layoutBorderColor);
 }
 .sakai-footer--nav li:last-of-type {
   border-right: 0 none;

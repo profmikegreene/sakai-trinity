@@ -4,17 +4,18 @@
   justify-content: space-between;
   min-height: inherit;
 
-  --current-background: #d4ebf9;
-  --current-background--hover: #a0d3f2;
-  --current-background--active: #6cbbeb;
-  --link-background--hover: #a0d3f2;
-  --link-current-background--active: #6cbbeb;
+  --current-background: var(--primary-10);
+  --current-background--hover: var(--primary-20);
+  --current-background--active: var(--primary-30);
+  --link-background--hover: var(--primary-20);
+  --link-current-background--active: var(--primary-30);
 }
 :host([open]) {
   height: auto;
   flex-direction: column;
   align-items: flex-start;
 }
+
 a,
 a:visited {
   color: #212121;
@@ -27,6 +28,11 @@ a:visited {
   border-bottom: 1px solid var(--layoutBorderColor);
   overflow: hidden;
   list-style: none;
+}
+.sakai-sitesNav__menuitem:hover,
+.sakai-sitesNav__menuitem:active,
+.sakai-sitesNav__menuitem:focus {
+  background: var(--gray-15);
 }
 .sakai-sitesNav__menuitem:first-of-type {
   margin-top: 0;
@@ -56,7 +62,7 @@ a:visited {
   padding: 8px 8px 8px 16px;
 }
 .sakai-sitesNav__submenuitem-link ion-icon {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 .sakai-sitesNav__submenuitem-title {
   display: inline-block;
@@ -97,8 +103,11 @@ a:visited {
     content: url('../icons/star.svg');
     padding: 2px;
   } */
+.link-container .fav {
+  font-size: 14px;
+}
 .favStar {
-  fill: gold;
+  fill: var(--gold-35);
   display: none;
   padding: 4px;
 }
@@ -113,6 +122,9 @@ a:visited {
 .link-container:hover .sakai-sitesNav__favbtn {
   content: url('../icons/caret-forward-outline.svg');
 }
+:host([open]) .link-container:hover .sakai-sitesNav__favbtn {
+  content: url('../icons/caret-down-outline.svg');
+}
 .sakai-sitesNav__settingsTitle {
   display: none;
 }
@@ -126,9 +138,6 @@ a:visited {
   background: #333;
   color: #fefefe;
   padding: 8px;
-}
-.is-expanded .link-container:hover .sakai-sitesNav__favbtn {
-  content: url('../icons/caret-down-outline.svg');
 }
 .courseId,
 .courseTitle {

@@ -5,28 +5,190 @@
   --quickSideBarWidth: 0;
   --quickSideBarClosedWidth: 0;
   --quickSideBarOpenWidth: 372px;
+  --headerHeight: 60px;
+  --white: #fff;
+  --black: #000;
+  --gray-10: #f3f3f4;
+  --gray-15: #e3e4e5;
+  --gray-20: #d3d4d6;
+  --gray-25: #c3c5c7;
+  --gray-30: #b3b5b8;
+  --gray-35: #a3a6a9;
+  --gray-40: #93969a;
+  --gray-45: #898c90;
+  --gray-50: #7c7f83;
+  --gray-55: #6a6c6f;
+  --gray-60: #58595c;
+  --gray-65: #454749;
+  --gray-70: #333435;
+  --gray-75: #202122;
+  --gray-80: #0e0e0e;
+  --blue-10: #e4f4fb;
+  --blue-15: #c9eaf7;
+  --blue-20: #aedff4;
+  --blue-25: #93d4f0;
+  --blue-30: #78caec;
+  --blue-35: #5dbfe8;
+  --blue-40: #42b5e5;
+  --blue-45: #27aae1;
+  --blue-50: #1c97cb;
+  --blue-55: #1882ae;
+  --blue-60: #146c91;
+  --blue-65: #105674;
+  --blue-70: #0c4157;
+  --blue-75: #082b3a;
+  --blue-80: #04161d;
+  --teal-10: #e6f5f5;
+  --teal-15: #c3e7e7;
+  --teal-20: #a1d9d9;
+  --teal-25: #7ecbcb;
+  --teal-30: #5cbebe;
+  --teal-35: #39b0b0;
+  --teal-40: #17a2a2;
+  --teal-45: #099;
+  --teal-50: #008b8b;
+  --teal-55: #077;
+  --teal-60: #006262;
+  --teal-65: #004d4d;
+  --teal-70: #003939;
+  --teal-75: #002424;
+  --teal-80: #000f0f;
+  --gold-10: #fbf8e6;
+  --gold-15: #f6eec3;
+  --gold-20: #f1e4a1;
+  --gold-25: #ecda7f;
+  --gold-30: #e7d05d;
+  --gold-35: #e2c63a;
+  --gold-40: #debd18;
+  --gold-45: #dab601;
+  --gold-50: #c7a601;
+  --gold-55: #a98d01;
+  --gold-60: #8c7401;
+  --gold-65: #6e5c01;
+  --gold-70: #514300;
+  --gold-75: #332b00;
+  --gold-80: #161200;
+  --green-10: #e6f6ed;
+  --green-15: #c5ead6;
+  --green-20: #a3debe;
+  --green-25: #82d2a6;
+  --green-30: #60c68e;
+  --green-35: #3fba76;
+  --green-40: #1dae5f;
+  --green-45: #07a64f;
+  --green-50: #069748;
+  --green-55: #05813d;
+  --green-60: #046b32;
+  --green-65: #045428;
+  --green-70: #033e1d;
+  --green-75: #022713;
+  --green-80: #011108;
+  --orange-10: #fbf1e6;
+  --orange-15: #f6ddc5;
+  --orange-20: #f1caa4;
+  --orange-25: #ecb782;
+  --orange-30: #e6a461;
+  --orange-35: #e1903f;
+  --orange-40: #dc7d1e;
+  --orange-45: #d97008;
+  --orange-50: #c56607;
+  --orange-55: #a85706;
+  --orange-60: #8b4805;
+  --orange-65: #6d3904;
+  --orange-70: #502a03;
+  --orange-75: #331a02;
+  --orange-80: #160b01;
+  --purple-10: #ededfe;
+  --purple-15: #d4d4fe;
+  --purple-20: #bbbbfd;
+  --purple-25: #a3a3fc;
+  --purple-30: #8a8afb;
+  --purple-35: #7171fb;
+  --purple-40: #5858fa;
+  --purple-45: #4848f9;
+  --purple-50: #4141e3;
+  --purple-55: #3838c1;
+  --purple-60: #2e2ea0;
+  --purple-65: #24247e;
+  --purple-70: #1b1b5c;
+  --purple-75: #11113b;
+  --purple-80: #070719;
+  --red-10: #fae6e7;
+  --red-15: #f3c3c5;
+  --red-20: #eca1a4;
+  --red-25: #e57e83;
+  --red-30: #de5c62;
+  --red-35: #d73941;
+  --red-40: #d11720;
+  --red-45: #cc000a;
+  --red-50: #ba0009;
+  --red-55: #9e0008;
+  --red-60: #830007;
+  --red-65: #670005;
+  --red-70: #4b0004;
+  --red-75: #300002;
+  --red-80: #140001;
+
+  --primary-10: var(--blue-10, #e4f4fb);
+  --primary-15: var(--blue-15, #c9eaf7);
+  --primary-20: var(--blue-20, #aedff4);
+  --primary-25: var(--blue-25, #93d4f0);
+  --primary-30: var(--blue-30, #78caec);
+  --primary-35: var(--blue-35, #5dbfe8);
+  --primary-40: var(--blue-40, #42b5e5);
+  --primary-45: var(--blue-45, #27aae1);
+  --primary-50: var(--blue-50, #1c97cb);
+  --primary-55: var(--blue-55, #1882ae);
+  --primary-60: var(--blue-60, #146c91);
+  --primary-65: var(--blue-65, #105674);
+  --primary-70: var(--blue-70, #0c4157);
+  --primary-75: var(--blue-75, #082b3a);
+  --primary-80: var(--blue-80, #04161d);
+  --secondary-10: #cde8ff;
+  --secondary-15: #9ad1ff;
+  --secondary-20: #68baff;
+  --secondary-25: #35a3ff;
+  --secondary-30: #038cff;
+  --secondary-35: #0071d0;
+  --secondary-40: #00559d;
+  --secondary-45: #003a6b;
+  --secondary-50: #00335e;
+  --secondary-55: #002b50;
+  --secondary-60: #002443;
+  --secondary-65: #001d36;
+  --secondary-70: #001628;
+  --secondary-75: #000e1b;
+  --secondary-80: #00070d;
+
+  --blue-3: #0f4b6f;
+  --layoutBorderColor: var(--gray-20, rgba(150, 150, 150, 0.2));
+  --formBorderColor: var(--gray-40, rgba(150, 150, 150, 0.6));
+  --layoutBackgroundColor: var(--gray-10, rgba(225, 225, 225, 1));
+  --contentBackgroundColor: var(--white, rgba(255, 255, 255, 0.9));
+  --textColor: var(--gray-55, #333);
+  --textColorHighContrast: var(--gray-65, #000);
+  --textColorInverted: var(--gray-25, #fafafa);
+  --textColorInvertedHighContrast: var(--white, #fff);
+  --buttonPrimaryBackgroundColor: var(--secondary-45);
 }
 /* Grid */
 sakai-header {
   grid-area: header;
   position: sticky;
   top: 0;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   z-index: 10;
 }
 sakai-toolbar {
   grid-area: toolbar;
   position: sticky;
-  top: 50px;
+  top: var(--headerHeight);
   box-sizing: border-box;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - var(--headerHeight));
   padding: 0;
   justify-content: stretch;
 }
 sakai-quick-sidebar {
   grid-area: sidebar;
-  background-color: #fafafa;
 }
 sakai-footer {
   display: flex;
@@ -39,7 +201,7 @@ body {
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.4;
-  color: #212121;
+  color: var(--textColor);
 }
 /* Non webcomponent shared styles */
 ul {
@@ -48,15 +210,16 @@ ul {
   list-style: none;
 }
 a {
-  color: #003a6b;
+  color: var(--secondary-45);
 }
 button,
 input[type='button'],
+textarea,
 .sakai-toolOptions {
   display: inline-block;
   margin: 0;
   padding: 8px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--formBorderColor);
   border-radius: 4px;
   background-color: #fefefe;
   font-size: 1em;
@@ -75,7 +238,7 @@ input[type='date'] {
   box-sizing: border-box;
   height: 2.3em;
   padding: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--formBorderColor);
   border-radius: 3px;
 }
 select {
@@ -97,38 +260,7 @@ select {
     'header header header'
     'toolbar main sidebar';
 }
-/* 
-.sakai-sitesNav__menuitem {
-	display: flex;
-	align-items: center;
-	justify-content: left;
-	margin: 4px 0;
-	padding: 8px;
-	border: 2px solid #ddd;
-	background-color: #eee;
-	overflow: hidden;
-}
-.sakai-sitesNav__menuitem:first-of-type {
-	margin-top: 0;
-}
-.sakai-sitesNav__submenuitem {
-	margin: 8px 0;
-}
-.sakai-sitesNav__submenu {
-	display: none;
-}
-.sakai-sitesNav__menuitem.is-current {
-	height: auto;
-	flex-direction: column;
-	align-items: flex-start;
-}
-.is-current .sakai-sitesNav__submenu {
-	display: block;
-	margin-left: 16px;
-}
-.sakai-sitesNav__menuitem a {
-	text-decoration: none;
-} */
+
 .is-expanded {
   overflow: visible;
   height: auto;
@@ -169,7 +301,7 @@ select {
 .sakai-pageHeader {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--layoutBorderColor);
   margin-bottom: 16px;
 }
 .sakai-pageHeader h1 {
@@ -196,12 +328,12 @@ select {
 }
 button.primary,
 .sakai-toolCreationButton {
-  border-color: #003a6b;
+  border-color: var(--buttonPrimaryBackgroundColor, #003a6b);
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  background: #003a6b;
+  background: var(--buttonPrimaryBackgroundColor, #003a6b);
   font-weight: bold;
-  color: #fff;
+  color: var(--textColorInvertedHighContrast, #fff);
 }
 .sakai-actionsBar {
   position: sticky;
@@ -210,9 +342,7 @@ button.primary,
   align-items: center;
   margin: 16px -16px 0 -16px;
   padding: 16px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #f5f5f5;
+  background-color: var(--layoutBackgroundColor, #f5f5f5);
 }
 .sakai-actionsBar * {
   margin-right: 8px;
@@ -221,18 +351,18 @@ button.primary,
   width: 100%;
   margin: 0 0 8px 0;
   padding: 0;
-  border: 1px solid #eee;
+  border: 1px solid var(--layoutBorderColor);
   border-collapse: collapse;
 }
 .sakai-table thead {
-  border: 1px solid #ccc;
+  border: 1px solid var(--layoutBorderColor);
 }
 .sakai-table th,
 .sakai-table td {
   padding: 12px 8px;
 }
 .sakai-table thead th {
-  border-color: #aaa;
+  border-color: var(--layoutBorderColor);
   background-color: #ddd;
   text-align: left;
   white-space: nowrap;
@@ -363,41 +493,6 @@ input.sakai-table-searchFilter-searchField {
   display: flex;
   justify-content: flex-end;
 }
-.sakai-table-pages {
-  display: flex;
-}
-.sakai-table-pages li {
-  margin: 0;
-  padding: 0;
-}
-.sakai-table-pages li a {
-  display: inline-block;
-  min-width: 42px;
-  margin-left: -1px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  background-color: #fefefe;
-  text-decoration: none;
-  text-align: center;
-}
-.sakai-table-pages li:first-of-type a {
-  border-radius: 4px 0 0 4px;
-}
-.sakai-table-pages li:last-of-type a {
-  border-radius: 0 4px 4px 0;
-}
-.sakai-table-pages .current a {
-  border-color: #003a6b;
-  background-color: #003a6b;
-  color: #fff;
-}
-.sakai-table-pages .disabled a {
-  color: #ccc;
-  cursor: default;
-}
-.sakai-table-pages span {
-  font-size: 0;
-}
 .sakai-table-actionsBar {
   display: none;
   align-items: center;
@@ -413,7 +508,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-table-actionsBar-selected {
   margin: 0 16px 0 0;
   padding: 16px;
-  border-right: 1px solid #999;
+  border-right: 1px solid var(--layoutBorderColor);
 }
 .sakai-table-actionsBar-actions {
   display: flex;
@@ -463,7 +558,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-form legend h2 {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--layoutBorderColor);
   font-size: 1.5em;
   font-weight: normal;
 }
@@ -536,7 +631,7 @@ input.sakai-table-searchFilter-searchField {
   box-sizing: border-box;
   margin-left: 8px;
   padding: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--layoutBorderColor);
   background-color: #eee;
 }
 .sakai-grader-submissionDetails h2,
@@ -582,7 +677,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-dashboard-siteCard {
   margin: 0 0 16px 0;
   border-radius: 4px;
-  background-color: #1f2b32;
+  background-color: var(--secondary-70, #1f2b32);
   color: #fff;
 }
 .sakai-dashboard-siteCard h2 {
@@ -626,7 +721,7 @@ input.sakai-table-searchFilter-searchField {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid var(--layoutBorderColor);
 }
 .sakai-dashboard-widget h2 {
   margin: 0;

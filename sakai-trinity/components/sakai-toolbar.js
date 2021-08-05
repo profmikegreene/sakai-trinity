@@ -76,6 +76,11 @@ export class SakaiToolbar extends LitElement {
           aria-label="Sites list begins here"
         >
           <sakai-toolbar-site
+            emoji="🐒"
+            courseId="EVOLBIO 2001 001 FW21"
+            courseTitle="Physical Ocean - Evolutionary Biology"
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
             emoji=""
             courseId="${this.courseId}"
             courseTitle="${this.courseTitle}"
@@ -84,11 +89,6 @@ export class SakaiToolbar extends LitElement {
             this.isCurrentCourse('CALCULUS 101 - 001 Sp21')}
             ?showSelected=${this.isToolPage}
             .toolId=${this.toolId}
-          ></sakai-toolbar-site>
-          <sakai-toolbar-site
-            emoji="🐒"
-            courseId="EVOLBIO 2001 001 FW21"
-            courseTitle="Physical Ocean - Evolutionary Biology"
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="👩‍⚕️"
@@ -105,7 +105,7 @@ export class SakaiToolbar extends LitElement {
             courseId="GREEK 103 - 01 Sp21"
             courseTitle="Greek Theatre"
           ></sakai-toolbar-site>
-          <sakai-toolbar-site
+          <!-- <sakai-toolbar-site
             emoji="💉"
             courseId="ANESTH 440C - 41 Sp21"
             courseTitle="Foreign Educated Pt Course"
@@ -119,7 +119,7 @@ export class SakaiToolbar extends LitElement {
             emoji="🌎"
             courseId="SMPL101 Spring 2021"
             courseTitle="Foreign Educated Pt Course"
-          ></sakai-toolbar-site>
+          ></sakai-toolbar-site> -->
           <li id="membership"></li>
         </ul>
         <div id="manageSidebar">

@@ -40,19 +40,21 @@ export class SakaiHeader extends LitElement {
         type="text/css"
       />
       <header role="banner" class="sakai-topHeader">
-        <a
-          href="#"
-          class="sakai-headerItem toggle-toolbar"
-          id="toggleToolbar"
-          @click=${this._toggleToolBar}
-          ><ion-icon name="menu-outline"></ion-icon
-        ></a>
-        <div class="sakai-headerLogo">
+        <div id="logoWrapper" class="sakai-headerItem">
           <a
-            href="/sakai-trinity/index.html"
-            class="sakai-headerLogo--institution"
-            >Sakai</a
-          >
+            href="#"
+            class="sakai-headerItem toggle-toolbar"
+            id="toggleToolbar"
+            @click=${this._toggleToolBar}
+            ><ion-icon name="menu-outline"></ion-icon
+          ></a>
+          <div class="sakai-headerLogo">
+            <a
+              href="/sakai-trinity/index.html"
+              class="sakai-headerLogo--institution"
+              >Sakai</a
+            >
+          </div>
         </div>
 
         <!-- <sakai-breadcrumbs>

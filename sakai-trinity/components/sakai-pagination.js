@@ -25,7 +25,7 @@ export class SakaiPagination extends LionPagination {
           -webkit-appearance: none;
         }
         ul {
-            margin: 0;
+          margin: 0;
         }
         li:first-of-type button {
           background-image: url('/sakai-trinity/icons/chevron-back-outline.svg');

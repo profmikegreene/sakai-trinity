@@ -165,7 +165,7 @@
   --formBorderColor: var(--gray-40, rgba(150, 150, 150, 0.6));
   --layoutBackgroundColor: var(--gray-10, rgba(225, 225, 225, 1));
   --contentBackgroundColor: var(--white, rgba(255, 255, 255, 0.9));
-  --textColor: var(--gray-55, #333);
+  --textColor: var(--gray-65, #333);
   --textColorHighContrast: var(--gray-65, #000);
   --textColorInverted: var(--gray-25, #fafafa);
   --textColorInvertedHighContrast: var(--white, #fff);
@@ -255,7 +255,7 @@ select {
 .sakai-portalWrapper {
   display: grid;
   grid-template-columns: var(--toolBarWidth) auto var(--quickSideBarWidth);
-  grid-template-rows: 50px auto;
+  grid-template-rows: var(--headerHeight) auto;
   grid-template-areas:
     'header header header'
     'toolbar main sidebar';
@@ -351,7 +351,7 @@ button.primary,
   width: 100%;
   margin: 0 0 8px 0;
   padding: 0;
-  border: 1px solid var(--layoutBorderColor);
+  border: 0 none;
   border-collapse: collapse;
 }
 .sakai-table thead {
@@ -359,6 +359,8 @@ button.primary,
 }
 .sakai-table th,
 .sakai-table td {
+  border-top: 1px solid var(--layoutBorderColor);
+  border-bottom: 1px solid var(--layoutBorderColor);
   padding: 12px 8px;
 }
 .sakai-table thead th {
@@ -405,6 +407,7 @@ button.primary,
 input.sakai-table-searchFilter-searchField {
   flex-grow: 1;
   width: 200px;
+  height: auto;
   margin-right: 4px;
 }
 .sakai-table-searchFilter-searchField input[type='button'],
@@ -492,6 +495,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-table-endBar {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 8px;
 }
 .sakai-table-actionsBar {
   display: none;

@@ -12,7 +12,7 @@ header {
 ion-icon {
   color: white;
   /* --ionicon-stroke-width: 16px; */
-  font-size: 44px;
+  font-size: 40px;
 }
 li {
   list-style: none;
@@ -62,7 +62,7 @@ input[type='date'] {
   background-color: var(--secondary-45);
   border-radius: 0;
   margin: 0;
-  padding-right: 31px;
+  padding-right: 30px;
   height: 100%;
 }
 #logoWrapper:hover,
@@ -77,7 +77,7 @@ input[type='date'] {
   display: block;
   width: calc(var(--toolBarOpenWidth) - 40px);
   height: var(--headerHeight);
-  margin-left: -44px;
+  margin-left: -40px;
   background: url('../images/logo-jewel.png') no-repeat center center;
   background-size: auto 40px;
   font-size: 0;
@@ -103,14 +103,13 @@ input[type='date'] {
 }
 .sak-sysInd-account {
   box-sizing: border-box;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   margin: 0 0 0 8px;
-  border: 3px solid #fff;
 }
 .sak-sysInd-account img {
   filter: none;
-  width: 40px;
+  width: 50px;
 }
 
 .sakai-breadcrumbs ul {

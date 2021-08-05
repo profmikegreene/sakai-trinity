@@ -84,7 +84,7 @@ export class SakaiToolbar extends LitElement {
             emoji=""
             courseId="${this.courseId}"
             courseTitle="${this.courseTitle}"
-            ?open=${this.open}
+            ?open=${this.isToolPage && this.open}
             ?isCurrent=${this.isToolPage &&
             this.isCurrentCourse('CALCULUS 101 - 001 Sp21')}
             ?showSelected=${this.isToolPage}

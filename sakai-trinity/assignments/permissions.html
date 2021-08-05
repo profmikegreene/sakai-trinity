@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sakai: Assignments Permissions (CALCULUS 101 - 001 Sp21)</title>
+		<script type="module" src="../../sakai-trinity/components/sakai-header.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-toolbar.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-quicksidebar.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-footer.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-pagination.js"></script>
+		<link type="text/css" rel="stylesheet" href="../../sakai-trinity/styles.css">
+	</head>
+
+	<body class="sakai-portalBody">
+		<div class="sakai-portalWrapper">
+            <sakai-header></sakai-header>
+			<sakai-toolbar open></sakai-toolbar>
+			<sakai-quick-sidebar></sakai-quick-sidebar>
+			<div class="sakai-mainContainer">
+				<div class="sakai-pageBody">
+					<div class="sakai-pageHeader">
+						<nav class="sakai-breadcrumbs">
+						  <ul>
+							<li><a href="#" class="sakai-breadcrumb">Sakai</a></li>
+							<li>
+							  <a href="#" class="sakai-breadcrumb">CALCULUS 101 - 001 Sp21</a>
+							</li>
+							<li>
+							  <a href="index.html" class="sakai-breadcrumb">Assignments</a>
+							</li>
+						  </ul>
+						  <h1>Assignments Permissions</h1>
+						</nav>
+						<div class="sakai-pageOptions">
+						  <button class="sakai-toolCreationButton" onclick="window.location.href='create.html'">+ Create Assignment</button>
+						  <select class="sakai-toolOptions" onChange="window.location.href = 'permissions.html';">
+							<option>Options</option>
+							<option>Settings</option>
+							<option>Permissions</option>
+						  </select>
+						</div>
+					  </div>
+
+					  <p>
+						  <label for="permissionsFor">Set permissions for</label>
+						  <select id="permissionsFor">
+							  <option>Entire Site</option>
+							  <option>CALCULUS 101 - 001 Sp21</option>
+						  </select>
+					  </p>
+					  <table class="sakai-table">
+						  <thead>
+							  <tr>
+								  <th>Permission</th>
+								  <th>Instructor</th>
+								  <th>Teaching Assistant</th>
+								  <th>Student</th>
+							  </tr>
+						  </thead>
+						  <tbody>
+							  <tr>
+								  <td>Same site-level permissions for all groups inside the site</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+							  <tr>
+								  <td>Create new assignments</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+							  <tr>
+								  <td>Submit to assignments</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox" checked /></td>
+							  </tr>
+							  <tr>
+								  <td>Delete assignments</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+							  <tr>
+								  <td>Read assignments</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox" checked /></td>
+							  </tr>
+							  <tr>
+								  <td>Revise assignments</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+							  <tr>
+								  <td>Grade assignment submissions</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+							  <tr>
+								  <td>Receive email notifications</td>
+								  <td><input type="checkbox" checked /></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+							  <tr>
+								  <td>Able to view draft assignments created by other users</td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+								  <td><input type="checkbox"/></td>
+							  </tr>
+						  </tbody>
+					  </table>
+					  <div class="sakai-actionsBar">
+						  <button class="primary" onclick="window.location.href='index.html'">Save</button>
+						  <a href="index.html">Cancel</a>
+					  </div>
+				</div>
+				<sakai-footer></sakai-footer>
+			</div>
+		</div>
+		<script src="../../sakai-trinity/scripts.js"></script>
+	</body>
+</html>

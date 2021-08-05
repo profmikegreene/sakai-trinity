@@ -1,3 +1,6 @@
+:host {
+  display: block;
+}
 header {
   display: flex;
   align-items: center;
@@ -77,10 +80,11 @@ input[type='date'] {
   display: block;
   width: calc(var(--toolBarOpenWidth) - 40px);
   height: var(--headerHeight);
-  margin-left: -40px;
+  margin-left: var(--logoMargin, -40px);
   background: url('../images/logo-jewel.png') no-repeat center center;
   background-size: auto 40px;
   font-size: 0;
+  transition: margin 0.3s var(--toolbarTransition, ease-in-out);
 }
 .sakai-headerSearch {
   display: flex;

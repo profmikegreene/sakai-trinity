@@ -15,9 +15,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: inherit;
   flex-grow: 1;
-  margin-bottom: 48px;
 }
 
 .sakai-toolBar a {
@@ -35,17 +33,22 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  padding: 8px;
+  padding: 0;
   flex-shrink: 0;
   position: sticky;
   bottom: 0;
-  padding: 8px;
   border-top: 1px solid var(--layoutBorderColor);
 }
 
 #manageSidebar > a {
+  display: block;
+  align-items: center;
+  width: 100%;
   text-decoration: none;
-  padding: 8px;
+  padding: 16px;
+}
+#manageSidebar > a > ion-icon {
+  margin-right: 4px;
 }
 #mySites {
   display: none;

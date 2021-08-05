@@ -32,7 +32,7 @@
   height: 30px;
   margin: 4px;
   padding: 4px;
-  border: 2px solid #ddd;
+  border: 2px solid #var(--layoutBorderColor);
   background-color: #eee;
   overflow: hidden;
   font-size: 0;

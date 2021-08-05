@@ -3,8 +3,10 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 50px;
-  background-color: #003a6b;
+  height: var(--headerHeight);
+  background-color: var(--gray-70, #003a6b);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 ion-icon {
@@ -20,13 +22,13 @@ input[type='button'] {
   display: inline-block;
   margin: 0;
   padding: 8px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--formBorderColor);
   border-radius: 4px;
   background-color: #fefefe;
   font-size: 1em;
   font-weight: normal;
   line-height: 16px;
-  color: #212121;
+  color: var(--textColorHighContrast);
   text-decoration: none;
   text-transform: none;
   cursor: pointer;
@@ -39,7 +41,7 @@ input[type='date'] {
   box-sizing: border-box;
   height: 2.3em;
   padding: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--formBorderColor);
   border-radius: 3px;
 }
 .sakai-headerItem {
@@ -56,6 +58,17 @@ input[type='date'] {
 .sakai-headerItem:focus {
   background-color: rgba(255, 255, 255, 0.2);
 }
+#logoWrapper {
+  background-color: var(--secondary-45);
+  border-radius: 0;
+  margin: 0;
+  padding-right: 31px;
+  height: 100%;
+}
+#logoWrapper:hover,
+#logoWrapper:focus {
+  background-color: var(--secondary-65);
+}
 .sakai-headerItem img {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
     brightness(100%) contrast(102%);
@@ -63,7 +76,7 @@ input[type='date'] {
 .sakai-headerLogo--institution {
   display: block;
   width: calc(var(--toolBarOpenWidth) - 40px);
-  height: 50px;
+  height: var(--headerHeight);
   margin-left: -44px;
   background: url('../images/logo-jewel.png') no-repeat center center;
   background-size: auto 40px;

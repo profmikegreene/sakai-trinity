@@ -28,8 +28,30 @@ export class SakaiHeader extends LitElement {
   _toggleQuickSideBar() {
     document.querySelector('sakai-quick-sidebar').toggleAttribute('open');
   }
-  _toggleToolBar() {
+
+  _toggleToolBar(e) {
+    e.preventDefault();
     document.querySelector('sakai-toolbar').toggleAttribute('open');
+    if (document.querySelector('sakai-toolbar').open) {
+      this._toggleMargin(false);
+    } else if (document.querySelector('sakai-toolbar').open === false) {
+      this._toggleMargin(true);
+    }
+  }
+
+  _toggleMargin(state) {
+    if (window.location.href.endsWith('sakai-trinity/index.html')) {
+      if (state) {
+        document.firstElementChild.style.setProperty('--logoMargin', '28px');
+      } else if (state === false) {
+        document.firstElementChild.style.setProperty('--logoMargin', '-40px');
+      }
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._toggleMargin(true);
   }
 
   render() {
@@ -39,7 +61,7 @@ export class SakaiHeader extends LitElement {
         rel="stylesheet"
         type="text/css"
       />
-      <header role="banner" class="sakai-topHeader">
+      <header id="sakai-header" role="banner" class="sakai-topHeader">
         <div id="logoWrapper" class="sakai-headerItem">
           <a
             href="#"
@@ -73,17 +95,26 @@ export class SakaiHeader extends LitElement {
 
         <ul class="sakai-systemIndicators">
           <li>
-            <a href="https://sakai.screenstepslive.com/s/sakai_help/m/101295/l/1339923-what-is-the-assignments-tool" class="sakai-headerItem sak-sysInd-help"
-              target="_blank"><ion-icon name="help-circle-outline"></ion-icon>Help</a
+            <a
+              href="https://sakai.screenstepslive.com/s/sakai_help/m/101295/l/1339923-what-is-the-assignments-tool"
+              class="sakai-headerItem sak-sysInd-help"
+              target="_blank"
+              ><ion-icon name="help-circle-outline"></ion-icon>Help</a
             >
           </li>
           <li>
-            <a href="#" class="sakai-headerItem sak-sysInd-systemAlerts" onclick="alert('The PA System Announcements would appear here');"
+            <a
+              href="#"
+              class="sakai-headerItem sak-sysInd-systemAlerts"
+              onclick="alert('The PA System Announcements would appear here');"
               ><ion-icon name="alert-circle-outline"></ion-icon>System Alerts</a
             >
           </li>
           <li>
-            <a href="#" class="sakai-headerItem sak-sysInd-notifications" onclick="alert('Your event notifications would appear here');"
+            <a
+              href="#"
+              class="sakai-headerItem sak-sysInd-notifications"
+              onclick="alert('Your event notifications would appear here');"
               ><ion-icon name="notifications-circle-outline"></ion-icon
               >Notifications</a
             >

@@ -79,6 +79,7 @@ export class SakaiToolbar extends LitElement {
             emoji="🐒"
             courseId="EVOLBIO 2001 001 FW21"
             courseTitle="Physical Ocean - Evolutionary Biology"
+            isPinned
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji=""
@@ -89,22 +90,93 @@ export class SakaiToolbar extends LitElement {
             this.isCurrentCourse('CALCULUS 101 - 001 Sp21')}
             ?showSelected=${this.isToolPage}
             .toolId=${this.toolId}
+            isPinned
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="👩‍⚕️"
             courseId="NURSING 680 - 01 Sp21"
             courseTitle="Nurse Practice III"
+            isPinned
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🖥️"
             courseId="ENGR 101 - 01 Sp21"
             courseTitle="Fluid Dynamics"
+            isPinned
+          ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="🎭"
+            courseId="GREEK 103 - 01 Sp21"
+            courseTitle="Greek Theatre"
+            isPinned
+          ></sakai-toolbar-site>
+        </ul>
+        <div id="mostRecent">
+          <h4>Most Recent</h4>
+          <sakai-toolbar-site
+            emoji=""
+            courseId="${this.courseId}"
+            courseTitle="${this.courseTitle}"
+            ?showSelected=${this.isToolPage}
+            .toolId=${this.toolId}
           ></sakai-toolbar-site>
           <sakai-toolbar-site
             emoji="🎭"
             courseId="GREEK 103 - 01 Sp21"
             courseTitle="Greek Theatre"
           ></sakai-toolbar-site>
+          <sakai-toolbar-site
+            emoji="🐒"
+            courseId="EVOLBIO 2001 001 FW21"
+            courseTitle="Physical Ocean - Evolutionary Biology"
+          ></sakai-toolbar-site>
+        </div>
+        <div id="manageSidebar">
+          <a href="/sakai-trinity/membership.html">
+            <ion-icon name="apps-outline"></ion-icon>
+            <span>View all my sites</span></a
+          >
+          <!-- <li class="sakai-sitesNav__menuitem">
+        <div class="sakai-sitesNav__menuitemtitle">
+          <a
+            class="link-container"
+            href="#"
+            title="${this.courseId}"
+            @click=${this.toggleOpen}
+          >
+            <span
+              class="sakai-sitesNav__favbtn fav"
+              href="#"
+              data-site-id="${this.courseId}"
+              role="switch"
+              aria-checked="true"
+              title="Collapse ${this.courseId} in the menu"
+              >${this.emoji}</span
+            >
+            <ion-icon class="pin" name="star"></ion-icon>
+            <span class="courseId">${this.courseId}</span>
+            <span class="courseTitle">${this.courseTitle}</span>
+          </a>
+          <a
+            tabindex="-1"
+            class="sakai-sitesNav__settingsLink"
+            role="menuitem"
+            href="/sakai-trinity/site-info.html"
+            title="Site Info"
+          >
+            <ion-icon name="cog-outline"></ion-icon>
+            <span class="sakai-sitesNav__settingsTitle">Site Info</span>
+          </a>
+
+          <a
+            class="sakai-sitesNav__dropdown"
+            href="#"
+            data-site-id="${this.courseId}"
+            aria-haspopup="true"
+            title="Open attached menu for ${this.courseId} to access its tools"
+          ></a>
+        </div> 
+        </li>-->
           <!-- <sakai-toolbar-site
             emoji="💉"
             courseId="ANESTH 440C - 41 Sp21"
@@ -120,13 +192,7 @@ export class SakaiToolbar extends LitElement {
             courseId="SMPL101 Spring 2021"
             courseTitle="Foreign Educated Pt Course"
           ></sakai-toolbar-site> -->
-          <li id="membership"></li>
-        </ul>
-        <div id="manageSidebar">
-          <a href="/sakai-trinity/membership.html">
-            <ion-icon name="apps-outline"></ion-icon>
-            <span>View all my sites</span></a
-          >
+
           <!-- <ion-icon name="star-half-outline"></ion-icon>
           <a href="#">Manage Sidebar</a> -->
           <div

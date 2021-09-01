@@ -4,11 +4,13 @@ export class SakaiToolbarSite extends LitElement {
   static get properties() {
     return {
       open: { type: Boolean },
+      dropdown: { type: Boolean },
       emoji: { type: String },
       courseId: { type: String },
       courseTitle: { type: String },
       isCurrent: { type: Boolean },
       showSelected: { type: Boolean },
+      isPinned: { type: Boolean },
       toolId: { type: String },
     };
   }
@@ -25,12 +27,17 @@ export class SakaiToolbarSite extends LitElement {
   constructor() {
     super();
     this.open = false;
+    this.dropdown = false;
     this._emoji = '';
     this.courseId = '';
     this.courseTitle = '';
     this.isCurrent = false;
     this.showSelected = false;
+    this.isPinned = false;
     this.toolId = '';
+  }
+  getPinned(isPinned) {
+    return isPinned ? 'Unpin' : 'Pin';
   }
   attributeChangedCallback(name, oldVal, newVal) {
     console.log('attribute change: ', name, newVal);
@@ -40,6 +47,9 @@ export class SakaiToolbarSite extends LitElement {
   toggleOpen(e) {
     console.log(e);
     this.toggleAttribute('open');
+  }
+  toggleDropdown() {
+    this.toggleAttribute('dropdown');
   }
   isCurrentTool(toolId) {
     return this.toolId === toolId;
@@ -74,28 +84,42 @@ export class SakaiToolbarSite extends LitElement {
               title="Collapse ${this.courseId} in the menu"
               >${this.emoji}</span
             >
-            <ion-icon class="favStar" name="star"></ion-icon>
+            <ion-icon class="pin" name="bookmark"></ion-icon>
             <span class="courseId">${this.courseId}</span>
             <span class="courseTitle">${this.courseTitle}</span>
           </a>
+
           <a
             tabindex="-1"
             class="sakai-sitesNav__settingsLink"
             role="menuitem"
-            href="/sakai-trinity/site-info.html"
             title="Site Info"
+            @click=${this.toggleDropdown}
           >
-            <ion-icon name="cog-outline"></ion-icon>
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             <span class="sakai-sitesNav__settingsTitle">Site Info</span>
           </a>
 
-          <a
-            class="sakai-sitesNav__dropdown"
-            href="#"
-            data-site-id="${this.courseId}"
-            aria-haspopup="true"
-            title="Open attached menu for ${this.courseId} to access its tools"
-          ></a>
+          <div id="siteNavSiteInfoDropdown">
+            <ul>
+              <li>
+                <a href="#"
+                  ><ion-icon name="settings-outline"></ion-icon>Site Info</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon name="bookmark-outline"></ion-icon
+                  >${this.getPinned(this.isPinned)} site</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><ion-icon name="happy-outline"></ion-icon>Change emoji</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
         <ul class="sakai-sitesNav__submenu" role="menu">
           <li class="sakai-sitesNav__submenuitem">
@@ -136,6 +160,7 @@ export class SakaiToolbarSite extends LitElement {
             >
               <ion-icon name="newspaper-outline"></ion-icon>
               <span class="sakai-sitesNav__submenuitem-title">Assignments</span>
+              <span class="sakai-status-new"></span>
             </a>
           </li>
           <li class="sakai-sitesNav__submenuitem">
@@ -198,6 +223,7 @@ export class SakaiToolbarSite extends LitElement {
               <span class="sakai-sitesNav__submenuitem-title"
                 >Conversations</span
               >
+              <span class="sakai-status-new"></span>
             </a>
           </li>
           <li class="sakai-sitesNav__submenuitem">
@@ -234,6 +260,7 @@ export class SakaiToolbarSite extends LitElement {
             >
               <ion-icon name="trophy-outline"></ion-icon>
               <span class="sakai-sitesNav__submenuitem-title">Gradebook</span>
+              <span class="sakai-status-new"></span>
             </a>
           </li>
           <li class="sakai-sitesNav__submenuitem">

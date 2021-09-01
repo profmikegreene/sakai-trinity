@@ -99,6 +99,11 @@ a:visited {
   position: relative;
   text-align: center;
 }
+.sakai-sitesNav__settingsLink:hover,
+.sakai-sitesNav__settingsLink:active {
+  background: var(--gray-70);
+  color: var(--gray-10);
+}
 /* .sakai-sitesNav__favbtn:empty {
     content: url('../icons/star.svg');
     padding: 2px;
@@ -106,17 +111,17 @@ a:visited {
 .link-container .fav {
   font-size: 14px;
 }
-.favStar {
+.pin {
   fill: var(--gold-35);
   display: none;
   padding: 4px;
 }
-.fav:empty + .favStar,
+.fav:empty + .pin,
 .link-container:hover .fav:empty {
   display: inline-block;
 }
 .link-container .fav:empty,
-.link-container:hover .favStar {
+.link-container:hover .pin {
   display: none;
 }
 .link-container:hover .sakai-sitesNav__favbtn {
@@ -128,16 +133,37 @@ a:visited {
 .sakai-sitesNav__settingsTitle {
   display: none;
 }
-.sakai-sitesNav__settingsLink:hover .sakai-sitesNav__settingsTitle,
-.sakai-sitesNav__settingsLink:active .sakai-sitesNav__settingsTitle,
-.sakai-sitesNav__settingsLink:focus .sakai-sitesNav__settingsTitle {
+#siteNavSiteInfoDropdown {
+  display: none;
+}
+:host([dropdown]) #siteNavSiteInfoDropdown {
+  display: flex;
+  position: relative;
+}
+:host([dropdown]) #siteNavSiteInfoDropdown ul {
   display: inline-block;
   position: absolute;
-  left: -75px;
-  top: 0;
-  background: #333;
-  color: #fefefe;
+  left: -179px;
+  top: -16px;
+  background: var(--gray-70);
+  z-index: 2;
+  padding: 0;
+}
+#siteNavSiteInfoDropdown li {
+  list-style: none;
+}
+#siteNavSiteInfoDropdown a {
+  color: var(--gray-10);
+  cursor: not-allowed;
   padding: 8px;
+  display: block;
+}
+#siteNavSiteInfoDropdown a:hover,
+#siteNavSiteInfoDropdown a:active {
+  background-color: var(--gray-60);
+}
+#siteNavSiteInfoDropdown ion-icon {
+  margin-right: 8px;
 }
 .courseId,
 .courseTitle {
@@ -165,4 +191,23 @@ a:visited {
 }
 .sakai-sitesNav__submenuitem-link[iscurrent] {
   background: var(--current-background--active);
+}
+.sakai-sitesNav__submenuitem-link {
+  position: relative;
+}
+
+.sakai-status-new::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid;
+  right: 8px;
+  top: 14px;
+  position: absolute;
+}
+.sakai-status-new::before {
+  border-color: var(--blue-40);
+  background-color: var(--blue-40);
 }

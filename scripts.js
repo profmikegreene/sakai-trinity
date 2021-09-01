@@ -39,6 +39,7 @@ const allTableItems = exampleTable.querySelectorAll(
 const tableActionsClose = tableActions.querySelector(
   '.sakai-table-actionsBar-cancel'
 );
+const tableBulkActions = document.querySelector('.sakai-table-bulkActions');
 var selectedItems = new Set();
 
 allTableItems.forEach(checkedItem => {
@@ -90,3 +91,14 @@ tableActionsClose.addEventListener('click', function () {
   checkAllTableItems(false);
   selectAllTableItems.checked = false;
 });
+
+tableBulkActions.addEventListener('click', function () {
+  event.preventDefault();
+  if (tableActions.classList.contains('enabled')) {
+    tableActions.classList.remove('enabled');
+  } else {
+    selectedCounter.innerText = 0;
+    tableActions.classList.add('enabled');
+  }
+  
+})

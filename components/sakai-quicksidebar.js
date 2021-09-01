@@ -14,7 +14,7 @@ export class SakaiQuickSidebar extends LitElement {
     };
   }
   attributeChangedCallback(name, oldVal, newVal) {
-    // console.log('attribute change: ', name, newVal);
+    console.log('attribute change: ', name, newVal);
     super.attributeChangedCallback(name, oldVal, newVal);
     this.toggleOpen();
   }
@@ -35,15 +35,11 @@ export class SakaiQuickSidebar extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    // this.toggleOpen();
+    this.toggleOpen();
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: none;
-      }
-    `;
+    return css``;
   }
   // _onClick() {
   //   const portalWrapper = document.querySelector('.sakai-portalWrapper');

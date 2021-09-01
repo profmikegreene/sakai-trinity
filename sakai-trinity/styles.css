@@ -275,7 +275,7 @@ select {
 }
 .sakai-breadcrumbs ul {
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-size: 0.75em;
 }
 .sakai-breadcrumbs ul li {
@@ -300,6 +300,7 @@ select {
 }
 .sakai-pageHeader {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   border-bottom: 1px solid var(--layoutBorderColor);
   margin-bottom: 16px;
@@ -309,10 +310,14 @@ select {
   font-size: 2em;
   font-weight: normal;
 }
+.sakai-pageHeader .sakai-headingNew {
+  margin: 0;
+}
 .sakai-pageOptions {
   display: flex;
   flex-direction: column;
   margin-left: auto;
+  margin-bottom: 16px;
 }
 .sakai-toolOptions {
   margin-top: 8px;
@@ -325,6 +330,20 @@ select {
   background-image: url('/sakai-trinity/icons/settings.svg');
   background-position: center center;
   background-repeat: no-repeat;
+}
+.sakai-toolPages {
+  display: flex;
+  margin-left: auto;
+  margin-bottom: 4px;
+}
+.sakai-toolPages a, .sakai-toolPages span {
+  margin-left: 16px;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+.sakai-toolPages a:hover, .sakai-toolPages-selected {
+  margin-bottom: -4px;
+  border-bottom: 4px solid var(--secondary-45);
 }
 button.primary,
 .sakai-toolCreationButton {
@@ -417,6 +436,19 @@ input.sakai-table-searchFilter-searchField {
 .sakai-table-searchFilter-searchField button,
 .sakai-table-searchFilter-searchField button:disabled {
   margin: 0 4px 0 0;
+}
+.sakai-table-controls {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+.sakai-table-controls button {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+.sakai-table-controls button ion-icon {
+  margin-right: 4px;
 }
 .sakai-table-pagerContainer {
   display: flex;
@@ -595,13 +627,17 @@ input.sakai-table-searchFilter-searchField {
 .sakai-status-success,
 .sakai-status-warn,
 .sakai-status-error {
-  padding: 8px;
-  border-radius: 4px;
+  display: flex;
+  align-items: center;
+/*  padding: 4px 8px;
+  border-radius: 40px;
   font-size: 0.75em;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
+  white-space: nowrap;*/
 }
+/*
 .sakai-status-success {
   background-color: #425440;
   color: #aaec78;
@@ -613,6 +649,12 @@ input.sakai-table-searchFilter-searchField {
 .sakai-status-error {
   background-color: #520000;
   color: #e56673;
+}*/
+.sakai-status-success ion-icon,
+.sakai-status-warn ion-icon,
+.sakai-status-error  ion-icon{
+  margin-right: 4px;
+  font-size: 1.2em;
 }
 .sakai-grader {
   display: flex;

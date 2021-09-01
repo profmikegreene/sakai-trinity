@@ -21,7 +21,7 @@
 					<div class="sakai-pageHeader">
 						<nav class="sakai-breadcrumbs">
 						  <ul>
-							<li><a href="#" class="sakai-breadcrumb">Home</a></li>
+							<li><a href="#" class="sakai-breadcrumb">Sakai</a></li>
 							<li>
 							  <a href="#" class="sakai-breadcrumb">CALCULUS 101 - 001 Sp21</a>
 							</li>
@@ -29,12 +29,15 @@
 							  <a href="index.html" class="sakai-breadcrumb">Assignments</a>
 							</li>
 						  </ul>
-						  <h1 class="sakai-headingNew">Assignments Permissions</h1>
+						  <h1>Assignments Permissions</h1>
 						</nav>
-						<div class="sakai-toolPages">
-							<a href="#">Grade Report</a>
-							<span class="sakai-toolPages-selected">Permissions</span>
-							<a href="#">Trash</a>
+						<div class="sakai-pageOptions">
+						  <button class="sakai-toolCreationButton" onclick="window.location.href='create.html'">+ Create Assignment</button>
+						  <select class="sakai-toolOptions" onChange="window.location.href = 'permissions.html';">
+							<option>Options</option>
+							<option>Settings</option>
+							<option>Permissions</option>
+						  </select>
 						</div>
 					  </div>
 

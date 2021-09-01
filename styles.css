@@ -336,12 +336,14 @@ select {
   margin-left: auto;
   margin-bottom: 4px;
 }
-.sakai-toolPages a, .sakai-toolPages span {
+.sakai-toolPages a,
+.sakai-toolPages span {
   margin-left: 16px;
   padding-bottom: 4px;
   text-decoration: none;
 }
-.sakai-toolPages a:hover, .sakai-toolPages-selected {
+.sakai-toolPages a:hover,
+.sakai-toolPages-selected {
   margin-bottom: -4px;
   border-bottom: 4px solid var(--secondary-45);
 }
@@ -629,7 +631,7 @@ input.sakai-table-searchFilter-searchField {
 .sakai-status-error {
   display: flex;
   align-items: center;
-/*  padding: 4px 8px;
+  /*  padding: 4px 8px;
   border-radius: 40px;
   font-size: 0.75em;
   font-weight: bold;
@@ -637,24 +639,56 @@ input.sakai-table-searchFilter-searchField {
   text-transform: uppercase;
   white-space: nowrap;*/
 }
-/*
-.sakai-status-success {
-  background-color: #425440;
-  color: #aaec78;
-}
-.sakai-status-warn {
-  background-color: #6b6326;
-  color: #f8f000;
-}
-.sakai-status-error {
-  background-color: #520000;
-  color: #e56673;
-}*/
+
 .sakai-status-success ion-icon,
 .sakai-status-warn ion-icon,
-.sakai-status-error  ion-icon{
+.sakai-status-error ion-icon {
   margin-right: 4px;
   font-size: 1.2em;
+  --ionicon-stroke-width: 32px;
+}
+.sakai-status-success ion-icon {
+  /* background-color: #425440; */
+  color: var(--green-50);
+  /* color: #aaec78; */
+}
+.sakai-status-warn ion-icon {
+  /* background-color: #6b6326; */
+  color: var(--orange-30);
+  /* color: #f8f000; */
+}
+.sakai-status-error ion-icon {
+  /* background-color: #520000; */
+  color: var(--red-60);
+  /* color: #e56673; */
+}
+.sakai-status-open::before,
+.sakai-status-closed::before,
+.sakai-status-draft::before,
+.sakai-status-inactive::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+  border: 1px solid;
+}
+.sakai-status-open::before {
+  border-color: var(--green-40);
+  background-color: var(--green-40);
+}
+.sakai-status-closed::before {
+  border-color: var(--purple-50);
+  background-color: var(--purple-50);
+}
+.sakai-status-inactive::before {
+  border-color: var(--green-20);
+  background-color: var(--green-20);
+}
+.sakai-status-draft::before {
+  border-color: var(--gray-50);
+  background-color: var(--gray-50);
 }
 .sakai-grader {
   display: flex;

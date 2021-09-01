@@ -100,5 +100,4 @@ tableBulkActions.addEventListener('click', function () {
     selectedCounter.innerText = 0;
     tableActions.classList.add('enabled');
   }
-  
-})
+});

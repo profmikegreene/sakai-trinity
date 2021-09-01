@@ -32,6 +32,7 @@ Canvas Discussions
 
 Youtube Studio
 ![](Screenshot_20210331_104808.png)
+![](youtube-studio-bulk-edit.gif)
 
 Google News
 ![](Screenshot_20210331_105030.png)

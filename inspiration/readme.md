@@ -68,3 +68,12 @@ Google News
 ## Grader
 
 ![](gradescope.png)
+
+## Mobile
+
+![](reddit-mobile-feed.PNG)
+![](reddit-mobile-sitesequivilent.PNG)
+![](reddit-mobile-searchresults.PNG)
+![](reddit-mobile-useroffcanvas.PNG)
+![](reddit-mobile-notifications.PNG)
+![](reddit-mobile-chat-empty.PNG)

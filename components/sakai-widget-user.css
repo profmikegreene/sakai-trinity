@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+.sakai-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sakai-profile > img {
+  border-radius: 50%;
+}
+.sakai-profile__changePic {
+  margin-top: -2em;
+  margin-bottom: 1em;
+  color: #fff;
+  text-shadow: 1px 1px 1px #999;
+}
+.has-avatar,
+.userNav {
+  width: 371px;
+}
+.has-avatar {
+}
+.userNav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.userNav li.sakai-userNav__submenuitem {
+  margin: 16px;
+  text-align: center;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sakai: Assignments (CALCULUS 101 - 001 Sp21)</title>
+		<script type="module" src="../../sakai-trinity/components/sakai-header.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-toolbar.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-quicksidebar.js"></script>
+        <script type="module" src="../../sakai-trinity/components/sakai-footer.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+		<link type="text/css" rel="stylesheet" href="../../sakai-trinity/styles.css">
+	</head>
+
+	<body class="sakai-portalBody">
+		<div class="sakai-portalWrapper">
+            <sakai-header></sakai-header>
+			<sakai-toolbar isToolPage open courseId="CALCULUS 101 - 001 Sp21" courseTitle="Introduction to Calculus" toolId="Assignments"></sakai-toolbar>
+			<sakai-quick-sidebar></sakai-quick-sidebar>
+			<div class="sakai-mainContainer">
+				<div class="sakai-pageBody">
+					<div class="sakai-pageHeader">
+						<nav class="sakai-breadcrumbs">
+							<ul>
+								<li><a href="../index.html" class="sakai-breadcrumb">Home</a></li>
+								<li><a href="../courseIndex.html" class="sakai-breadcrumb">CALCULUS 101 - 001 Sp21</a></li>
+								<li><a href="index.html" class="sakai-breadcrumb">Assignments</a></li>
+							</ul>
+							<h1 class="sakai-headingNew">Create New Assignment</h1>
+						</nav>
+						<div class="sakai-toolPages">
+							<a href="#">Grade Report</a>
+							<a href="permissions.html">Permissions</a>
+							<a href="#">Trash</a>
+						</div>
+					</div>
+					<form class="sakai-form" action="index.html">
+						<fieldset>
+							<legend><h2>About</h2></legend>
+							<div class="sakai-form-option">
+								<label for="title">Title</label>
+								<input type="text" id="title">
+							</div>
+							<div class="sakai-form-option">
+								<label for="instructions">Instructions</label>
+								<textarea id="instructions" rows="10" cols="20" placeholder="A rich-text editor would appear here"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend><h2>Availability</h2></legend>
+							<div class="sakai-form-option">
+								<label for="openDate">Open Date</label>
+								<input type="date" id="openDate">
+							</div>
+							<div class="sakai-form-option">
+								<label for="dueDate">Due Date</label>
+								<input type="date" id="dueDate">
+							</div>
+							<div class="sakai-form-option">
+								<label for="acceptDate">Accept Until Date</label>
+								<input type="date" id="acceptDate">
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend><h2>Assign To</h2></legend>
+							<div class="sakai-form-option">
+								<div class="sakai-form-spacer"></div>
+								<div class="sakai-form-options">
+									<div>
+										<input type="radio" name="assignTo" id="assignIndividual" checked>
+										<label for="assignIndividual">Each individual member of the site</label>
+									</div>
+									<div>
+										<input type="radio" name="assignTo" id="assignSelectGroup">
+										<label for="assignSelectGroup">Each individual member of the selected group(s)</label>
+									</div>
+									<div>
+										<input type="radio" name="assignTo" id="assignGroups">
+										<label for="assignGroups">The selected group(s), as a group assignment (one group member submits on behalf of the entire group)</label>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend><h2>Submissions</h2></legend>
+							<fieldset>
+								<legend>Submission Type</legend>
+								<div class="sakai-form-spacer"></div>
+								<div class="sakai-form-options">
+									<div>
+										<input type="radio" name="submissionType" id="inlineAttach">
+										<label for="inlineAttach">Inline and attachments</label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="inlineOnly" checked>
+										<label for="inlineOnly">Inline text only</label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="attachOnly">
+										<label for="attachOnly">Uploaded attachments only</label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="externalLti">
+										<label for="externalLti">External tool (LTI)</label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="nonElectronic">
+										<label for="nonElectronic">Non-electronic</label>
+									</div>
+								</div>
+							</fieldset>
+						</fieldset>
+						<fieldset>
+							<legend><h2>Grading</h2></legend>
+							<div class="sakai-form-option">
+								<div class="sakai-form-spacer"></div>
+								<div class="sakai-form-options">
+									<div>
+										<input type="checkbox" id="grade" checked>
+										<label for="grade">Grade submissions to this assignment</label>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend><h2>Notifications</h2></legend>
+							<fieldset>
+								<legend>For Submissions</legend>
+								<div class="sakai-form-spacer"></div>
+								<div class="sakai-form-options">
+									<div>
+										<input type="radio" name="submissionType" id="inlineAttach">
+										<label for="inlineAttach">Do not send notification emails for any student submissions</label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="inlineOnly" checked>
+										<label for="inlineOnly">Receive a notification email for each student submission </label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="attachOnly">
+										<label for="attachOnly">Receive one email per day summarizing notifications for student submissions </label>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>When Releasing Grades</legend>
+								<div class="sakai-form-spacer"></div>
+								<div class="sakai-form-options">
+									<div>
+										<input type="radio" name="submissionType" id="inlineAttach">
+										<label for="inlineAttach">Do not send notification email to student when the grade is released </label>
+									</div>
+									<div>
+										<input type="radio" name="submissionType" id="inlineOnly" checked>
+										<label for="inlineOnly">Send notification email to student when the grade is released </label>
+									</div>
+								</div>
+							</fieldset>
+						</fieldset>
+						<div class="sakai-actionsBar">
+							<button class="primary" onclick="window.location.href='index.html'">Create Assignment</button>
+							<button>Preview</button>
+							<button>Save Draft</button>
+							<a href="index.html">Cancel</a>
+						</div>
+					</form>
+				</div>
+				<sakai-footer></sakai-footer>
+			</div>
+		</div>
+		<script src="../../sakai-trinity/scripts.js"></script>
+	</body>
+</html>

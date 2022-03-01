@@ -1,0 +1,213 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: inherit;
+
+  --current-background: var(--primary-10);
+  --current-background--hover: var(--primary-20);
+  --current-background--active: var(--primary-30);
+  --link-background--hover: var(--primary-20);
+  --link-current-background--active: var(--primary-30);
+}
+:host([open]) {
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+a,
+a:visited {
+  color: #212121;
+}
+.sakai-sitesNav__menuitem {
+  /* display: flex; */
+  align-items: center;
+  justify-content: left;
+  margin: 0;
+  border-bottom: 1px solid var(--layoutBorderColor);
+  overflow: hidden;
+  list-style: none;
+}
+.sakai-sitesNav__menuitem:hover,
+.sakai-sitesNav__menuitem:active,
+.sakai-sitesNav__menuitem:focus {
+  background: var(--gray-15);
+}
+.sakai-sitesNav__menuitem:first-of-type {
+  margin-top: 0;
+}
+.sakai-sitesNav__submenuitem {
+  margin: 0;
+  list-style: none;
+  display: block;
+}
+.sakai-sitesNav__submenu {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+:host([open]) .sakai-sitesNav__submenu {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+.sakai-sitesNav__menuitem a {
+  text-decoration: none;
+}
+.sakai-sitesNav__submenuitem-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
+}
+.sakai-sitesNav__submenuitem-link ion-icon {
+  margin-right: 8px;
+}
+.sakai-sitesNav__submenuitem-title {
+  display: inline-block;
+}
+.sakai-sitesNav__submenuitem-link:hover,
+.sakai-sitesNav__submenuitem-link:active {
+  background: var(--link-background--hover);
+}
+.sakai-sitesNav__submenuitem-link:active {
+  background: var(--link-background--active);
+}
+.link-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: calc(
+    var(--toolBarWidth) - 40px - 16px - 18px
+  ); /* 16px for padding, 18px for border */
+  padding: 8px;
+}
+.link-container span {
+  line-height: 1.5;
+}
+.sakai-sitesNav__menuitemtitle {
+  display: flex;
+}
+.sakai-sitesNav__favbtn,
+.sakai-sitesNav__settingsLink {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.sakai-sitesNav__settingsLink {
+  padding: 8px;
+  position: relative;
+  text-align: center;
+}
+.sakai-sitesNav__settingsLink:hover,
+.sakai-sitesNav__settingsLink:active {
+  background: var(--gray-70);
+  color: var(--gray-10);
+}
+/* .sakai-sitesNav__favbtn:empty {
+    content: url('../icons/star.svg');
+    padding: 2px;
+  } */
+.link-container .fav {
+  font-size: 14px;
+}
+.pin {
+  fill: var(--gold-35);
+  display: none;
+  padding: 4px;
+}
+.fav:empty + .pin,
+.link-container:hover .fav:empty {
+  display: inline-block;
+}
+.link-container .fav:empty,
+.link-container:hover .pin {
+  display: none;
+}
+.link-container:hover .sakai-sitesNav__favbtn {
+  content: url('../icons/caret-forward-outline.svg');
+}
+:host([open]) .link-container:hover .sakai-sitesNav__favbtn {
+  content: url('../icons/caret-down-outline.svg');
+}
+.sakai-sitesNav__settingsTitle {
+  display: none;
+}
+#siteNavSiteInfoDropdown {
+  display: none;
+}
+:host([dropdown]) #siteNavSiteInfoDropdown {
+  display: flex;
+  position: relative;
+}
+:host([dropdown]) #siteNavSiteInfoDropdown ul {
+  display: inline-block;
+  position: absolute;
+  left: -179px;
+  top: -16px;
+  background: var(--gray-70);
+  z-index: 2;
+  padding: 0;
+}
+#siteNavSiteInfoDropdown li {
+  list-style: none;
+}
+#siteNavSiteInfoDropdown a {
+  color: var(--gray-10);
+  cursor: not-allowed;
+  padding: 8px;
+  display: block;
+}
+#siteNavSiteInfoDropdown a:hover,
+#siteNavSiteInfoDropdown a:active {
+  background-color: var(--gray-60);
+}
+#siteNavSiteInfoDropdown ion-icon {
+  margin-right: 8px;
+}
+.courseId,
+.courseTitle {
+  display: inline-block;
+}
+.courseTitle {
+  margin-left: 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.showSelected.is-current a {
+  background: var(--current-background);
+}
+.showSelected.is-current a:hover,
+.showSelected.is-current a:focus {
+  background: var(--current-background--hover);
+}
+.showSelected.is-current a:active {
+  background: var(--current-background--active);
+}
+
+:host([iscurrent]) .sakai-sitesNav__menuitem {
+  background-color: var(--current-background);
+}
+.sakai-sitesNav__submenuitem-link[iscurrent] {
+  background: var(--current-background--active);
+}
+.sakai-sitesNav__submenuitem-link {
+  position: relative;
+}
+
+.sakai-status-new::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid;
+  right: 8px;
+  top: 14px;
+  position: absolute;
+}
+.sakai-status-new::before {
+  border-color: var(--blue-40);
+  background-color: var(--blue-40);
+}

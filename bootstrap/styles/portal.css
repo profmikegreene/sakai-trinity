@@ -34,10 +34,13 @@ a, .nav-link {
 }
 .sakai-navSidebar {
   grid-area: toolbar;
+  top: var(--sakai-headerHeight);
+  width: var(--sakai-navSidebar);
   height: calc(100vh - var(--sakai-headerHeight));
 }
 .sakai-mainContent {
   grid-area: main;
+  min-height: calc(100vh - var(--sakai-headerHeight));
 }
 .sakai-jumpLinks {
   padding-left: var(--sakai-navSidebar);
@@ -67,11 +70,12 @@ a, .nav-link {
 .sakai-sitesAndToolsNav {
   height: 100%;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .sakai-sitesAndToolsNav .btn::before {
   width:1.25em;
   line-height:0;
-  content:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' class='bi bi-caret-right-fill' viewBox='0 0 16 16'%3E%3Cpath d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/%3E%3C/svg%3E");
   transition:transform 0.35s ease;
   transform-origin:.5em 50%
 }
@@ -89,6 +93,14 @@ a, .nav-link {
 .sakai-sitesAndToolsNav .active {
   color: #000;
   font-weight: bold;
+}
+.sakai-toolPages.nav-tabs .nav-link {
+  border-width: 0 0 4px 0;
+  border-radius: 0;
+}
+.sakai-toolPages.nav-tabs .nav-link:focus, .sakai-toolPages.nav-tabs .nav-link:hover {
+  margin-bottom: -4px;
+  border-color: transparent transparent var(--bs-primary) transparent;
 }
 .sakai-footer .nav-link {
   padding-top: 0;

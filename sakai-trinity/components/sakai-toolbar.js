@@ -55,11 +55,15 @@ export class SakaiToolbar extends LitElement {
   // }
   connectedCallback() {
     super.connectedCallback();
-    this.toggleOpen();
+    // this.toggleOpen();
   }
 
   static get styles() {
-    return css``;
+    return css`
+      :host {
+        display: none;
+      }
+    `;
   }
 
   render() {

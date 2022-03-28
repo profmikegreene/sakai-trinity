@@ -28,8 +28,30 @@ export class SakaiHeader extends LitElement {
   _toggleQuickSideBar() {
     document.querySelector('sakai-quick-sidebar').toggleAttribute('open');
   }
-  _toggleToolBar() {
+
+  _toggleToolBar(e) {
+    e.preventDefault();
     document.querySelector('sakai-toolbar').toggleAttribute('open');
+    if (document.querySelector('sakai-toolbar').open) {
+      this._toggleMargin(false);
+    } else if (document.querySelector('sakai-toolbar').open === false) {
+      this._toggleMargin(true);
+    }
+  }
+
+  _toggleMargin(state) {
+    if (window.location.href.endsWith('sakai-trinity/index.html')) {
+      if (state) {
+        document.firstElementChild.style.setProperty('--logoMargin', '28px');
+      } else if (state === false) {
+        document.firstElementChild.style.setProperty('--logoMargin', '-40px');
+      }
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._toggleMargin(true);
   }
 
   render() {
@@ -39,7 +61,7 @@ export class SakaiHeader extends LitElement {
         rel="stylesheet"
         type="text/css"
       />
-      <header role="banner" class="sakai-topHeader">
+      <header id="sakai-header" role="banner" class="sakai-topHeader">
         <div id="logoWrapper" class="sakai-headerItem">
           <a
             href="#"

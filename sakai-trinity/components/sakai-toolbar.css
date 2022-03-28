@@ -1,14 +1,21 @@
 :host {
   display: none;
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  /* width:0; */
 }
 :host([open]) {
+  transition: all 0.3s var(--toolbarTransition, ease-in-out);
+  background: var(--layoutBackgroundColor);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: scroll;
   height: 1vh;
   min-height: 100%;
-  background: var(--layoutBackgroundColor);
+  /* visibility: visible; */
+  /* opacity: 1; */
+  /* width: 100%; */
 }
 
 #sakaiToolBar {

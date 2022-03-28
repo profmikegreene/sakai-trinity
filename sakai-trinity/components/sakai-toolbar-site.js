@@ -18,7 +18,7 @@ export class SakaiToolbarSite extends LitElement {
     let oldVal = this._emoji;
     this._emoji = val;
     let newVal = val === '' ? '<ion-icon name="star"></ion-icon>' : oldVal;
-    console.log(typeof val, val, typeof oldVal, oldVal, typeof newVal, newVal);
+    // console.log(typeof val, val, typeof oldVal, oldVal, typeof newVal, newVal);
     this.requestUpdate('emoji', newVal);
   }
   get emoji() {
@@ -40,12 +40,12 @@ export class SakaiToolbarSite extends LitElement {
     return isPinned ? 'Unpin' : 'Pin';
   }
   attributeChangedCallback(name, oldVal, newVal) {
-    console.log('attribute change: ', name, newVal);
+    // console.log('attribute change: ', name, newVal);
     super.attributeChangedCallback(name, oldVal, newVal);
     // this.toggleOpen();
   }
-  toggleOpen(e) {
-    console.log(e);
+  toggleOpen() {
+    // console.log(e);
     this.toggleAttribute('open');
   }
   toggleDropdown() {
